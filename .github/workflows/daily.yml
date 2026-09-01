@@ -11,19 +11,26 @@ permissions:
 jobs:
   intelligence:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
       - name: Run collection and publishing pipeline
         run: python scripts/run.py
+
       - name: Quality gate
         run: python scripts/validate.py
+
       - name: Commit generated intelligence
         run: |
-          git config user.name 'OBOR Automation'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data scripts signals opportunities risks sectors index.html sitemap.xml
+          git config user.name "OBOR Automation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
           git diff --cached --quiet || git commit -m "Update daily intelligence"
           git push

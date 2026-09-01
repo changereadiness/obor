@@ -1,0 +1,36 @@
+{
+  "collected_at": "2026-09-01T07:23:43.949409+00:00",
+  "items": 0,
+  "errors": [
+    {
+      "source": "Government of Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "Global Affairs Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "WTO \u2014 News",
+      "feed_url": "https://www.wto.org/library/rss/news_e.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "IMF \u2014 News",
+      "feed_url": "https://www.imf.org/en/News/rss",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "OECD \u2014 News",
+      "feed_url": "https://www.oecd.org/newsroom/rss.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "World Bank \u2014 News",
+      "feed_url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    }
+  ]
+}

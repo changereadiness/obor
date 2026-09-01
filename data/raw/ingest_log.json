@@ -1,36 +1,36 @@
 {
-  "collected_at": "2026-09-01T07:23:43.949409+00:00",
+  "collected_at": "2026-09-01T07:39:26.288524+00:00",
   "items": 0,
   "errors": [
     {
       "source": "Government of Canada \u2014 News",
       "feed_url": "https://www.canada.ca/en/news.atom.xml",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "syntax error: line 2, column 0"
     },
     {
       "source": "Global Affairs Canada \u2014 News",
       "feed_url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "syntax error: line 2, column 0"
     },
     {
       "source": "WTO \u2014 News",
       "feed_url": "https://www.wto.org/library/rss/news_e.xml",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "HTTP Error 406: Not Acceptable"
     },
     {
       "source": "IMF \u2014 News",
       "feed_url": "https://www.imf.org/en/News/rss",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "OECD \u2014 News",
       "feed_url": "https://www.oecd.org/newsroom/rss.xml",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "World Bank \u2014 News",
       "feed_url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
-      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      "error": "mismatched tag: line 63, column 4"
     }
   ]
 }

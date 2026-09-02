@@ -1,87 +1,46 @@
 {
-  "collected_at": "2026-09-02T06:57:09.190751+00:00",
-  "state": "degraded",
-  "sources_enabled": 7,
-  "sources_succeeded": 4,
-  "items_new": 34,
-  "items_cached": 34,
+  "collected_at": "2026-09-01T07:55:55.281729+00:00",
+  "items": 0,
   "errors": [
     {
-      "source": "WTO — News",
-      "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0"
+      "source": "Government of Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "IMF — News",
-      "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden"
+      "source": "Global Affairs Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "OECD — News",
-      "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden"
-    }
-  ],
-  "health": [
-    {
-      "source": "Government of Canada — News",
-      "status": "ok",
-      "method": "html",
-      "http_status": 200,
-      "items": 2,
-      "content_type": "text/html;charset=utf-8",
-      "attempt_errors": [
-        "page https://www.canada.ca/en/news.html: HTML page contained no matching article links"
-      ],
-      "seconds": 6.17
+      "source": "National Bureau of Statistics of China \u2014 Latest Releases",
+      "feed_url": "https://www.stats.gov.cn/english/PressRelease/rss.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "Global Affairs Canada — News",
-      "status": "ok",
-      "method": "html",
-      "http_status": 200,
-      "items": 1,
-      "content_type": "text/html; charset=utf-8",
-      "attempt_errors": [],
-      "seconds": 0.62
+      "source": "Xinhua \u2014 English RSS",
+      "feed_url": "https://english.news.cn/rss/",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "National Bureau of Statistics of China — Latest Releases",
-      "status": "ok",
-      "method": "html",
-      "http_status": 200,
-      "items": 15,
-      "content_type": "text/html",
-      "attempt_errors": [],
-      "seconds": 3.94
+      "source": "WTO \u2014 News",
+      "feed_url": "https://www.wto.org/library/rss/news_e.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "WTO — News",
-      "status": "error",
-      "items": 0,
-      "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0",
-      "seconds": 0.47
+      "source": "IMF \u2014 News",
+      "feed_url": "https://www.imf.org/en/News/rss",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "IMF — News",
-      "status": "error",
-      "items": 0,
-      "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden",
-      "seconds": 9.29
+      "source": "OECD \u2014 News",
+      "feed_url": "https://www.oecd.org/newsroom/rss.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
-      "source": "OECD — News",
-      "status": "error",
-      "items": 0,
-      "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden",
-      "seconds": 9.31
-    },
-    {
-      "source": "World Bank — News",
-      "status": "ok",
-      "method": "html",
-      "http_status": 200,
-      "items": 16,
-      "content_type": "text/html; charset=utf-8",
-      "attempt_errors": [],
-      "seconds": 0.1
+      "source": "World Bank \u2014 News",
+      "feed_url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
     }
   ]
 }

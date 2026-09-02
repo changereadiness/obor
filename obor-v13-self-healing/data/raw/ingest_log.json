@@ -1,0 +1,46 @@
+{
+  "collected_at": "2026-09-01T07:55:55.281729+00:00",
+  "items": 0,
+  "errors": [
+    {
+      "source": "Government of Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "Global Affairs Canada \u2014 News",
+      "feed_url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "National Bureau of Statistics of China \u2014 Latest Releases",
+      "feed_url": "https://www.stats.gov.cn/english/PressRelease/rss.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "Xinhua \u2014 English RSS",
+      "feed_url": "https://english.news.cn/rss/",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "WTO \u2014 News",
+      "feed_url": "https://www.wto.org/library/rss/news_e.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "IMF \u2014 News",
+      "feed_url": "https://www.imf.org/en/News/rss",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "OECD \u2014 News",
+      "feed_url": "https://www.oecd.org/newsroom/rss.xml",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "source": "World Bank \u2014 News",
+      "feed_url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
+      "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+    }
+  ]
+}

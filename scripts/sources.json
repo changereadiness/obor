@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Government of Canada — News",
+    "url": "https://www.canada.ca/en/news/subscribe-emails/news-releases.html",
+    "feed_url": "https://www.canada.ca/content/canadasite/en/news/subscribe-emails/news-releases.atom.xml",
+    "source_type": "Primary source",
+    "country": "Canada",
+    "adapter": "rss_atom",
+    "enabled": true
+  },
+  {
+    "name": "Global Affairs Canada — News",
+    "url": "https://international.canada.ca/en/global-affairs/news",
+    "feed_url": "https://api.io.canada.ca/io-server/gc/news/en/v2?atomtitle=Global%20Affairs%20Canada%20news&dept=departmentofforeignaffairstradeanddevelopment&format=atom&orderBy=desc&pick=100&publishedDate%3E=2021-01-01&sort=publishedDate",
+    "source_type": "Primary source",
+    "country": "Canada",
+    "adapter": "rss_atom",
+    "enabled": true
+  },
+  {
+    "name": "National Bureau of Statistics of China — Latest Releases",
+    "url": "https://www.stats.gov.cn/english/PressRelease/",
+    "feed_url": "https://www.stats.gov.cn/english/PressRelease/rss.xml",
+    "fallback": "https://www.stats.gov.cn/english/PressRelease/index.html",
+    "source_type": "Primary source",
+    "country": "China",
+    "adapter": "rss_atom",
+    "include_url_terms": ["/PressRelease/"] ,
+    "enabled": true
+  },
+  {
+    "name": "WTO — News",
+    "url": "https://www.wto.org/english/news_e/news_e.htm",
+    "feed_url": "https://www.wto.org/library/rss/news_e.xml",
+    "fallback": "https://www.wto.org/english/news_e/news_e.htm",
+    "source_type": "Primary source",
+    "country": "International",
+    "adapter": "rss_atom",
+    "include_url_terms": ["/english/news_e/"] ,
+    "enabled": true
+  },
+  {
+    "name": "IMF — News",
+    "url": "https://www.imf.org/en/News",
+    "feed_url": "https://www.imf.org/en/news/rss",
+    "fallback": "https://www.imf.org/en/News",
+    "source_type": "Primary source",
+    "country": "International",
+    "adapter": "rss_atom",
+    "include_url_terms": ["/en/news/", "/en/articles/"],
+    "enabled": true
+  },
+  {
+    "name": "OECD — News",
+    "url": "https://www.oecd.org/en/about/news.html",
+    "feed_url": "https://www.oecd.org/newsroom/rss.xml",
+    "fallback": "https://www.oecd.org/en/about/news.html",
+    "source_type": "Primary source",
+    "country": "International",
+    "adapter": "rss_atom",
+    "include_url_terms": ["/en/about/news", "/en/about/newsroom"],
+    "enabled": true
+  },
+  {
+    "name": "World Bank — News",
+    "url": "https://www.worldbank.org/en/news",
+    "feed_url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
+    "fallback": "https://www.worldbank.org/en/news",
+    "source_type": "Primary source",
+    "country": "International",
+    "adapter": "rss_atom",
+    "include_url_terms": ["/en/news/"],
+    "enabled": true
+  }
+]

@@ -95,3 +95,11 @@ The deterministic analyst can later be replaced or augmented by an optional AI a
 ## v9 — Evidence-backed synthesis
 
 v9 adds a synthesis layer between screening and publication. Screened source pages are fetched, article text is extracted, numeric economic facts are parsed, and each published signal is generated from source evidence rather than the raw source title. Signals now carry `key_data`, `interpretation`, and `synthesis` evidence. A source fetch/extraction failure prevents publication of that candidate rather than allowing an unsupported signal through.
+
+
+### V18 — Intelligence Semantics
+- Article-body extraction prioritizes content after the main H1 and strips site chrome.
+- Dataset-level statistics are treated as primary evidence ahead of individual table rows.
+- Production-input price releases use the 50-product movement distribution for interpretation rather than the extracted sample.
+- Synthesized sectors are based on the economic subject rather than generic supply-chain keywords.
+- Canadian relevance distinguishes observed facts from conditional business implications.

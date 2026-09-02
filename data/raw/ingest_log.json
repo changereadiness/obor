@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-02T03:42:59.368557+00:00",
+  "collected_at": "2026-09-02T03:56:52.833523+00:00",
   "state": "failed_no_data",
   "sources_enabled": 7,
   "sources_succeeded": 0,
@@ -8,38 +8,31 @@
   "errors": [
     {
       "source": "Government of Canada — News",
-      "url": "https://www.canada.ca/en/news.atom.xml",
-      "error": "XML parse failed: syntax error: line 2, column 0"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "Global Affairs Canada — News",
-      "url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
-      "error": "XML parse failed: syntax error: line 2, column 0"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "National Bureau of Statistics of China — Latest Releases",
-      "url": "https://www.stats.gov.cn/english/PressRelease/rss.xml",
-      "error": "XML parse failed: mismatched tag: line 6514, column 2"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "WTO — News",
-      "url": "https://www.wto.org/library/rss/news_e.xml",
-      "error": "XML parse failed: syntax error: line 1, column 0"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "IMF — News",
-      "url": "https://www.imf.org/en/News/rss",
-      "error": "HTTP Error 403: Forbidden"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "OECD — News",
-      "url": "https://www.oecd.org/newsroom/rss.xml",
-      "error": "HTTP Error 403: Forbidden"
+      "error": "no collection endpoints configured"
     },
     {
       "source": "World Bank — News",
-      "url": "https://www.worldbank.org/en/news/all?displaycon=1&sort=latest&rss=1",
-      "error": "XML parse failed: mismatched tag: line 63, column 4"
+      "error": "no collection endpoints configured"
     }
   ],
   "health": [
@@ -47,50 +40,50 @@
       "source": "Government of Canada — News",
       "status": "error",
       "items": 0,
-      "error": "XML parse failed: syntax error: line 2, column 0",
-      "seconds": 4.37
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "Global Affairs Canada — News",
       "status": "error",
       "items": 0,
-      "error": "XML parse failed: syntax error: line 2, column 0",
-      "seconds": 3.27
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "National Bureau of Statistics of China — Latest Releases",
       "status": "error",
       "items": 0,
-      "error": "XML parse failed: mismatched tag: line 6514, column 2",
-      "seconds": 26.03
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "WTO — News",
       "status": "error",
       "items": 0,
-      "error": "XML parse failed: syntax error: line 1, column 0",
-      "seconds": 0.6
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "IMF — News",
       "status": "error",
       "items": 0,
-      "error": "HTTP Error 403: Forbidden",
-      "seconds": 3.29
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "OECD — News",
       "status": "error",
       "items": 0,
-      "error": "HTTP Error 403: Forbidden",
-      "seconds": 3.28
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     },
     {
       "source": "World Bank — News",
       "status": "error",
       "items": 0,
-      "error": "XML parse failed: mismatched tag: line 63, column 4",
-      "seconds": 0.16
+      "error": "no collection endpoints configured",
+      "seconds": 0.0
     }
   ]
 }

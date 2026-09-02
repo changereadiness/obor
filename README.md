@@ -104,7 +104,5 @@ v9 adds a synthesis layer between screening and publication. Screened source pag
 - Synthesized sectors are based on the economic subject rather than generic supply-chain keywords.
 - Canadian relevance distinguishes observed facts from conditional business implications.
 
-## V19 — Semantic observations + editorial separation
-V19 replaces flattened-text economic inference with a source-agnostic semantic table layer. HTML tables are reconstructed with rowspan/colspan support, header paths are preserved, columns are typed (growth, price change, absolute value, volume, index, etc.), and validated observations are stored explicitly before synthesis.
-
-Editorial fields are now separated by job: Summary explains why the signal matters; Canadian Relevance explains the Canadian implication; What Happened is factual bullets; Key Data contains concise validated statistics; What the Data Shows contains the deterministic interpretation. Headlines are constrained to the measured phenomenon rather than inferred concepts.
+## V19 — Semantic Observations
+V19 replaces flattened-text economic inference with a source-agnostic semantic observation layer. Structured HTML tables are reconstructed with row/column spans, headers are retained with period and metric context, and validated observations are passed into deterministic synthesis. Supported semantic types include absolute values, YoY/MoM growth, price changes, price-change rates, volume, quantity, index and share. Text extraction remains a fallback when no usable structured table exists. Editorial output separates Summary, Canadian Relevance, factual What Happened bullets, Key Data, and analytical interpretation.

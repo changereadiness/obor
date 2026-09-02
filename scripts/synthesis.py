@@ -15,6 +15,29 @@ RETRIES = 2
 TIMEOUT = 15
 UA = 'Mozilla/5.0 (compatible; OBOR/0.9; +https://obor.ca/)'
 
+
+def fetch(url):
+    """Fetch a source page with retries and return (body, content_type, status)."""
+    if not url:
+        raise ValueError('empty source URL')
+    last = None
+    headers = {
+        'User-Agent': UA,
+        'Accept': 'text/html,application/xhtml+xml,application/atom+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.1',
+        'Accept-Language': 'en-CA,en;q=0.8',
+        'Cache-Control': 'no-cache',
+    }
+    for attempt in range(RETRIES + 1):
+        try:
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=TIMEOUT) as response:
+                return response.read(), response.headers.get('Content-Type', ''), response.status
+        except (HTTPError, URLError, TimeoutError, OSError) as exc:
+            last = exc
+            if attempt < RETRIES:
+                time.sleep(1.5 * (attempt + 1))
+    raise last
+
 class TextExtractor(HTMLParser):
     SKIP = {'script','style','noscript','svg','nav','footer','header','form','aside'}
     BLOCK = {'p','div','article','section','li','h1','h2','h3','h4','h5','h6','br','tr'}

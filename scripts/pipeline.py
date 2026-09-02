@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 14
+SYNTHESIS_VERSION = 15
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -342,6 +342,7 @@ def main():
         else:
             base = analyze(base)
         rebuilt = synthesize(base)
+        print(f"reprocess: {existing_signal.get('slug', existing_signal.get('id'))} -> {rebuilt.get('synthesis_status')}")
         if rebuilt.get('synthesis_status') != 'evidence_available':
             # Preserve the existing valid signal if the source is temporarily
             # unavailable or the new extractor cannot establish evidence.

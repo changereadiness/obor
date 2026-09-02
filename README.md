@@ -1,3 +1,7 @@
+## V15 — Repair synthesis fetch dependency
+
+V15 gives the synthesis layer its own source fetch implementation. Earlier versions called `fetch()` from `synthesis.py` without defining it, causing re-synthesis to fail silently and preserve stale records. V15 also reports the reprocessing status for each recovered signal and restores the current GitHub Actions runtime versions.
+
 ## V13 — Self-healing signal ledger
 
 V13 makes the published signal pages a recovery ledger. If `data/signals.json` is stale or reverted but real published signal pages remain under `signals/<slug>/`, the runtime pipeline reconstructs those records, re-fetches their source URLs, re-synthesizes them, and rewrites the canonical `data/signals.json`. The normal architecture remains `data/signals.json` → generated pages; page recovery exists only to survive deployment/package replacement. Demo pages are never recovered as real signals.

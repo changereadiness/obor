@@ -1,95 +1,3195 @@
 [
   {
-    "id": "demo-001",
-    "title": "Illustrative signal: China expands support for advanced manufacturing",
-    "slug": "china-advanced-manufacturing-support",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.gov.cn/",
+    "id": "sig-d955a0f9dca8",
+    "title": "China production-input prices show mixed movement",
+    "slug": "12-market-prices-of-important-means-of-production-in-circulation-august-1-10-202",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260813_1965026.html",
     "source_type": "Primary source",
-    "summary": "Demo record showing how an economic-policy development can be translated into a Canadian business signal.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian manufacturers, equipment suppliers and technology companies may need to monitor how industrial-policy support changes Chinese production capacity and competitive conditions.",
+    "summary": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 1-10, 2026 2026-08-14 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In early August 2026, according to",
+    "what_happened": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 1-10, 2026 2026-08-14 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In early August 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 12 products increased, 31 kinds decreased, and 7 kinds remained flat compared with those in late July 2026. Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 7487.0; price change over previous period -585.9; rate -7.3%. Liquefied Petroleum Gas (LPG) ton current price 5790.9; price change over previous period -208.6; rate -3.5%. Coke (Quasi Primary Metallurgical Coke) ton current price 1679.7; price change over previous period -60.5; rate -3.5%.",
+    "interpretation": "The table shows mixed price movement across production inputs, with 3 tracked items rising and 5 falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.",
+    "key_data": [
+      {
+        "value": "-7.3",
+        "unit": "% economic price movement",
+        "context": "Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 7487.0; price change over previous period -585.9; rate -7.3%."
+      },
+      {
+        "value": "-3.5",
+        "unit": "% economic price movement",
+        "context": "Liquefied Petroleum Gas (LPG) ton current price 5790.9; price change over previous period -208.6; rate -3.5%."
+      },
+      {
+        "value": "-3.5",
+        "unit": "% economic price movement",
+        "context": "Coke (Quasi Primary Metallurgical Coke) ton current price 1679.7; price change over previous period -60.5; rate -3.5%."
+      },
+      {
+        "value": "-3.3",
+        "unit": "% economic price movement",
+        "context": "Butadiene Rubber (BR9000) ton current price 12572.2; price change over previous period -427.8; rate -3.3%."
+      },
+      {
+        "value": "2.9",
+        "unit": "% economic price movement",
+        "context": "Zinc Ingot (0#) ton current price 25374.2; price change over previous period 722.9; rate 2.9%."
+      },
+      {
+        "value": "-2.7",
+        "unit": "% economic price movement",
+        "context": "Sulfuric Acid (98%) ton current price 1983.7; price change over previous period -54.1; rate -2.7%."
+      },
+      {
+        "value": "2.7",
+        "unit": "% economic price movement",
+        "context": "Paraffin (58#, Semi-refined) ton current price 7366.3; price change over previous period 193.8; rate 2.7%."
+      },
+      {
+        "value": "2.3",
+        "unit": "% economic price movement",
+        "context": "Cotton (Ginned Cotton, White Cotton Grade III) ton current price 17198.0; price change over previous period 387.4; rate 2.3%."
+      }
+    ],
+    "canadian_relevance": "The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 86,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Manufacturing",
-      "Machinery & Equipment",
-      "Technology"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Policy",
-      "Industry"
+      "Markets"
     ],
     "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true,
+    "synthesis": {
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html",
+      "text_length": 9474,
+      "page_title": "Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+      "facts": [
+        {
+          "value": "-1.9",
+          "unit": "% economic price movement",
+          "text": "Rebar (Φ20mm, HRB400E) ton current price 3062.7; price change over previous period -60.7; rate -1.9%.",
+          "source_kind": "structured_table",
+          "product": "Rebar (Φ20mm, HRB400E)",
+          "current_price": "3062.7",
+          "price_change": "-60.7"
+        },
+        {
+          "value": "-1.5",
+          "unit": "% economic price movement",
+          "text": "Wire (Φ8-10mm, HPB300) ton current price 3244.5; price change over previous period -48.7; rate -1.5%.",
+          "source_kind": "structured_table",
+          "product": "Wire (Φ8-10mm, HPB300)",
+          "current_price": "3244.5",
+          "price_change": "-48.7"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "Ordinary Medium Plate (20mm, Q235) ton current price 3466.9; price change over previous period -8.9; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Medium Plate (20mm, Q235)",
+          "current_price": "3466.9",
+          "price_change": "-8.9"
+        },
+        {
+          "value": "-1.4",
+          "unit": "% economic price movement",
+          "text": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235) ton current price 3241.1; price change over previous period -47.3; rate -1.4%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235)",
+          "current_price": "3241.1",
+          "price_change": "-47.3"
+        },
+        {
+          "value": "-0.5",
+          "unit": "% economic price movement",
+          "text": "Seamless Steel Pipe (219*6, 20#) ton current price 4022.7; price change over previous period -21.4; rate -0.5%.",
+          "source_kind": "structured_table",
+          "product": "Seamless Steel Pipe (219*6, 20#)",
+          "current_price": "4022.7",
+          "price_change": "-21.4"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Angle Steel (5#) ton current price 3417.0; price change over previous period -24.0; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Angle Steel (5#)",
+          "current_price": "3417.0",
+          "price_change": "-24.0"
+        },
+        {
+          "value": "1.7",
+          "unit": "% economic price movement",
+          "text": "Electrolytic Copper (1#) ton current price 107498.3; price change over previous period 1803.9; rate 1.7%.",
+          "source_kind": "structured_table",
+          "product": "Electrolytic Copper (1#)",
+          "current_price": "107498.3",
+          "price_change": "1803.9"
+        },
+        {
+          "value": "2.2",
+          "unit": "% economic price movement",
+          "text": "Aluminum Ingot (A00) ton current price 23773.3; price change over previous period 503.3; rate 2.2%.",
+          "source_kind": "structured_table",
+          "product": "Aluminum Ingot (A00)",
+          "current_price": "23773.3",
+          "price_change": "503.3"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Lead Ingot (1#) ton current price 15462.5; price change over previous period -106.3; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Lead Ingot (1#)",
+          "current_price": "15462.5",
+          "price_change": "-106.3"
+        },
+        {
+          "value": "2.9",
+          "unit": "% economic price movement",
+          "text": "Zinc Ingot (0#) ton current price 25374.2; price change over previous period 722.9; rate 2.9%.",
+          "source_kind": "structured_table",
+          "product": "Zinc Ingot (0#)",
+          "current_price": "25374.2",
+          "price_change": "722.9"
+        },
+        {
+          "value": "-2.7",
+          "unit": "% economic price movement",
+          "text": "Sulfuric Acid (98%) ton current price 1983.7; price change over previous period -54.1; rate -2.7%.",
+          "source_kind": "structured_table",
+          "product": "Sulfuric Acid (98%)",
+          "current_price": "1983.7",
+          "price_change": "-54.1"
+        },
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Caustic Soda (Liquid Caustic Soda, 32%) ton current price 684.8; price change over previous period -5.2; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Caustic Soda (Liquid Caustic Soda, 32%)",
+          "current_price": "684.8",
+          "price_change": "-5.2"
+        },
+        {
+          "value": "-1.9",
+          "unit": "% economic price movement",
+          "text": "Methyl Alcohol (Superior Quality) ton current price 2479.4; price change over previous period -47.5; rate -1.9%.",
+          "source_kind": "structured_table",
+          "product": "Methyl Alcohol (Superior Quality)",
+          "current_price": "2479.4",
+          "price_change": "-47.5"
+        },
+        {
+          "value": "-7.3",
+          "unit": "% economic price movement",
+          "text": "Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 7487.0; price change over previous period -585.9; rate -7.3%.",
+          "source_kind": "structured_table",
+          "product": "Pure Benzene (Petroleum Benzene, Industrial Grade)",
+          "current_price": "7487.0",
+          "price_change": "-585.9"
+        },
+        {
+          "value": "-0.5",
+          "unit": "% economic price movement",
+          "text": "Ethyl Alcohol (95.0%) ton current price 5458.6; price change over previous period -29.3; rate -0.5%.",
+          "source_kind": "structured_table",
+          "product": "Ethyl Alcohol (95.0%)",
+          "current_price": "5458.6",
+          "price_change": "-29.3"
+        },
+        {
+          "value": "-1.0",
+          "unit": "% economic price movement",
+          "text": "Polyethylene (LLDPE, Melt Index 2 Film Material) ton current price 8413.3; price change over previous period -87.1; rate -1.0%.",
+          "source_kind": "structured_table",
+          "product": "Polyethylene (LLDPE, Melt Index 2 Film Material)",
+          "current_price": "8413.3",
+          "price_change": "-87.1"
+        },
+        {
+          "value": "-1.0",
+          "unit": "% economic price movement",
+          "text": "Polypropylene (Wire Drawing Material) ton current price 8838.6; price change over previous period -90.4; rate -1.0%.",
+          "source_kind": "structured_table",
+          "product": "Polypropylene (Wire Drawing Material)",
+          "current_price": "8838.6",
+          "price_change": "-90.4"
+        },
+        {
+          "value": "-1.6",
+          "unit": "% economic price movement",
+          "text": "Glacial Acetic Acid (99.5% and above) ton current price 2989.2; price change over previous period -47.7; rate -1.6%.",
+          "source_kind": "structured_table",
+          "product": "Glacial Acetic Acid (99.5% and above)",
+          "current_price": "2989.2",
+          "price_change": "-47.7"
+        },
+        {
+          "value": "-3.3",
+          "unit": "% economic price movement",
+          "text": "Butadiene Rubber (BR9000) ton current price 12572.2; price change over previous period -427.8; rate -3.3%.",
+          "source_kind": "structured_table",
+          "product": "Butadiene Rubber (BR9000)",
+          "current_price": "12572.2",
+          "price_change": "-427.8"
+        },
+        {
+          "value": "-0.9",
+          "unit": "% economic price movement",
+          "text": "Polyester Filament (POY150D/48F) ton current price 8450.0; price change over previous period -75.0; rate -0.9%.",
+          "source_kind": "structured_table",
+          "product": "Polyester Filament (POY150D/48F)",
+          "current_price": "8450.0",
+          "price_change": "-75.0"
+        },
+        {
+          "value": "-1.2",
+          "unit": "% economic price movement",
+          "text": "Lithium Iron Phosphate (Standard Power Grade) ton current price 53732.5; price change over previous period -635.6; rate -1.2%.",
+          "source_kind": "structured_table",
+          "product": "Lithium Iron Phosphate (Standard Power Grade)",
+          "current_price": "53732.5",
+          "price_change": "-635.6"
+        },
+        {
+          "value": "0.3",
+          "unit": "% economic price movement",
+          "text": "Liquefied Natural Gas (LNG) ton current price 5539.5; price change over previous period 14.1; rate 0.3%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Natural Gas (LNG)",
+          "current_price": "5539.5",
+          "price_change": "14.1"
+        },
+        {
+          "value": "-3.5",
+          "unit": "% economic price movement",
+          "text": "Liquefied Petroleum Gas (LPG) ton current price 5790.9; price change over previous period -208.6; rate -3.5%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Petroleum Gas (LPG)",
+          "current_price": "5790.9",
+          "price_change": "-208.6"
+        },
+        {
+          "value": "0.5",
+          "unit": "% economic price movement",
+          "text": "Gasoline (95#, National VI Emission Standard) ton current price 9440.1; price change over previous period 47.6; rate 0.5%.",
+          "source_kind": "structured_table",
+          "product": "Gasoline (95#, National VI Emission Standard)",
+          "current_price": "9440.1",
+          "price_change": "47.6"
+        },
+        {
+          "value": "1.1",
+          "unit": "% economic price movement",
+          "text": "Diesel Oil (0#, National VI Emission Standard) ton current price 7905.7; price change over previous period 88.0; rate 1.1%.",
+          "source_kind": "structured_table",
+          "product": "Diesel Oil (0#, National VI Emission Standard)",
+          "current_price": "7905.7",
+          "price_change": "88.0"
+        },
+        {
+          "value": "2.7",
+          "unit": "% economic price movement",
+          "text": "Paraffin (58#, Semi-refined) ton current price 7366.3; price change over previous period 193.8; rate 2.7%.",
+          "source_kind": "structured_table",
+          "product": "Paraffin (58#, Semi-refined)",
+          "current_price": "7366.3",
+          "price_change": "193.8"
+        },
+        {
+          "value": "-0.6",
+          "unit": "% economic price movement",
+          "text": "Anthracite (Washed, Medium Pieces) ton current price 1314.0; price change over previous period -7.9; rate -0.6%.",
+          "source_kind": "structured_table",
+          "product": "Anthracite (Washed, Medium Pieces)",
+          "current_price": "1314.0",
+          "price_change": "-7.9"
+        },
+        {
+          "value": "1.9",
+          "unit": "% economic price movement",
+          "text": "Shanxi Superior Mixed Coal (5500 kilocalories) ton current price 840.8; price change over previous period 16.0; rate 1.9%.",
+          "source_kind": "structured_table",
+          "product": "Shanxi Superior Mixed Coal (5500 kilocalories)",
+          "current_price": "840.8",
+          "price_change": "16.0"
+        },
+        {
+          "value": "1.8",
+          "unit": "% economic price movement",
+          "text": "Coking Coal (Main Coking Coal) ton current price 1908.3; price change over previous period 33.3; rate 1.8%.",
+          "source_kind": "structured_table",
+          "product": "Coking Coal (Main Coking Coal)",
+          "current_price": "1908.3",
+          "price_change": "33.3"
+        },
+        {
+          "value": "-3.5",
+          "unit": "% economic price movement",
+          "text": "Coke (Quasi Primary Metallurgical Coke) ton current price 1679.7; price change over previous period -60.5; rate -3.5%.",
+          "source_kind": "structured_table",
+          "product": "Coke (Quasi Primary Metallurgical Coke)",
+          "current_price": "1679.7",
+          "price_change": "-60.5"
+        },
+        {
+          "value": "0.2",
+          "unit": "% economic price movement",
+          "text": "Ordinary Portland Cement (P.O 42.5 in Bulk) ton current price 246.8; price change over previous period 0.4; rate 0.2%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Portland Cement (P.O 42.5 in Bulk)",
+          "current_price": "246.8",
+          "price_change": "0.4"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "Float Flat Glass (5/6mm) ton current price 1095.6; price change over previous period -3.3; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "Float Flat Glass (5/6mm)",
+          "current_price": "1095.6",
+          "price_change": "-3.3"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Polysilicon (Dense Grade) kg current price 31.5; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Polysilicon (Dense Grade)",
+          "current_price": "31.5",
+          "price_change": "0.0"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Rice (Japonica Rice) ton current price 3988.0; price change over previous period -0.3; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Rice (Japonica Rice)",
+          "current_price": "3988.0",
+          "price_change": "-0.3"
+        },
+        {
+          "value": "-0.6",
+          "unit": "% economic price movement",
+          "text": "Wheat (National Standard Grade III) ton current price 2390.8; price change over previous period -15.5; rate -0.6%.",
+          "source_kind": "structured_table",
+          "product": "Wheat (National Standard Grade III)",
+          "current_price": "2390.8",
+          "price_change": "-15.5"
+        },
+        {
+          "value": "-1.0",
+          "unit": "% economic price movement",
+          "text": "Corn (Yellow Corn Grade II) ton current price 2241.6; price change over previous period -23.3; rate -1.0%.",
+          "source_kind": "structured_table",
+          "product": "Corn (Yellow Corn Grade II)",
+          "current_price": "2241.6",
+          "price_change": "-23.3"
+        },
+        {
+          "value": "2.3",
+          "unit": "% economic price movement",
+          "text": "Cotton (Ginned Cotton, White Cotton Grade III) ton current price 17198.0; price change over previous period 387.4; rate 2.3%.",
+          "source_kind": "structured_table",
+          "product": "Cotton (Ginned Cotton, White Cotton Grade III)",
+          "current_price": "17198.0",
+          "price_change": "387.4"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Live Hog (Three-way Crossbred) kg current price 10.4; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Live Hog (Three-way Crossbred)",
+          "current_price": "10.4",
+          "price_change": "0.0"
+        },
+        {
+          "value": "-1.4",
+          "unit": "% economic price movement",
+          "text": "Soybean (Soy) ton current price 4464.8; price change over previous period -61.1; rate -1.4%.",
+          "source_kind": "structured_table",
+          "product": "Soybean (Soy)",
+          "current_price": "4464.8",
+          "price_change": "-61.1"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Soybean Meal (Crude Protein Content≥43%) ton current price 3045.0; price change over previous period 0.8; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Soybean Meal (Crude Protein Content≥43%)",
+          "current_price": "3045.0",
+          "price_change": "0.8"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Peanut (For Oil Processing) ton current price 7358.3; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Peanut (For Oil Processing)",
+          "current_price": "7358.3",
+          "price_change": "0.0"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "White Sugar (National Standard Grade I) ton current price 5174.2; price change over previous period -17.7; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "White Sugar (National Standard Grade I)",
+          "current_price": "5174.2",
+          "price_change": "-17.7"
+        },
+        {
+          "value": "-0.9",
+          "unit": "% economic price movement",
+          "text": "Urea (Small and Medium Granules) ton current price 1770.4; price change over previous period -16.4; rate -0.9%.",
+          "source_kind": "structured_table",
+          "product": "Urea (Small and Medium Granules)",
+          "current_price": "1770.4",
+          "price_change": "-16.4"
+        },
+        {
+          "value": "-0.2",
+          "unit": "% economic price movement",
+          "text": "Phosphate Fertilizer (55% Monoammonium Phosphate) ton current price 4471.9; price change over previous period -8.6; rate -0.2%.",
+          "source_kind": "structured_table",
+          "product": "Phosphate Fertilizer (55% Monoammonium Phosphate)",
+          "current_price": "4471.9",
+          "price_change": "-8.6"
+        },
+        {
+          "value": "-1.1",
+          "unit": "% economic price movement",
+          "text": "Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton current price 3135.0; price change over previous period -35.9; rate -1.1%.",
+          "source_kind": "structured_table",
+          "product": "Potassium Fertilizer (62% White Muriate of Potash, Port Price)",
+          "current_price": "3135.0",
+          "price_change": "-35.9"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton current price 3640.0; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK)",
+          "current_price": "3640.0",
+          "price_change": "0.0"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Pesticide (Glyphosate, 95% Technical Material) ton current price 26000.0; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Pesticide (Glyphosate, 95% Technical Material)",
+          "current_price": "26000.0",
+          "price_change": "0.0"
+        },
+        {
+          "value": "0.5",
+          "unit": "% economic price movement",
+          "text": "Natural Rubber (Standard Rubber SCRWF) ton current price 16798.6; price change over previous period 80.9; rate 0.5%.",
+          "source_kind": "structured_table",
+          "product": "Natural Rubber (Standard Rubber SCRWF)",
+          "current_price": "16798.6",
+          "price_change": "80.9"
+        },
+        {
+          "value": "-2.2",
+          "unit": "% economic price movement",
+          "text": "Pulp (Imported Coniferous Pulp) ton current price 4798.8; price change over previous period -108.0; rate -2.2%.",
+          "source_kind": "structured_table",
+          "product": "Pulp (Imported Coniferous Pulp)",
+          "current_price": "4798.8",
+          "price_change": "-108.0"
+        },
+        {
+          "value": "-1.5",
+          "unit": "% economic price movement",
+          "text": "Corrugated Paper (AA Grade, 120g) ton current price 3212.4; price change over previous period -47.8; rate -1.5%.",
+          "source_kind": "structured_table",
+          "product": "Corrugated Paper (AA Grade, 120g)",
+          "current_price": "3212.4",
+          "price_change": "-47.8"
+        },
+        {
+          "value": "55",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1770.4 -16.4 -0.9 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4471.9 -8.6 -0.2 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3135.0 -35.9 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 0.0 0.0 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 0.0 0.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "62",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1770.4 -16.4 -0.9 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4471.9 -8.6 -0.2 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3135.0 -35.9 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 0.0 0.0 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 0.0 0.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "45",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1770.4 -16.4 -0.9 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4471.9 -8.6 -0.2 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3135.0 -35.9 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 0.0 0.0 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 0.0 0.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "95",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1770.4 -16.4 -0.9 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4471.9 -8.6 -0.2 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3135.0 -35.9 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 0.0 0.0 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 0.0 0.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.95",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.7",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.994",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.995",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        }
+      ],
+      "relevant_sentences": [
+        "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 1-10, 2026 2026-08-14 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In early August 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 12 products increased, 31 kinds decreased, and 7 kinds remained flat compared with those in late July 2026.",
+        "Market Prices of Important Means of Production in Circulation (August 1-10, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I.",
+        "Monitoring Content The monitoring of market prices of important means of production in circulation includes the prices of 50 kinds of products under 9 categories.",
+        "Notes on Indicators Market prices of important means of production in circulation refer to the wholesale prices and selling prices of enterprises trading important means of production.",
+        "Different from producer prices, market prices of means of production include producer prices, as well as circulation expenses, profits, and taxes of the enterprises.",
+        "Attached Table: Specifications of Market Price Monitoring Products of Important Means of Production in Circulation No.",
+        "Agricultural Means of Production Urea (Small and Medium Granules) ton 1770.4 -16.4 -0.9 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4471.9 -8.6 -0.2 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3135.0 -35.9 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 0.0 0.0 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 0.0 0.0 IX.",
+        "Producer prices and market prices influence each other."
+      ]
+    },
+    "synthesis_version": 17,
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   },
   {
-    "id": "demo-002",
-    "title": "Illustrative signal: Chinese logistics activity changes regional supply conditions",
-    "slug": "china-logistics-supply-conditions",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.stats.gov.cn/",
+    "id": "sig-370d277e832d",
+    "title": "China retail growth remains subdued",
+    "slug": "8-total-retail-sales-of-consumer-goods-from-january-to-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965078.html",
     "source_type": "Primary source",
-    "summary": "Demo record for a supply-chain signal that would connect Chinese logistics conditions to Canadian sourcing and transportation exposure.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian importers and supply-chain teams could be affected through lead times, freight conditions, sourcing decisions and supplier reliability.",
+    "summary": "Total Retail Sales of Consumer Goods in July 2026 Indicator July January - July Absolute Value (100 million yuan) Growth Rate Y/Y (%) Absolute Value (100 million yuan) Growth Rate Y/Y (%) Total retail sales of consumer goods 39022 0.6 287744 1.2 Of which: Retail sales of consumer goods excluding automobiles 35892 2.5 265142 2.7 Of which: Retail sales of enterprises (units) above the designated size 14308 -3.4 108935 ",
+    "what_happened": "Total Retail Sales of Consumer Goods in July 2026 Indicator July January - July Absolute Value (100 million yuan) Growth Rate Y/Y (%) Absolute Value (100 million yuan) Growth Rate Y/Y (%) Total retail sales of consumer goods 39022 0.6 287744 1.2 Of which: Retail sales of consumer goods excluding automobiles 35892 2.5 265142 2.7 Of which: Retail sales of enterprises (units) above the designated size 14308 -3.4 108935 -1.1 Of which: Online retail sales of goods - - 73965 4.6 By area Urban 33780 0.5 249285 1.1 Rural 5242 1.6 38459 2.4 By consumption pattern Income of the catering industry 4567 1.4 32822 2.6 Of which: Income of the catering industry by enterprises (units) above the designated size 1352 0.0 9678 1.5 Retail sales of goods 34455 0.5 254922 1.1 Of which: Retail sales of goods by enterprises (units) above the designated size 12956 -3.8 99257 -1.4 Of which: Grain, oil and food 1794 5.3 13813 7.2 Beverage 278 3.5 1866 5.6 Tobacco and liquor 431 6.0 3966 12.4 Clothes, shoes, hats and textiles 922 -1.0 8628 5.8 Cosmetics 285 6.8 2723 6.3 Gold, silver and jewelry 189 -10.1 2123 0.",
+    "interpretation": "The table shows mixed price movement across production inputs, with 8 tracked items rising and 0 falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.",
+    "key_data": [
+      {
+        "value": "39022",
+        "unit": "% economic price movement",
+        "context": "Total retail sales of consumer goods 39022 current price 0.6; price change over previous period 287744; rate 39022%."
+      },
+      {
+        "value": "35892",
+        "unit": "% economic price movement",
+        "context": "Of which: Retail sales of consumer goods excluding automobiles 35892 current price 2.5; price change over previous period 265142; rate 35892%."
+      },
+      {
+        "value": "34455",
+        "unit": "% economic price movement",
+        "context": "Retail sales of goods 34455 current price 0.5; price change over previous period 254922; rate 34455%."
+      },
+      {
+        "value": "33780",
+        "unit": "% economic price movement",
+        "context": "Urban 33780 current price 0.5; price change over previous period 249285; rate 33780%."
+      },
+      {
+        "value": "14308",
+        "unit": "% economic price movement",
+        "context": "Of which: Retail sales of enterprises (units) above the designated size 14308 current price -3.4; price change over previous period 108935; rate 14308%."
+      },
+      {
+        "value": "12956",
+        "unit": "% economic price movement",
+        "context": "Of which: Retail sales of goods by enterprises (units) above the designated size 12956 current price -3.8; price change over previous period 99257; rate 12956%."
+      },
+      {
+        "value": "5242",
+        "unit": "% economic price movement",
+        "context": "Rural 5242 current price 1.6; price change over previous period 38459; rate 5242%."
+      },
+      {
+        "value": "4567",
+        "unit": "% economic price movement",
+        "context": "Income of the catering industry 4567 current price 1.4; price change over previous period 32822; rate 4567%."
+      }
+    ],
+    "canadian_relevance": "The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 79,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Logistics & Transportation",
-      "Manufacturing",
+      "Technology",
       "Consumer Goods"
     ],
     "categories": [
-      "Supply Chain",
       "Markets"
     ],
-    "direction": "China → Canada",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true,
+    "synthesis": {
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html",
+      "text_length": 8706,
+      "page_title": "Total Retail Sales of Consumer Goods from January to July 2026",
+      "facts": [
+        {
+          "value": "39022",
+          "unit": "% economic price movement",
+          "text": "Total retail sales of consumer goods 39022 current price 0.6; price change over previous period 287744; rate 39022%.",
+          "source_kind": "structured_table",
+          "product": "Total retail sales of consumer goods",
+          "current_price": "0.6",
+          "price_change": "287744"
+        },
+        {
+          "value": "35892",
+          "unit": "% economic price movement",
+          "text": "Of which: Retail sales of consumer goods excluding automobiles 35892 current price 2.5; price change over previous period 265142; rate 35892%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Retail sales of consumer goods excluding automobiles",
+          "current_price": "2.5",
+          "price_change": "265142"
+        },
+        {
+          "value": "14308",
+          "unit": "% economic price movement",
+          "text": "Of which: Retail sales of enterprises (units) above the designated size 14308 current price -3.4; price change over previous period 108935; rate 14308%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Retail sales of enterprises (units) above the designated size",
+          "current_price": "-3.4",
+          "price_change": "108935"
+        },
+        {
+          "value": "33780",
+          "unit": "% economic price movement",
+          "text": "Urban 33780 current price 0.5; price change over previous period 249285; rate 33780%.",
+          "source_kind": "structured_table",
+          "product": "Urban",
+          "current_price": "0.5",
+          "price_change": "249285"
+        },
+        {
+          "value": "5242",
+          "unit": "% economic price movement",
+          "text": "Rural 5242 current price 1.6; price change over previous period 38459; rate 5242%.",
+          "source_kind": "structured_table",
+          "product": "Rural",
+          "current_price": "1.6",
+          "price_change": "38459"
+        },
+        {
+          "value": "4567",
+          "unit": "% economic price movement",
+          "text": "Income of the catering industry 4567 current price 1.4; price change over previous period 32822; rate 4567%.",
+          "source_kind": "structured_table",
+          "product": "Income of the catering industry",
+          "current_price": "1.4",
+          "price_change": "32822"
+        },
+        {
+          "value": "1352",
+          "unit": "% economic price movement",
+          "text": "Of which: Income of the catering industry by enterprises (units) above the designated size 1352 current price 0.0; price change over previous period 9678; rate 1352%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Income of the catering industry by enterprises (units) above the designated size",
+          "current_price": "0.0",
+          "price_change": "9678"
+        },
+        {
+          "value": "34455",
+          "unit": "% economic price movement",
+          "text": "Retail sales of goods 34455 current price 0.5; price change over previous period 254922; rate 34455%.",
+          "source_kind": "structured_table",
+          "product": "Retail sales of goods",
+          "current_price": "0.5",
+          "price_change": "254922"
+        },
+        {
+          "value": "12956",
+          "unit": "% economic price movement",
+          "text": "Of which: Retail sales of goods by enterprises (units) above the designated size 12956 current price -3.8; price change over previous period 99257; rate 12956%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Retail sales of goods by enterprises (units) above the designated size",
+          "current_price": "-3.8",
+          "price_change": "99257"
+        },
+        {
+          "value": "1794",
+          "unit": "% economic price movement",
+          "text": "Of which: Grain, oil and food 1794 current price 5.3; price change over previous period 13813; rate 1794%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Grain, oil and food",
+          "current_price": "5.3",
+          "price_change": "13813"
+        },
+        {
+          "value": "278",
+          "unit": "% economic price movement",
+          "text": "Beverage 278 current price 3.5; price change over previous period 1866; rate 278%.",
+          "source_kind": "structured_table",
+          "product": "Beverage",
+          "current_price": "3.5",
+          "price_change": "1866"
+        },
+        {
+          "value": "431",
+          "unit": "% economic price movement",
+          "text": "Tobacco and liquor 431 current price 6.0; price change over previous period 3966; rate 431%.",
+          "source_kind": "structured_table",
+          "product": "Tobacco and liquor",
+          "current_price": "6.0",
+          "price_change": "3966"
+        },
+        {
+          "value": "922",
+          "unit": "% economic price movement",
+          "text": "Clothes, shoes, hats and textiles 922 current price -1.0; price change over previous period 8628; rate 922%.",
+          "source_kind": "structured_table",
+          "product": "Clothes, shoes, hats and textiles",
+          "current_price": "-1.0",
+          "price_change": "8628"
+        },
+        {
+          "value": "285",
+          "unit": "% economic price movement",
+          "text": "Cosmetics 285 current price 6.8; price change over previous period 2723; rate 285%.",
+          "source_kind": "structured_table",
+          "product": "Cosmetics",
+          "current_price": "6.8",
+          "price_change": "2723"
+        },
+        {
+          "value": "189",
+          "unit": "% economic price movement",
+          "text": "Gold, silver and jewelry 189 current price -10.1; price change over previous period 2123; rate 189%.",
+          "source_kind": "structured_table",
+          "product": "Gold, silver and jewelry",
+          "current_price": "-10.1",
+          "price_change": "2123"
+        },
+        {
+          "value": "652",
+          "unit": "% economic price movement",
+          "text": "Daily necessities 652 current price 1.8; price change over previous period 4973; rate 652%.",
+          "source_kind": "structured_table",
+          "product": "Daily necessities",
+          "current_price": "1.8",
+          "price_change": "4973"
+        },
+        {
+          "value": "125",
+          "unit": "% economic price movement",
+          "text": "Sports & recreational articles 125 current price -10.6; price change over previous period 996; rate 125%.",
+          "source_kind": "structured_table",
+          "product": "Sports & recreational articles",
+          "current_price": "-10.6",
+          "price_change": "996"
+        },
+        {
+          "value": "946",
+          "unit": "% economic price movement",
+          "text": "Household appliances and audio-video equipment 946 current price -1.9; price change over previous period 6372; rate 946%.",
+          "source_kind": "structured_table",
+          "product": "Household appliances and audio-video equipment",
+          "current_price": "-1.9",
+          "price_change": "6372"
+        },
+        {
+          "value": "577",
+          "unit": "% economic price movement",
+          "text": "Traditional Chinese and Western medicines 577 current price 6.7; price change over previous period 4179; rate 577%.",
+          "source_kind": "structured_table",
+          "product": "Traditional Chinese and Western medicines",
+          "current_price": "6.7",
+          "price_change": "4179"
+        },
+        {
+          "value": "393",
+          "unit": "% economic price movement",
+          "text": "Cultural and office appliances 393 current price 7.4; price change over previous period 2834; rate 393%.",
+          "source_kind": "structured_table",
+          "product": "Cultural and office appliances",
+          "current_price": "7.4",
+          "price_change": "2834"
+        },
+        {
+          "value": "145",
+          "unit": "% economic price movement",
+          "text": "Furniture 145 current price -8.8; price change over previous period 1004; rate 145%.",
+          "source_kind": "structured_table",
+          "product": "Furniture",
+          "current_price": "-8.8",
+          "price_change": "1004"
+        },
+        {
+          "value": "787",
+          "unit": "% economic price movement",
+          "text": "Telecommunication equipment 787 current price 20.4; price change over previous period 6310; rate 787%.",
+          "source_kind": "structured_table",
+          "product": "Telecommunication equipment",
+          "current_price": "20.4",
+          "price_change": "6310"
+        },
+        {
+          "value": "1701",
+          "unit": "% economic price movement",
+          "text": "Petroleum and petroleum products 1701 current price -7.6; price change over previous period 12326; rate 1701%.",
+          "source_kind": "structured_table",
+          "product": "Petroleum and petroleum products",
+          "current_price": "-7.6",
+          "price_change": "12326"
+        },
+        {
+          "value": "3130",
+          "unit": "% economic price movement",
+          "text": "Motor vehicles 3130 current price -17.0; price change over previous period 22602; rate 3130%.",
+          "source_kind": "structured_table",
+          "product": "Motor vehicles",
+          "current_price": "-17.0",
+          "price_change": "22602"
+        },
+        {
+          "value": "94",
+          "unit": "% economic price movement",
+          "text": "Building and decoration materials 94 current price -14.2; price change over previous period 690; rate 94%.",
+          "source_kind": "structured_table",
+          "product": "Building and decoration materials",
+          "current_price": "-14.2",
+          "price_change": "690"
+        },
+        {
+          "value": "0.18",
+          "unit": "% economic price movement",
+          "text": "August 0.18 current price ; price change over previous period ; rate 0.18%.",
+          "source_kind": "structured_table",
+          "product": "August",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "-0.08",
+          "unit": "% economic price movement",
+          "text": "September -0.08 current price ; price change over previous period ; rate -0.08%.",
+          "source_kind": "structured_table",
+          "product": "September",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.15",
+          "unit": "% economic price movement",
+          "text": "October 0.15 current price ; price change over previous period ; rate 0.15%.",
+          "source_kind": "structured_table",
+          "product": "October",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "-0.10",
+          "unit": "% economic price movement",
+          "text": "November -0.10 current price ; price change over previous period ; rate -0.10%.",
+          "source_kind": "structured_table",
+          "product": "November",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "-0.01",
+          "unit": "% economic price movement",
+          "text": "December -0.01 current price ; price change over previous period ; rate -0.01%.",
+          "source_kind": "structured_table",
+          "product": "December",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.23",
+          "unit": "% economic price movement",
+          "text": "February 0.23 current price ; price change over previous period ; rate 0.23%.",
+          "source_kind": "structured_table",
+          "product": "February",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.10",
+          "unit": "% economic price movement",
+          "text": "March 0.10 current price ; price change over previous period ; rate 0.10%.",
+          "source_kind": "structured_table",
+          "product": "March",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "-0.27",
+          "unit": "% economic price movement",
+          "text": "April -0.27 current price ; price change over previous period ; rate -0.27%.",
+          "source_kind": "structured_table",
+          "product": "April",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "-0.15",
+          "unit": "% economic price movement",
+          "text": "May -0.15 current price ; price change over previous period ; rate -0.15%.",
+          "source_kind": "structured_table",
+          "product": "May",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.35",
+          "unit": "% economic price movement",
+          "text": "June 0.35 current price ; price change over previous period ; rate 0.35%.",
+          "source_kind": "structured_table",
+          "product": "June",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.06",
+          "unit": "% economic price movement",
+          "text": "July 0.06 current price ; price change over previous period ; rate 0.06%.",
+          "source_kind": "structured_table",
+          "product": "July",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "1.2",
+          "unit": "%",
+          "text": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Total Retail Sales of Consumer Goods from January to July 2026 2026-08-18 15:00 Print | Large | Medium | Small From January to July 2026, the total retail sales of consumer goods reached 28,774.4 billion yuan, up by 1.2% year on year.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.7",
+          "unit": "%",
+          "text": "Specifically, the retail sales of consumer goods excluding automobiles reached 26,514.2 billion yuan, up by 2.7%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.6",
+          "unit": "%",
+          "text": "In July, the total retail sales of consumer goods reached 3,902.2 billion yuan, up by 0.6% year on year.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.5",
+          "unit": "%",
+          "text": "Specifically, the retail sales of consumer goods excluding automobiles reached 3,589.2 billion yuan, up by 2.5%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.1",
+          "unit": "%",
+          "text": "By business area, from January to July 2026, the retail sales of consumer goods in urban areas reached 24,928.5 billion yuan, up by 1.1% year on year; those in rural areas were 3,845.9 billion yuan, up by 2.4%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.4",
+          "unit": "%",
+          "text": "By business area, from January to July 2026, the retail sales of consumer goods in urban areas reached 24,928.5 billion yuan, up by 1.1% year on year; those in rural areas were 3,845.9 billion yuan, up by 2.4%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.5",
+          "unit": "%",
+          "text": "In July, the retail sales of consumer goods in urban areas reached 3,378.0 billion yuan, up by 0.5% year on year; those in rural areas were 524.2 billion yuan, up by 1.6%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.6",
+          "unit": "%",
+          "text": "In July, the retail sales of consumer goods in urban areas reached 3,378.0 billion yuan, up by 0.5% year on year; those in rural areas were 524.2 billion yuan, up by 1.6%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.1",
+          "unit": "%",
+          "text": "By consumption pattern, from January to July 2026, the retail sales of goods were 25,492.2 billion yuan, up by 1.1% year on year; the income of the catering industry was 3,282.2 billion yuan, up by 2.6%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.6",
+          "unit": "%",
+          "text": "By consumption pattern, from January to July 2026, the retail sales of goods were 25,492.2 billion yuan, up by 1.1% year on year; the income of the catering industry was 3,282.2 billion yuan, up by 2.6%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.5",
+          "unit": "%",
+          "text": "In July, the retail sales of goods were 3,445.5 billion yuan, up by 0.5% year on year; the income of the catering industry was 456.7 billion yuan, up by 1.4%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.4",
+          "unit": "%",
+          "text": "In July, the retail sales of goods were 3,445.5 billion yuan, up by 0.5% year on year; the income of the catering industry was 456.7 billion yuan, up by 1.4%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "6.1",
+          "unit": "%",
+          "text": "By retail format, from January to July 2026, the retail sales of convenience stores and supermarkets among retail enterprises (units) above the designated size increased by 6.1% and 3.8% year on year, respectively; those of specialty stores, department stores and brand-exclusive stores decreased by 1.8%, 2.4% and 9.3%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "3.8",
+          "unit": "%",
+          "text": "By retail format, from January to July 2026, the retail sales of convenience stores and supermarkets among retail enterprises (units) above the designated size increased by 6.1% and 3.8% year on year, respectively; those of specialty stores, department stores and brand-exclusive stores decreased by 1.8%, 2.4% and 9.3%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.8",
+          "unit": "%",
+          "text": "By retail format, from January to July 2026, the retail sales of convenience stores and supermarkets among retail enterprises (units) above the designated size increased by 6.1% and 3.8% year on year, respectively; those of specialty stores, department stores and brand-exclusive stores decreased by 1.8%, 2.4% and 9.3%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.4",
+          "unit": "%",
+          "text": "By retail format, from January to July 2026, the retail sales of convenience stores and supermarkets among retail enterprises (units) above the designated size increased by 6.1% and 3.8% year on year, respectively; those of specialty stores, department stores and brand-exclusive stores decreased by 1.8%, 2.4% and 9.3%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "9.3",
+          "unit": "%",
+          "text": "By retail format, from January to July 2026, the retail sales of convenience stores and supermarkets among retail enterprises (units) above the designated size increased by 6.1% and 3.8% year on year, respectively; those of specialty stores, department stores and brand-exclusive stores decreased by 1.8%, 2.4% and 9.3%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "4.8",
+          "unit": "%",
+          "text": "From January to July 2026, China’s online retail sales of goods and services reached 11,721.4 billion yuan, up by 4.8% year on year.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "4.6",
+          "unit": "%",
+          "text": "Specifically, the online retail sales of goods were 7,396.5 billion yuan, up by 4.6%; among the online retail sales of goods, those of food, clothing, and daily necessities increased by 16.9%, 5.8%, and 1.1%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "16.9",
+          "unit": "%",
+          "text": "Specifically, the online retail sales of goods were 7,396.5 billion yuan, up by 4.6%; among the online retail sales of goods, those of food, clothing, and daily necessities increased by 16.9%, 5.8%, and 1.1%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.8",
+          "unit": "%",
+          "text": "Specifically, the online retail sales of goods were 7,396.5 billion yuan, up by 4.6%; among the online retail sales of goods, those of food, clothing, and daily necessities increased by 16.9%, 5.8%, and 1.1%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.1",
+          "unit": "%",
+          "text": "Specifically, the online retail sales of goods were 7,396.5 billion yuan, up by 4.6%; among the online retail sales of goods, those of food, clothing, and daily necessities increased by 16.9%, 5.8%, and 1.1%, respectively.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.2",
+          "unit": "%",
+          "text": "The online retail sales of services were 4,324.9 billion yuan, up by 5.2%.",
+          "source_kind": "text",
+          "label": "%"
+        }
+      ],
+      "relevant_sentences": [
+        "Total Retail Sales of Consumer Goods in July 2026 Indicator July January - July Absolute Value (100 million yuan) Growth Rate Y/Y (%) Absolute Value (100 million yuan) Growth Rate Y/Y (%) Total retail sales of consumer goods 39022 0.6 287744 1.2 Of which: Retail sales of consumer goods excluding automobiles 35892 2.5 265142 2.7 Of which: Retail sales of enterprises (units) above the designated size 14308 -3.4 108935 -1.1 Of which: Online retail sales of goods - - 73965 4.6 By area Urban 33780 0.5 249285 1.1 Rural 5242 1.6 38459 2.4 By consumption pattern Income of the catering industry 4567 1.4 32822 2.6 Of which: Income of the catering industry by enterprises (units) above the designated size 1352 0.0 9678 1.5 Retail sales of goods 34455 0.5 254922 1.1 Of which: Retail sales of goods by enterprises (units) above the designated size 12956 -3.8 99257 -1.4 Of which: Grain, oil and food 1794 5.3 13813 7.2 Beverage 278 3.5 1866 5.6 Tobacco and liquor 431 6.0 3966 12.4 Clothes, shoes, hats and textiles 922 -1.0 8628 5.8 Cosmetics 285 6.8 2723 6.3 Gold, silver and jewelry 189 -10.1 2123 0.7 Daily necessities 652 1.8 4973 4.1 Sports & recreational articles 125 -10.6 996 -3.5 Household appliances and audio-video equipment 946 -1.9 6372 -6.6 Traditional Chinese and Western medicines 577 6.7 4179 3.8 Cultural and office appliances 393 7.4 2834 6.0 Furniture 145 -8.8 1004 -4.5 Telecommunication equipment 787 20.4 6310 15.1 Petroleum and petroleum products 1701 -7.6 12326 -5.9 Motor vehicles 3130 -17.0 22602 -13.2 Building and decoration materials 94 -14.2 690 -9.5 Note: The growth rates in this table are not adjusted for price factors.",
+        "Notes on Indicators Total retail sales of consumer goods refer to the revenue of enterprises (units or self-employed individuals) from sales of non-production and non-business physical goods to individuals and social groups, as well as the income obtained from providing catering services.",
+        "Revision of Month-on-Month Data In accordance with the automatic correction results based on the seasonal adjustment model, the month-on-month growth rates of total retail sales of consumer goods since July 2025 have been revised.",
+        "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Total Retail Sales of Consumer Goods from January to July 2026 2026-08-18 15:00 Print | Large | Medium | Small From January to July 2026, the total retail sales of consumer goods reached 28,774.4 billion yuan, up by 1.2% year on year.",
+        "In July, the total retail sales of consumer goods reached 3,902.2 billion yuan, up by 0.6% year on year.",
+        "By business area, from January to July 2026, the retail sales of consumer goods in urban areas reached 24,928.5 billion yuan, up by 1.1% year on year; those in rural areas were 3,845.9 billion yuan, up by 2.4%.",
+        "Statistical Standard As the coverage of enterprises above the designated size (units or self-employed individuals) engaged in wholesale and retail trades, accommodation, and the catering industry changes every year, to ensure comparability between the data of the current year and those of the previous year, the year-on-year growth rates of the retail sales of consumer goods and other indicators for enterprises above the designated size are calculated based on the same statistical coverage of enterprises (units or self-employed individuals) as in the current period, which is different from the coverage of data published last year.",
+        "Specifically, the retail sales of consumer goods excluding automobiles reached 26,514.2 billion yuan, up by 2.7%."
+      ]
+    },
+    "synthesis_version": 17,
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "sales"
+      ],
+      "economic_terms": [
+        "retail sales"
+      ],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   },
   {
-    "id": "demo-003",
-    "title": "Illustrative signal: Chinese demand shifts create an export-market watchpoint",
-    "slug": "china-demand-export-watchpoint",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.wto.org/",
-    "source_type": "Secondary / institutional context",
-    "summary": "Demo record for a market-demand signal relevant to Canadian exporters and commodity-linked businesses.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Changes in Chinese demand can affect Canadian exporters through market access, commodity demand, pricing and competitive conditions.",
+    "id": "sig-588605b7c402",
+    "title": "China production-input prices show mixed movement",
+    "slug": "4-market-prices-of-important-means-of-production-in-circulation-august-11-20-202",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260821_1965094.html",
+    "source_type": "Primary source",
+    "summary": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 11-20, 2026 2026-08-24 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In mid-August 2026, according to ",
+    "what_happened": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 11-20, 2026 2026-08-24 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In mid-August 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 33 products increased, 14 kinds decreased, and 3 kinds remained flat compared with those in early August 2026. Polysilicon (Dense Grade) kg current price 35.4; price change over previous period 3.9; rate 12.4%. Butadiene Rubber (BR9000) ton current price 13489.6; price change over previous period 917.4; rate 7.3%. Coking Coal (Main Coking Coal) ton current price 2043.1; price change over previous period 134.8; rate 7.1%.",
+    "interpretation": "The table shows mixed price movement across production inputs, with 8 tracked items rising and 0 falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.",
+    "key_data": [
+      {
+        "value": "12.4",
+        "unit": "% economic price movement",
+        "context": "Polysilicon (Dense Grade) kg current price 35.4; price change over previous period 3.9; rate 12.4%."
+      },
+      {
+        "value": "7.3",
+        "unit": "% economic price movement",
+        "context": "Butadiene Rubber (BR9000) ton current price 13489.6; price change over previous period 917.4; rate 7.3%."
+      },
+      {
+        "value": "7.1",
+        "unit": "% economic price movement",
+        "context": "Coking Coal (Main Coking Coal) ton current price 2043.1; price change over previous period 134.8; rate 7.1%."
+      },
+      {
+        "value": "6.3",
+        "unit": "% economic price movement",
+        "context": "Methyl Alcohol (Superior Quality) ton current price 2635.6; price change over previous period 156.2; rate 6.3%."
+      },
+      {
+        "value": "6.1",
+        "unit": "% economic price movement",
+        "context": "Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 7943.2; price change over previous period 456.2; rate 6.1%."
+      },
+      {
+        "value": "5.8",
+        "unit": "% economic price movement",
+        "context": "Live Hog (Three-way Crossbred) kg current price 11.0; price change over previous period 0.6; rate 5.8%."
+      },
+      {
+        "value": "4.4",
+        "unit": "% economic price movement",
+        "context": "Lithium Iron Phosphate (Standard Power Grade) ton current price 56114.5; price change over previous period 2382.0; rate 4.4%."
+      },
+      {
+        "value": "3.1",
+        "unit": "% economic price movement",
+        "context": "Anthracite (Washed, Medium Pieces) ton current price 1354.5; price change over previous period 40.5; rate 3.1%."
+      }
+    ],
+    "canadian_relevance": "The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 74,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Agriculture & Food",
-      "Energy",
-      "Mining & Critical Minerals"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Markets",
-      "Macroeconomics"
+      "Markets"
     ],
-    "direction": "Canada → China",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true,
+    "synthesis": {
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html",
+      "text_length": 9453,
+      "page_title": "Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+      "facts": [
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Rebar (Φ20mm, HRB400E) ton current price 3062.9; price change over previous period 0.2; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Rebar (Φ20mm, HRB400E)",
+          "current_price": "3062.9",
+          "price_change": "0.2"
+        },
+        {
+          "value": "0.3",
+          "unit": "% economic price movement",
+          "text": "Wire (Φ8-10mm, HPB300) ton current price 3254.7; price change over previous period 10.2; rate 0.3%.",
+          "source_kind": "structured_table",
+          "product": "Wire (Φ8-10mm, HPB300)",
+          "current_price": "3254.7",
+          "price_change": "10.2"
+        },
+        {
+          "value": "0.4",
+          "unit": "% economic price movement",
+          "text": "Ordinary Medium Plate (20mm, Q235) ton current price 3482.4; price change over previous period 15.5; rate 0.4%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Medium Plate (20mm, Q235)",
+          "current_price": "3482.4",
+          "price_change": "15.5"
+        },
+        {
+          "value": "0.7",
+          "unit": "% economic price movement",
+          "text": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235) ton current price 3265.3; price change over previous period 24.2; rate 0.7%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235)",
+          "current_price": "3265.3",
+          "price_change": "24.2"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "Seamless Steel Pipe (219*6, 20#) ton current price 4010.5; price change over previous period -12.2; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "Seamless Steel Pipe (219*6, 20#)",
+          "current_price": "4010.5",
+          "price_change": "-12.2"
+        },
+        {
+          "value": "-0.2",
+          "unit": "% economic price movement",
+          "text": "Angle Steel (5#) ton current price 3410.1; price change over previous period -6.9; rate -0.2%.",
+          "source_kind": "structured_table",
+          "product": "Angle Steel (5#)",
+          "current_price": "3410.1",
+          "price_change": "-6.9"
+        },
+        {
+          "value": "0.7",
+          "unit": "% economic price movement",
+          "text": "Electrolytic Copper (1#) ton current price 108236.3; price change over previous period 738.0; rate 0.7%.",
+          "source_kind": "structured_table",
+          "product": "Electrolytic Copper (1#)",
+          "current_price": "108236.3",
+          "price_change": "738.0"
+        },
+        {
+          "value": "0.8",
+          "unit": "% economic price movement",
+          "text": "Aluminum Ingot (A00) ton current price 23956.3; price change over previous period 183.0; rate 0.8%.",
+          "source_kind": "structured_table",
+          "product": "Aluminum Ingot (A00)",
+          "current_price": "23956.3",
+          "price_change": "183.0"
+        },
+        {
+          "value": "1.3",
+          "unit": "% economic price movement",
+          "text": "Lead Ingot (1#) ton current price 15665.6; price change over previous period 203.1; rate 1.3%.",
+          "source_kind": "structured_table",
+          "product": "Lead Ingot (1#)",
+          "current_price": "15665.6",
+          "price_change": "203.1"
+        },
+        {
+          "value": "0.6",
+          "unit": "% economic price movement",
+          "text": "Zinc Ingot (0#) ton current price 25517.5; price change over previous period 143.3; rate 0.6%.",
+          "source_kind": "structured_table",
+          "product": "Zinc Ingot (0#)",
+          "current_price": "25517.5",
+          "price_change": "143.3"
+        },
+        {
+          "value": "-2.2",
+          "unit": "% economic price movement",
+          "text": "Sulfuric Acid (98%) ton current price 1940.6; price change over previous period -43.1; rate -2.2%.",
+          "source_kind": "structured_table",
+          "product": "Sulfuric Acid (98%)",
+          "current_price": "1940.6",
+          "price_change": "-43.1"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Caustic Soda (Liquid Caustic Soda, 32%) ton current price 684.5; price change over previous period -0.3; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Caustic Soda (Liquid Caustic Soda, 32%)",
+          "current_price": "684.5",
+          "price_change": "-0.3"
+        },
+        {
+          "value": "6.3",
+          "unit": "% economic price movement",
+          "text": "Methyl Alcohol (Superior Quality) ton current price 2635.6; price change over previous period 156.2; rate 6.3%.",
+          "source_kind": "structured_table",
+          "product": "Methyl Alcohol (Superior Quality)",
+          "current_price": "2635.6",
+          "price_change": "156.2"
+        },
+        {
+          "value": "6.1",
+          "unit": "% economic price movement",
+          "text": "Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 7943.2; price change over previous period 456.2; rate 6.1%.",
+          "source_kind": "structured_table",
+          "product": "Pure Benzene (Petroleum Benzene, Industrial Grade)",
+          "current_price": "7943.2",
+          "price_change": "456.2"
+        },
+        {
+          "value": "-1.3",
+          "unit": "% economic price movement",
+          "text": "Ethyl Alcohol (95.0%) ton current price 5389.2; price change over previous period -69.4; rate -1.3%.",
+          "source_kind": "structured_table",
+          "product": "Ethyl Alcohol (95.0%)",
+          "current_price": "5389.2",
+          "price_change": "-69.4"
+        },
+        {
+          "value": "2.2",
+          "unit": "% economic price movement",
+          "text": "Polyethylene (LLDPE, Melt Index 2 Film Material) ton current price 8602.3; price change over previous period 189.0; rate 2.2%.",
+          "source_kind": "structured_table",
+          "product": "Polyethylene (LLDPE, Melt Index 2 Film Material)",
+          "current_price": "8602.3",
+          "price_change": "189.0"
+        },
+        {
+          "value": "2.2",
+          "unit": "% economic price movement",
+          "text": "Polypropylene (Wire Drawing Material) ton current price 9034.4; price change over previous period 195.8; rate 2.2%.",
+          "source_kind": "structured_table",
+          "product": "Polypropylene (Wire Drawing Material)",
+          "current_price": "9034.4",
+          "price_change": "195.8"
+        },
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Glacial Acetic Acid (99.5% and above) ton current price 2966.7; price change over previous period -22.5; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Glacial Acetic Acid (99.5% and above)",
+          "current_price": "2966.7",
+          "price_change": "-22.5"
+        },
+        {
+          "value": "7.3",
+          "unit": "% economic price movement",
+          "text": "Butadiene Rubber (BR9000) ton current price 13489.6; price change over previous period 917.4; rate 7.3%.",
+          "source_kind": "structured_table",
+          "product": "Butadiene Rubber (BR9000)",
+          "current_price": "13489.6",
+          "price_change": "917.4"
+        },
+        {
+          "value": "1.7",
+          "unit": "% economic price movement",
+          "text": "Polyester Filament (POY150D/48F) ton current price 8590.6; price change over previous period 140.6; rate 1.7%.",
+          "source_kind": "structured_table",
+          "product": "Polyester Filament (POY150D/48F)",
+          "current_price": "8590.6",
+          "price_change": "140.6"
+        },
+        {
+          "value": "4.4",
+          "unit": "% economic price movement",
+          "text": "Lithium Iron Phosphate (Standard Power Grade) ton current price 56114.5; price change over previous period 2382.0; rate 4.4%.",
+          "source_kind": "structured_table",
+          "product": "Lithium Iron Phosphate (Standard Power Grade)",
+          "current_price": "56114.5",
+          "price_change": "2382.0"
+        },
+        {
+          "value": "0.6",
+          "unit": "% economic price movement",
+          "text": "Liquefied Natural Gas (LNG) ton current price 5572.8; price change over previous period 33.3; rate 0.6%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Natural Gas (LNG)",
+          "current_price": "5572.8",
+          "price_change": "33.3"
+        },
+        {
+          "value": "0.3",
+          "unit": "% economic price movement",
+          "text": "Liquefied Petroleum Gas (LPG) ton current price 5808.5; price change over previous period 17.6; rate 0.3%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Petroleum Gas (LPG)",
+          "current_price": "5808.5",
+          "price_change": "17.6"
+        },
+        {
+          "value": "1.2",
+          "unit": "% economic price movement",
+          "text": "Gasoline (95#, National VI Emission Standard) ton current price 9550.0; price change over previous period 109.9; rate 1.2%.",
+          "source_kind": "structured_table",
+          "product": "Gasoline (95#, National VI Emission Standard)",
+          "current_price": "9550.0",
+          "price_change": "109.9"
+        },
+        {
+          "value": "1.9",
+          "unit": "% economic price movement",
+          "text": "Diesel Oil (0#, National VI Emission Standard) ton current price 8056.3; price change over previous period 150.6; rate 1.9%.",
+          "source_kind": "structured_table",
+          "product": "Diesel Oil (0#, National VI Emission Standard)",
+          "current_price": "8056.3",
+          "price_change": "150.6"
+        },
+        {
+          "value": "1.3",
+          "unit": "% economic price movement",
+          "text": "Paraffin (58#, Semi-refined) ton current price 7458.4; price change over previous period 92.1; rate 1.3%.",
+          "source_kind": "structured_table",
+          "product": "Paraffin (58#, Semi-refined)",
+          "current_price": "7458.4",
+          "price_change": "92.1"
+        },
+        {
+          "value": "3.1",
+          "unit": "% economic price movement",
+          "text": "Anthracite (Washed, Medium Pieces) ton current price 1354.5; price change over previous period 40.5; rate 3.1%.",
+          "source_kind": "structured_table",
+          "product": "Anthracite (Washed, Medium Pieces)",
+          "current_price": "1354.5",
+          "price_change": "40.5"
+        },
+        {
+          "value": "2.5",
+          "unit": "% economic price movement",
+          "text": "Shanxi Superior Mixed Coal (5500 kilocalories) ton current price 862.0; price change over previous period 21.2; rate 2.5%.",
+          "source_kind": "structured_table",
+          "product": "Shanxi Superior Mixed Coal (5500 kilocalories)",
+          "current_price": "862.0",
+          "price_change": "21.2"
+        },
+        {
+          "value": "7.1",
+          "unit": "% economic price movement",
+          "text": "Coking Coal (Main Coking Coal) ton current price 2043.1; price change over previous period 134.8; rate 7.1%.",
+          "source_kind": "structured_table",
+          "product": "Coking Coal (Main Coking Coal)",
+          "current_price": "2043.1",
+          "price_change": "134.8"
+        },
+        {
+          "value": "-2.0",
+          "unit": "% economic price movement",
+          "text": "Coke (Quasi Primary Metallurgical Coke) ton current price 1646.4; price change over previous period -33.3; rate -2.0%.",
+          "source_kind": "structured_table",
+          "product": "Coke (Quasi Primary Metallurgical Coke)",
+          "current_price": "1646.4",
+          "price_change": "-33.3"
+        },
+        {
+          "value": "0.9",
+          "unit": "% economic price movement",
+          "text": "Ordinary Portland Cement (P.O 42.5 in Bulk) ton current price 249.1; price change over previous period 2.3; rate 0.9%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Portland Cement (P.O 42.5 in Bulk)",
+          "current_price": "249.1",
+          "price_change": "2.3"
+        },
+        {
+          "value": "-1.0",
+          "unit": "% economic price movement",
+          "text": "Float Flat Glass (5/6mm) ton current price 1084.6; price change over previous period -11.0; rate -1.0%.",
+          "source_kind": "structured_table",
+          "product": "Float Flat Glass (5/6mm)",
+          "current_price": "1084.6",
+          "price_change": "-11.0"
+        },
+        {
+          "value": "12.4",
+          "unit": "% economic price movement",
+          "text": "Polysilicon (Dense Grade) kg current price 35.4; price change over previous period 3.9; rate 12.4%.",
+          "source_kind": "structured_table",
+          "product": "Polysilicon (Dense Grade)",
+          "current_price": "35.4",
+          "price_change": "3.9"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Rice (Japonica Rice) ton current price 3982.6; price change over previous period -5.4; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Rice (Japonica Rice)",
+          "current_price": "3982.6",
+          "price_change": "-5.4"
+        },
+        {
+          "value": "0.2",
+          "unit": "% economic price movement",
+          "text": "Wheat (National Standard Grade III) ton current price 2395.1; price change over previous period 4.3; rate 0.2%.",
+          "source_kind": "structured_table",
+          "product": "Wheat (National Standard Grade III)",
+          "current_price": "2395.1",
+          "price_change": "4.3"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "Corn (Yellow Corn Grade II) ton current price 2235.8; price change over previous period -5.8; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "Corn (Yellow Corn Grade II)",
+          "current_price": "2235.8",
+          "price_change": "-5.8"
+        },
+        {
+          "value": "1.7",
+          "unit": "% economic price movement",
+          "text": "Cotton (Ginned Cotton, White Cotton Grade III) ton current price 17484.0; price change over previous period 286.0; rate 1.7%.",
+          "source_kind": "structured_table",
+          "product": "Cotton (Ginned Cotton, White Cotton Grade III)",
+          "current_price": "17484.0",
+          "price_change": "286.0"
+        },
+        {
+          "value": "5.8",
+          "unit": "% economic price movement",
+          "text": "Live Hog (Three-way Crossbred) kg current price 11.0; price change over previous period 0.6; rate 5.8%.",
+          "source_kind": "structured_table",
+          "product": "Live Hog (Three-way Crossbred)",
+          "current_price": "11.0",
+          "price_change": "0.6"
+        },
+        {
+          "value": "1.5",
+          "unit": "% economic price movement",
+          "text": "Soybean (Soy) ton current price 4533.2; price change over previous period 68.4; rate 1.5%.",
+          "source_kind": "structured_table",
+          "product": "Soybean (Soy)",
+          "current_price": "4533.2",
+          "price_change": "68.4"
+        },
+        {
+          "value": "1.8",
+          "unit": "% economic price movement",
+          "text": "Soybean Meal (Crude Protein Content≥43%) ton current price 3101.1; price change over previous period 56.1; rate 1.8%.",
+          "source_kind": "structured_table",
+          "product": "Soybean Meal (Crude Protein Content≥43%)",
+          "current_price": "3101.1",
+          "price_change": "56.1"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Peanut (For Oil Processing) ton current price 7358.3; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Peanut (For Oil Processing)",
+          "current_price": "7358.3",
+          "price_change": "0.0"
+        },
+        {
+          "value": "0.5",
+          "unit": "% economic price movement",
+          "text": "White Sugar (National Standard Grade I) ton current price 5200.0; price change over previous period 25.8; rate 0.5%.",
+          "source_kind": "structured_table",
+          "product": "White Sugar (National Standard Grade I)",
+          "current_price": "5200.0",
+          "price_change": "25.8"
+        },
+        {
+          "value": "-1.1",
+          "unit": "% economic price movement",
+          "text": "Urea (Small and Medium Granules) ton current price 1750.4; price change over previous period -20.0; rate -1.1%.",
+          "source_kind": "structured_table",
+          "product": "Urea (Small and Medium Granules)",
+          "current_price": "1750.4",
+          "price_change": "-20.0"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Phosphate Fertilizer (55% Monoammonium Phosphate) ton current price 4439.1; price change over previous period -32.8; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Phosphate Fertilizer (55% Monoammonium Phosphate)",
+          "current_price": "4439.1",
+          "price_change": "-32.8"
+        },
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton current price 3110.9; price change over previous period -24.1; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Potassium Fertilizer (62% White Muriate of Potash, Port Price)",
+          "current_price": "3110.9",
+          "price_change": "-24.1"
+        },
+        {
+          "value": "-0.3",
+          "unit": "% economic price movement",
+          "text": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton current price 3627.8; price change over previous period -12.2; rate -0.3%.",
+          "source_kind": "structured_table",
+          "product": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK)",
+          "current_price": "3627.8",
+          "price_change": "-12.2"
+        },
+        {
+          "value": "-0.2",
+          "unit": "% economic price movement",
+          "text": "Pesticide (Glyphosate, 95% Technical Material) ton current price 25950.0; price change over previous period -50.0; rate -0.2%.",
+          "source_kind": "structured_table",
+          "product": "Pesticide (Glyphosate, 95% Technical Material)",
+          "current_price": "25950.0",
+          "price_change": "-50.0"
+        },
+        {
+          "value": "1.8",
+          "unit": "% economic price movement",
+          "text": "Natural Rubber (Standard Rubber SCRWF) ton current price 17100.0; price change over previous period 301.4; rate 1.8%.",
+          "source_kind": "structured_table",
+          "product": "Natural Rubber (Standard Rubber SCRWF)",
+          "current_price": "17100.0",
+          "price_change": "301.4"
+        },
+        {
+          "value": "0.9",
+          "unit": "% economic price movement",
+          "text": "Pulp (Imported Coniferous Pulp) ton current price 4840.8; price change over previous period 42.0; rate 0.9%.",
+          "source_kind": "structured_table",
+          "product": "Pulp (Imported Coniferous Pulp)",
+          "current_price": "4840.8",
+          "price_change": "42.0"
+        },
+        {
+          "value": "0.5",
+          "unit": "% economic price movement",
+          "text": "Corrugated Paper (AA Grade, 120g) ton current price 3228.8; price change over previous period 16.4; rate 0.5%.",
+          "source_kind": "structured_table",
+          "product": "Corrugated Paper (AA Grade, 120g)",
+          "current_price": "3228.8",
+          "price_change": "16.4"
+        },
+        {
+          "value": "55",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1750.4 -20.0 -1.1 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4439.1 -32.8 -0.7 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3110.9 -24.1 -0.8 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3627.8 -12.2 -0.3 Pesticide (Glyphosate, 95% Technical Material) ton 25950.0 -50.0 -0.2 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "62",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1750.4 -20.0 -1.1 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4439.1 -32.8 -0.7 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3110.9 -24.1 -0.8 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3627.8 -12.2 -0.3 Pesticide (Glyphosate, 95% Technical Material) ton 25950.0 -50.0 -0.2 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "45",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1750.4 -20.0 -1.1 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4439.1 -32.8 -0.7 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3110.9 -24.1 -0.8 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3627.8 -12.2 -0.3 Pesticide (Glyphosate, 95% Technical Material) ton 25950.0 -50.0 -0.2 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "95",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1750.4 -20.0 -1.1 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4439.1 -32.8 -0.7 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3110.9 -24.1 -0.8 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3627.8 -12.2 -0.3 Pesticide (Glyphosate, 95% Technical Material) ton 25950.0 -50.0 -0.2 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.95",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.7",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.994",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.995",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        }
+      ],
+      "relevant_sentences": [
+        "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, August 11-20, 2026 2026-08-24 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In mid-August 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 33 products increased, 14 kinds decreased, and 3 kinds remained flat compared with those in early August 2026.",
+        "Market Prices of Important Means of Production in Circulation (August 11-20, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I.",
+        "Monitoring Content The monitoring of market prices of important means of production in circulation includes the prices of 50 kinds of products under 9 categories.",
+        "Notes on Indicators Market prices of important means of production in circulation refer to the wholesale prices and selling prices of enterprises trading important means of production.",
+        "Different from producer prices, market prices of means of production include producer prices, as well as circulation expenses, profits, and taxes of the enterprises.",
+        "Attached Table: Specifications of Market Price Monitoring Products of Important Means of Production in Circulation No.",
+        "Agricultural Means of Production Urea (Small and Medium Granules) ton 1750.4 -20.0 -1.1 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4439.1 -32.8 -0.7 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3110.9 -24.1 -0.8 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3627.8 -12.2 -0.3 Pesticide (Glyphosate, 95% Technical Material) ton 25950.0 -50.0 -0.2 IX.",
+        "Producer prices and market prices influence each other."
+      ]
+    },
+    "synthesis_version": 17,
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
+  },
+  {
+    "id": "sig-7c0f8b412848",
+    "title": "China production-input prices show mixed movement",
+    "slug": "15-market-prices-of-important-means-of-production-in-circulation-july-21-31-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html",
+    "source_type": "Primary source",
+    "summary": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, July 21-31, 2026 2026-08-04 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In late July 2026, according to the",
+    "what_happened": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, July 21-31, 2026 2026-08-04 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In late July 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 20 products increased, 27 kinds decreased, and 3 kinds remained flat compared with those in mid-July 2026. Liquefied Petroleum Gas (LPG) ton current price 5999.5; price change over previous period 537.8; rate 9.8%. Diesel Oil (0#, National VI Emission Standard) ton current price 7817.7; price change over previous period 426.2; rate 5.8%. Live Hog (Three-way Crossbred) kg current price 10.4; price change over previous period -0.6; rate -5.5%.",
+    "interpretation": "The table shows mixed price movement across production inputs, with 6 tracked items rising and 2 falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.",
+    "key_data": [
+      {
+        "value": "9.8",
+        "unit": "% economic price movement",
+        "context": "Liquefied Petroleum Gas (LPG) ton current price 5999.5; price change over previous period 537.8; rate 9.8%."
+      },
+      {
+        "value": "5.8",
+        "unit": "% economic price movement",
+        "context": "Diesel Oil (0#, National VI Emission Standard) ton current price 7817.7; price change over previous period 426.2; rate 5.8%."
+      },
+      {
+        "value": "-5.5",
+        "unit": "% economic price movement",
+        "context": "Live Hog (Three-way Crossbred) kg current price 10.4; price change over previous period -0.6; rate -5.5%."
+      },
+      {
+        "value": "5.2",
+        "unit": "% economic price movement",
+        "context": "Gasoline (95#, National VI Emission Standard) ton current price 9392.5; price change over previous period 466.7; rate 5.2%."
+      },
+      {
+        "value": "5.0",
+        "unit": "% economic price movement",
+        "context": "Anthracite (Washed, Medium Pieces) ton current price 1321.9; price change over previous period 63.2; rate 5.0%."
+      },
+      {
+        "value": "4.0",
+        "unit": "% economic price movement",
+        "context": "Polyester Filament (POY150D/48F) ton current price 8525.0; price change over previous period 325.0; rate 4.0%."
+      },
+      {
+        "value": "3.2",
+        "unit": "% economic price movement",
+        "context": "Soybean Meal (Crude Protein Content≥43%) ton current price 3044.2; price change over previous period 95.2; rate 3.2%."
+      },
+      {
+        "value": "-3.1",
+        "unit": "% economic price movement",
+        "context": "Coke (Quasi Primary Metallurgical Coke) ton current price 1740.2; price change over previous period -56.2; rate -3.1%."
+      }
+    ],
+    "canadian_relevance": "The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 60,
+    "confidence_score": 60,
+    "sectors": [
+      "Logistics & Transportation"
+    ],
+    "categories": [
+      "Markets"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "recovered": true,
+    "synthesis": {
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html",
+      "text_length": 9463,
+      "page_title": "Market Prices of Important Means of Production in Circulation, July 21-31, 2026",
+      "facts": [
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Rebar (Φ20mm, HRB400E) ton current price 3123.4; price change over previous period -26.4; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Rebar (Φ20mm, HRB400E)",
+          "current_price": "3123.4",
+          "price_change": "-26.4"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Wire (Φ8-10mm, HPB300) ton current price 3293.2; price change over previous period -21.8; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Wire (Φ8-10mm, HPB300)",
+          "current_price": "3293.2",
+          "price_change": "-21.8"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Ordinary Medium Plate (20mm, Q235) ton current price 3475.8; price change over previous period -5.1; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Medium Plate (20mm, Q235)",
+          "current_price": "3475.8",
+          "price_change": "-5.1"
+        },
+        {
+          "value": "-0.5",
+          "unit": "% economic price movement",
+          "text": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235) ton current price 3288.4; price change over previous period -17.2; rate -0.5%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Hot-Rolled Sheet (4.75-11.5mm, Q235)",
+          "current_price": "3288.4",
+          "price_change": "-17.2"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Seamless Steel Pipe (219*6, 20#) ton current price 4044.1; price change over previous period -1.5; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Seamless Steel Pipe (219*6, 20#)",
+          "current_price": "4044.1",
+          "price_change": "-1.5"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Angle Steel (5#) ton current price 3441.0; price change over previous period -4.3; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Angle Steel (5#)",
+          "current_price": "3441.0",
+          "price_change": "-4.3"
+        },
+        {
+          "value": "1.3",
+          "unit": "% economic price movement",
+          "text": "Electrolytic Copper (1#) ton current price 105694.4; price change over previous period 1339.4; rate 1.3%.",
+          "source_kind": "structured_table",
+          "product": "Electrolytic Copper (1#)",
+          "current_price": "105694.4",
+          "price_change": "1339.4"
+        },
+        {
+          "value": "0.4",
+          "unit": "% economic price movement",
+          "text": "Aluminum Ingot (A00) ton current price 23270.0; price change over previous period 98.3; rate 0.4%.",
+          "source_kind": "structured_table",
+          "product": "Aluminum Ingot (A00)",
+          "current_price": "23270.0",
+          "price_change": "98.3"
+        },
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Lead Ingot (1#) ton current price 15568.8; price change over previous period -131.2; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Lead Ingot (1#)",
+          "current_price": "15568.8",
+          "price_change": "-131.2"
+        },
+        {
+          "value": "0.2",
+          "unit": "% economic price movement",
+          "text": "Zinc Ingot (0#) ton current price 24651.3; price change over previous period 59.6; rate 0.2%.",
+          "source_kind": "structured_table",
+          "product": "Zinc Ingot (0#)",
+          "current_price": "24651.3",
+          "price_change": "59.6"
+        },
+        {
+          "value": "-2.1",
+          "unit": "% economic price movement",
+          "text": "Sulfuric Acid (98%) ton current price 2037.8; price change over previous period -44.0; rate -2.1%.",
+          "source_kind": "structured_table",
+          "product": "Sulfuric Acid (98%)",
+          "current_price": "2037.8",
+          "price_change": "-44.0"
+        },
+        {
+          "value": "0.2",
+          "unit": "% economic price movement",
+          "text": "Caustic Soda (Liquid Caustic Soda, 32%) ton current price 690.0; price change over previous period 1.1; rate 0.2%.",
+          "source_kind": "structured_table",
+          "product": "Caustic Soda (Liquid Caustic Soda, 32%)",
+          "current_price": "690.0",
+          "price_change": "1.1"
+        },
+        {
+          "value": "1.4",
+          "unit": "% economic price movement",
+          "text": "Methyl Alcohol (Superior Quality) ton current price 2526.9; price change over previous period 36.1; rate 1.4%.",
+          "source_kind": "structured_table",
+          "product": "Methyl Alcohol (Superior Quality)",
+          "current_price": "2526.9",
+          "price_change": "36.1"
+        },
+        {
+          "value": "2.1",
+          "unit": "% economic price movement",
+          "text": "Pure Benzene (Petroleum Benzene, Industrial Grade) ton current price 8072.9; price change over previous period 163.9; rate 2.1%.",
+          "source_kind": "structured_table",
+          "product": "Pure Benzene (Petroleum Benzene, Industrial Grade)",
+          "current_price": "8072.9",
+          "price_change": "163.9"
+        },
+        {
+          "value": "-0.2",
+          "unit": "% economic price movement",
+          "text": "Ethyl Alcohol (95.0%) ton current price 5487.9; price change over previous period -10.4; rate -0.2%.",
+          "source_kind": "structured_table",
+          "product": "Ethyl Alcohol (95.0%)",
+          "current_price": "5487.9",
+          "price_change": "-10.4"
+        },
+        {
+          "value": "0.9",
+          "unit": "% economic price movement",
+          "text": "Polyethylene (LLDPE, Melt Index 2 Film Material) ton current price 8500.4; price change over previous period 77.3; rate 0.9%.",
+          "source_kind": "structured_table",
+          "product": "Polyethylene (LLDPE, Melt Index 2 Film Material)",
+          "current_price": "8500.4",
+          "price_change": "77.3"
+        },
+        {
+          "value": "0.6",
+          "unit": "% economic price movement",
+          "text": "Polypropylene (Wire Drawing Material) ton current price 8929.0; price change over previous period 54.0; rate 0.6%.",
+          "source_kind": "structured_table",
+          "product": "Polypropylene (Wire Drawing Material)",
+          "current_price": "8929.0",
+          "price_change": "54.0"
+        },
+        {
+          "value": "-1.7",
+          "unit": "% economic price movement",
+          "text": "Glacial Acetic Acid (99.5% and above) ton current price 3036.9; price change over previous period -53.1; rate -1.7%.",
+          "source_kind": "structured_table",
+          "product": "Glacial Acetic Acid (99.5% and above)",
+          "current_price": "3036.9",
+          "price_change": "-53.1"
+        },
+        {
+          "value": "-0.8",
+          "unit": "% economic price movement",
+          "text": "Butadiene Rubber (BR9000) ton current price 13000.0; price change over previous period -100.0; rate -0.8%.",
+          "source_kind": "structured_table",
+          "product": "Butadiene Rubber (BR9000)",
+          "current_price": "13000.0",
+          "price_change": "-100.0"
+        },
+        {
+          "value": "4.0",
+          "unit": "% economic price movement",
+          "text": "Polyester Filament (POY150D/48F) ton current price 8525.0; price change over previous period 325.0; rate 4.0%.",
+          "source_kind": "structured_table",
+          "product": "Polyester Filament (POY150D/48F)",
+          "current_price": "8525.0",
+          "price_change": "325.0"
+        },
+        {
+          "value": "-2.9",
+          "unit": "% economic price movement",
+          "text": "Lithium Iron Phosphate (Standard Power Grade) ton current price 54368.1; price change over previous period -1598.3; rate -2.9%.",
+          "source_kind": "structured_table",
+          "product": "Lithium Iron Phosphate (Standard Power Grade)",
+          "current_price": "54368.1",
+          "price_change": "-1598.3"
+        },
+        {
+          "value": "-3.0",
+          "unit": "% economic price movement",
+          "text": "Liquefied Natural Gas (LNG) ton current price 5525.4; price change over previous period -169.4; rate -3.0%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Natural Gas (LNG)",
+          "current_price": "5525.4",
+          "price_change": "-169.4"
+        },
+        {
+          "value": "9.8",
+          "unit": "% economic price movement",
+          "text": "Liquefied Petroleum Gas (LPG) ton current price 5999.5; price change over previous period 537.8; rate 9.8%.",
+          "source_kind": "structured_table",
+          "product": "Liquefied Petroleum Gas (LPG)",
+          "current_price": "5999.5",
+          "price_change": "537.8"
+        },
+        {
+          "value": "5.2",
+          "unit": "% economic price movement",
+          "text": "Gasoline (95#, National VI Emission Standard) ton current price 9392.5; price change over previous period 466.7; rate 5.2%.",
+          "source_kind": "structured_table",
+          "product": "Gasoline (95#, National VI Emission Standard)",
+          "current_price": "9392.5",
+          "price_change": "466.7"
+        },
+        {
+          "value": "5.8",
+          "unit": "% economic price movement",
+          "text": "Diesel Oil (0#, National VI Emission Standard) ton current price 7817.7; price change over previous period 426.2; rate 5.8%.",
+          "source_kind": "structured_table",
+          "product": "Diesel Oil (0#, National VI Emission Standard)",
+          "current_price": "7817.7",
+          "price_change": "426.2"
+        },
+        {
+          "value": "1.2",
+          "unit": "% economic price movement",
+          "text": "Paraffin (58#, Semi-refined) ton current price 7172.5; price change over previous period 87.5; rate 1.2%.",
+          "source_kind": "structured_table",
+          "product": "Paraffin (58#, Semi-refined)",
+          "current_price": "7172.5",
+          "price_change": "87.5"
+        },
+        {
+          "value": "5.0",
+          "unit": "% economic price movement",
+          "text": "Anthracite (Washed, Medium Pieces) ton current price 1321.9; price change over previous period 63.2; rate 5.0%.",
+          "source_kind": "structured_table",
+          "product": "Anthracite (Washed, Medium Pieces)",
+          "current_price": "1321.9",
+          "price_change": "63.2"
+        },
+        {
+          "value": "1.5",
+          "unit": "% economic price movement",
+          "text": "Shanxi Superior Mixed Coal (5500 kilocalories) ton current price 824.8; price change over previous period 12.1; rate 1.5%.",
+          "source_kind": "structured_table",
+          "product": "Shanxi Superior Mixed Coal (5500 kilocalories)",
+          "current_price": "824.8",
+          "price_change": "12.1"
+        },
+        {
+          "value": "-1.7",
+          "unit": "% economic price movement",
+          "text": "Coking Coal (Main Coking Coal) ton current price 1875.0; price change over previous period -33.3; rate -1.7%.",
+          "source_kind": "structured_table",
+          "product": "Coking Coal (Main Coking Coal)",
+          "current_price": "1875.0",
+          "price_change": "-33.3"
+        },
+        {
+          "value": "-3.1",
+          "unit": "% economic price movement",
+          "text": "Coke (Quasi Primary Metallurgical Coke) ton current price 1740.2; price change over previous period -56.2; rate -3.1%.",
+          "source_kind": "structured_table",
+          "product": "Coke (Quasi Primary Metallurgical Coke)",
+          "current_price": "1740.2",
+          "price_change": "-56.2"
+        },
+        {
+          "value": "-1.4",
+          "unit": "% economic price movement",
+          "text": "Ordinary Portland Cement (P.O 42.5 in Bulk) ton current price 246.4; price change over previous period -3.6; rate -1.4%.",
+          "source_kind": "structured_table",
+          "product": "Ordinary Portland Cement (P.O 42.5 in Bulk)",
+          "current_price": "246.4",
+          "price_change": "-3.6"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Float Flat Glass (5/6mm) ton current price 1098.9; price change over previous period -1.5; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Float Flat Glass (5/6mm)",
+          "current_price": "1098.9",
+          "price_change": "-1.5"
+        },
+        {
+          "value": "-2.2",
+          "unit": "% economic price movement",
+          "text": "Polysilicon (Dense Grade) kg current price 31.5; price change over previous period -0.7; rate -2.2%.",
+          "source_kind": "structured_table",
+          "product": "Polysilicon (Dense Grade)",
+          "current_price": "31.5",
+          "price_change": "-0.7"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Rice (Japonica Rice) ton current price 3988.3; price change over previous period -1.4; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Rice (Japonica Rice)",
+          "current_price": "3988.3",
+          "price_change": "-1.4"
+        },
+        {
+          "value": "-0.9",
+          "unit": "% economic price movement",
+          "text": "Wheat (National Standard Grade III) ton current price 2406.3; price change over previous period -21.3; rate -0.9%.",
+          "source_kind": "structured_table",
+          "product": "Wheat (National Standard Grade III)",
+          "current_price": "2406.3",
+          "price_change": "-21.3"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Corn (Yellow Corn Grade II) ton current price 2264.9; price change over previous period -16.5; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Corn (Yellow Corn Grade II)",
+          "current_price": "2264.9",
+          "price_change": "-16.5"
+        },
+        {
+          "value": "0.2",
+          "unit": "% economic price movement",
+          "text": "Cotton (Ginned Cotton, White Cotton Grade III) ton current price 16810.6; price change over previous period 33.3; rate 0.2%.",
+          "source_kind": "structured_table",
+          "product": "Cotton (Ginned Cotton, White Cotton Grade III)",
+          "current_price": "16810.6",
+          "price_change": "33.3"
+        },
+        {
+          "value": "-5.5",
+          "unit": "% economic price movement",
+          "text": "Live Hog (Three-way Crossbred) kg current price 10.4; price change over previous period -0.6; rate -5.5%.",
+          "source_kind": "structured_table",
+          "product": "Live Hog (Three-way Crossbred)",
+          "current_price": "10.4",
+          "price_change": "-0.6"
+        },
+        {
+          "value": "0.7",
+          "unit": "% economic price movement",
+          "text": "Soybean (Soy) ton current price 4525.9; price change over previous period 31.3; rate 0.7%.",
+          "source_kind": "structured_table",
+          "product": "Soybean (Soy)",
+          "current_price": "4525.9",
+          "price_change": "31.3"
+        },
+        {
+          "value": "3.2",
+          "unit": "% economic price movement",
+          "text": "Soybean Meal (Crude Protein Content≥43%) ton current price 3044.2; price change over previous period 95.2; rate 3.2%.",
+          "source_kind": "structured_table",
+          "product": "Soybean Meal (Crude Protein Content≥43%)",
+          "current_price": "3044.2",
+          "price_change": "95.2"
+        },
+        {
+          "value": "0.0",
+          "unit": "% economic price movement",
+          "text": "Peanut (For Oil Processing) ton current price 7358.3; price change over previous period 0.0; rate 0.0%.",
+          "source_kind": "structured_table",
+          "product": "Peanut (For Oil Processing)",
+          "current_price": "7358.3",
+          "price_change": "0.0"
+        },
+        {
+          "value": "-0.9",
+          "unit": "% economic price movement",
+          "text": "White Sugar (National Standard Grade I) ton current price 5191.9; price change over previous period -48.1; rate -0.9%.",
+          "source_kind": "structured_table",
+          "product": "White Sugar (National Standard Grade I)",
+          "current_price": "5191.9",
+          "price_change": "-48.1"
+        },
+        {
+          "value": "-0.7",
+          "unit": "% economic price movement",
+          "text": "Urea (Small and Medium Granules) ton current price 1786.8; price change over previous period -13.1; rate -0.7%.",
+          "source_kind": "structured_table",
+          "product": "Urea (Small and Medium Granules)",
+          "current_price": "1786.8",
+          "price_change": "-13.1"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Phosphate Fertilizer (55% Monoammonium Phosphate) ton current price 4480.5; price change over previous period -3.3; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Phosphate Fertilizer (55% Monoammonium Phosphate)",
+          "current_price": "4480.5",
+          "price_change": "-3.3"
+        },
+        {
+          "value": "-1.1",
+          "unit": "% economic price movement",
+          "text": "Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton current price 3170.9; price change over previous period -36.0; rate -1.1%.",
+          "source_kind": "structured_table",
+          "product": "Potassium Fertilizer (62% White Muriate of Potash, Port Price)",
+          "current_price": "3170.9",
+          "price_change": "-36.0"
+        },
+        {
+          "value": "0.1",
+          "unit": "% economic price movement",
+          "text": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton current price 3640.0; price change over previous period 1.9; rate 0.1%.",
+          "source_kind": "structured_table",
+          "product": "Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK)",
+          "current_price": "3640.0",
+          "price_change": "1.9"
+        },
+        {
+          "value": "-1.0",
+          "unit": "% economic price movement",
+          "text": "Pesticide (Glyphosate, 95% Technical Material) ton current price 26000.0; price change over previous period -250.0; rate -1.0%.",
+          "source_kind": "structured_table",
+          "product": "Pesticide (Glyphosate, 95% Technical Material)",
+          "current_price": "26000.0",
+          "price_change": "-250.0"
+        },
+        {
+          "value": "-1.7",
+          "unit": "% economic price movement",
+          "text": "Natural Rubber (Standard Rubber SCRWF) ton current price 16717.7; price change over previous period -292.0; rate -1.7%.",
+          "source_kind": "structured_table",
+          "product": "Natural Rubber (Standard Rubber SCRWF)",
+          "current_price": "16717.7",
+          "price_change": "-292.0"
+        },
+        {
+          "value": "0.3",
+          "unit": "% economic price movement",
+          "text": "Pulp (Imported Coniferous Pulp) ton current price 4906.8; price change over previous period 16.0; rate 0.3%.",
+          "source_kind": "structured_table",
+          "product": "Pulp (Imported Coniferous Pulp)",
+          "current_price": "4906.8",
+          "price_change": "16.0"
+        },
+        {
+          "value": "-0.1",
+          "unit": "% economic price movement",
+          "text": "Corrugated Paper (AA Grade, 120g) ton current price 3260.2; price change over previous period -3.0; rate -0.1%.",
+          "source_kind": "structured_table",
+          "product": "Corrugated Paper (AA Grade, 120g)",
+          "current_price": "3260.2",
+          "price_change": "-3.0"
+        },
+        {
+          "value": "55",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1786.8 -13.1 -0.7 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4480.5 -3.3 -0.1 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3170.9 -36.0 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 1.9 0.1 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 -250.0 -1.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "62",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1786.8 -13.1 -0.7 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4480.5 -3.3 -0.1 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3170.9 -36.0 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 1.9 0.1 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 -250.0 -1.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "45",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1786.8 -13.1 -0.7 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4480.5 -3.3 -0.1 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3170.9 -36.0 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 1.9 0.1 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 -250.0 -1.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "95",
+          "unit": "%",
+          "text": "Agricultural Means of Production Urea (Small and Medium Granules) ton 1786.8 -13.1 -0.7 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4480.5 -3.3 -0.1 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3170.9 -36.0 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 1.9 0.1 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 -250.0 -1.0 IX.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.95",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.7",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.994",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "99.995",
+          "unit": "%",
+          "text": "Nonferrous Metals 7 Electrolytic Copper 1# Mass Fraction of Copper and Silver≥99.95% 8 Aluminum Ingot A00 Mass Fraction of Aluminum≥99.7% 9 Lead Ingot 1# Mass Fraction of Lead≥99.994% 10 Zinc Ingot 0# Mass Fraction of Zinc≥99.995% III.",
+          "source_kind": "text",
+          "label": "%"
+        }
+      ],
+      "relevant_sentences": [
+        "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Market Prices of Important Means of Production in Circulation, July 21-31, 2026 2026-08-04 09:30 Print | Large | Medium | Small China Economic Monitoring and Analysis Center SCI International In late July 2026, according to the monitoring of market prices of 50 kinds of important means of production under 9 categories in the national circulation field, the prices of 20 products increased, 27 kinds decreased, and 3 kinds remained flat compared with those in mid-July 2026.",
+        "Market Prices of Important Means of Production in Circulation (July 21-31, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I.",
+        "Monitoring Content The monitoring of market prices of important means of production in circulation includes the prices of 50 kinds of products under 9 categories.",
+        "Notes on Indicators Market prices of important means of production in circulation refer to the wholesale prices and selling prices of enterprises trading important means of production.",
+        "Different from producer prices, market prices of means of production include producer prices, as well as circulation expenses, profits, and taxes of the enterprises.",
+        "Attached Table: Specifications of Market Price Monitoring Products of Important Means of Production in Circulation No.",
+        "Agricultural Means of Production Urea (Small and Medium Granules) ton 1786.8 -13.1 -0.7 Phosphate Fertilizer (55% Monoammonium Phosphate) ton 4480.5 -3.3 -0.1 Potassium Fertilizer (62% White Muriate of Potash, Port Price) ton 3170.9 -36.0 -1.1 Compound Fertilizer (Compound Fertilizer of Potassium Sulfate, 45% NPK) ton 3640.0 1.9 0.1 Pesticide (Glyphosate, 95% Technical Material) ton 26000.0 -250.0 -1.0 IX.",
+        "Producer prices and market prices influence each other."
+      ]
+    },
+    "synthesis_version": 17,
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
+  },
+  {
+    "id": "sig-bc93d4ec061e",
+    "title": "China industrial output provides a fresh read on factory demand",
+    "slug": "5-industrial-production-operation-in-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260818_1965071.html",
+    "source_type": "Primary source",
+    "summary": "Industrial Production Operation in July 2026 Indicator July January-July Absolute Value Growth Rate Y/Y (%) Absolute Value Growth Rate Y/Y (%) Value Added of Industrial Enterprises Above the Designated Size … 4.5 … 5.3 By Sector Mining … -4.2 … 2.5 Manufacturing … 5.5 … 5.6 Of which: High-technology Manufacturing … 16.9 … 13.8 Production and Supply of Electricity, Heat Power, Gas and Water … 5.0 … 5.4 By Economic Typ",
+    "what_happened": "Industrial Production Operation in July 2026 Indicator July January-July Absolute Value Growth Rate Y/Y (%) Absolute Value Growth Rate Y/Y (%) Value Added of Industrial Enterprises Above the Designated Size … 4.5 … 5.3 By Sector Mining … -4.2 … 2.5 Manufacturing … 5.5 … 5.6 Of which: High-technology Manufacturing … 16.9 … 13.8 Production and Supply of Electricity, Heat Power, Gas and Water … 5.0 … 5.4 By Economic Type Of which: State-holding Enterprises … 1.6 … 3.9 Of which: Share-holding Enterprises … 5.0 … 5.8 Enterprises Funded by Foreign Investors and Investors from Hong Kong, Macao and Taiwan … 2.8 … 3.1 Of which: Private Enterprises … 3.7 … 4.5 Value Added of the Main Industries Mining and Washing of Coal … -10.8 … 1.6 Extraction of Petroleum and Natural Gas … 6.1 … 5.0 Processing of Food from Agricultural and Sideline Products … 3.8 … 4.7 Manufacture of Foods … 9.0 … 8.4 Manufacture of Liquor, Beverages and Refined Tea … 2.6 … 2.4 Textile Industry … 2.3 … 3.1 Manufacture of Raw Chemical Materials and Chemical Products … -1.2 … 4.1 Manufacture of Medicines … 2.8 … 5.3 Manufactu",
+    "interpretation": "The table shows mixed price movement across production inputs, with 8 tracked items rising and 0 falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.",
+    "key_data": [
+      {
+        "value": "1685797",
+        "unit": "% economic price movement",
+        "context": "Service Robots (set) 1685797 current price 5.7; price change over previous period 12139067; rate 1685797%."
+      },
+      {
+        "value": "98677",
+        "unit": "% economic price movement",
+        "context": "Industrial Robots (set) 98677 current price 30.2; price change over previous period 635056; rate 98677%."
+      },
+      {
+        "value": "34321",
+        "unit": "% economic price movement",
+        "context": "Coal (10,000 tons) 34321 current price -10.1; price change over previous period 270158; rate 34321%."
+      },
+      {
+        "value": "14133",
+        "unit": "% economic price movement",
+        "context": "Export Delivery Value (100 million yuan) 14133 current price 10.4; price change over previous period 95766; rate 14133%."
+      },
+      {
+        "value": "12671",
+        "unit": "% economic price movement",
+        "context": "Cement (10,000 tons) 12671 current price -11.6; price change over previous period 85987; rate 12671%."
+      },
+      {
+        "value": "11646",
+        "unit": "% economic price movement",
+        "context": "Rolled Steel (10,000 tons) 11646 current price -4.1; price change over previous period 83616; rate 11646%."
+      },
+      {
+        "value": "9881",
+        "unit": "% economic price movement",
+        "context": "Mobile Telephones (10,000 sets) 9881 current price -16.7; price change over previous period 77428; rate 9881%."
+      },
+      {
+        "value": "9439",
+        "unit": "% economic price movement",
+        "context": "Electricity Generation of Industrial Enterprises Above the Designated Size (100 million kWh) 9439 current price -0.1; price change over previous period 56985; rate 9439%."
+      }
+    ],
+    "canadian_relevance": "The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 60,
+    "confidence_score": 60,
+    "sectors": [
+      "Manufacturing"
+    ],
+    "categories": [
+      "Markets"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "recovered": true,
+    "synthesis": {
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html",
+      "text_length": 11436,
+      "page_title": "Industrial Production Operation in July 2026",
+      "facts": [
+        {
+          "value": "26",
+          "unit": "% economic price movement",
+          "text": "Cloth (100 million meters) 26 current price 2.0; price change over previous period 172; rate 26%.",
+          "source_kind": "structured_table",
+          "product": "Cloth (100 million meters)",
+          "current_price": "2.0",
+          "price_change": "172"
+        },
+        {
+          "value": "768",
+          "unit": "% economic price movement",
+          "text": "Sulfuric Acid (100%) (10,000 tons) 768 current price -14.0; price change over previous period 6024; rate 768%.",
+          "source_kind": "structured_table",
+          "product": "Sulfuric Acid (100%) (10,000 tons)",
+          "current_price": "-14.0",
+          "price_change": "6024"
+        },
+        {
+          "value": "362",
+          "unit": "% economic price movement",
+          "text": "Caustic Soda (100%) (10,000 tons) 362 current price -5.1; price change over previous period 2729; rate 362%.",
+          "source_kind": "structured_table",
+          "product": "Caustic Soda (100%) (10,000 tons)",
+          "current_price": "-5.1",
+          "price_change": "2729"
+        },
+        {
+          "value": "348",
+          "unit": "% economic price movement",
+          "text": "Ethylene (10,000 tons) 348 current price 0.1; price change over previous period 2429; rate 348%.",
+          "source_kind": "structured_table",
+          "product": "Ethylene (10,000 tons)",
+          "current_price": "0.1",
+          "price_change": "2429"
+        },
+        {
+          "value": "706",
+          "unit": "% economic price movement",
+          "text": "Chemical Fiber (10,000 tons) 706 current price -1.7; price change over previous period 4907; rate 706%.",
+          "source_kind": "structured_table",
+          "product": "Chemical Fiber (10,000 tons)",
+          "current_price": "-1.7",
+          "price_change": "4907"
+        },
+        {
+          "value": "12671",
+          "unit": "% economic price movement",
+          "text": "Cement (10,000 tons) 12671 current price -11.6; price change over previous period 85987; rate 12671%.",
+          "source_kind": "structured_table",
+          "product": "Cement (10,000 tons)",
+          "current_price": "-11.6",
+          "price_change": "85987"
+        },
+        {
+          "value": "7598",
+          "unit": "% economic price movement",
+          "text": "Plate Glass (10,000 weight cases) 7598 current price -3.6; price change over previous period 51942; rate 7598%.",
+          "source_kind": "structured_table",
+          "product": "Plate Glass (10,000 weight cases)",
+          "current_price": "-3.6",
+          "price_change": "51942"
+        },
+        {
+          "value": "6835",
+          "unit": "% economic price movement",
+          "text": "Pig Iron (10,000 tons) 6835 current price -4.5; price change over previous period 49577; rate 6835%.",
+          "source_kind": "structured_table",
+          "product": "Pig Iron (10,000 tons)",
+          "current_price": "-4.5",
+          "price_change": "49577"
+        },
+        {
+          "value": "7693",
+          "unit": "% economic price movement",
+          "text": "Crude Steel (10,000 tons) 7693 current price -3.6; price change over previous period 57704; rate 7693%.",
+          "source_kind": "structured_table",
+          "product": "Crude Steel (10,000 tons)",
+          "current_price": "-3.6",
+          "price_change": "57704"
+        },
+        {
+          "value": "11646",
+          "unit": "% economic price movement",
+          "text": "Rolled Steel (10,000 tons) 11646 current price -4.1; price change over previous period 83616; rate 11646%.",
+          "source_kind": "structured_table",
+          "product": "Rolled Steel (10,000 tons)",
+          "current_price": "-4.1",
+          "price_change": "83616"
+        },
+        {
+          "value": "697",
+          "unit": "% economic price movement",
+          "text": "Ten Kinds of Non-ferrous Metals (10,000 tons) 697 current price 2.5; price change over previous period 4855; rate 697%.",
+          "source_kind": "structured_table",
+          "product": "Ten Kinds of Non-ferrous Metals (10,000 tons)",
+          "current_price": "2.5",
+          "price_change": "4855"
+        },
+        {
+          "value": "390",
+          "unit": "% economic price movement",
+          "text": "Of which: Primary Aluminum (Electrolytic Aluminum) (10,000 tons) 390 current price 3.8; price change over previous period 2717; rate 390%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Primary Aluminum (Electrolytic Aluminum) (10,000 tons)",
+          "current_price": "3.8",
+          "price_change": "2717"
+        },
+        {
+          "value": "8",
+          "unit": "% economic price movement",
+          "text": "Metal-cutting Machine Tools (10,000 units) 8 current price 4.0; price change over previous period 51; rate 8%.",
+          "source_kind": "structured_table",
+          "product": "Metal-cutting Machine Tools (10,000 units)",
+          "current_price": "4.0",
+          "price_change": "51"
+        },
+        {
+          "value": "98677",
+          "unit": "% economic price movement",
+          "text": "Industrial Robots (set) 98677 current price 30.2; price change over previous period 635056; rate 98677%.",
+          "source_kind": "structured_table",
+          "product": "Industrial Robots (set)",
+          "current_price": "30.2",
+          "price_change": "635056"
+        },
+        {
+          "value": "1685797",
+          "unit": "% economic price movement",
+          "text": "Service Robots (set) 1685797 current price 5.7; price change over previous period 12139067; rate 1685797%.",
+          "source_kind": "structured_table",
+          "product": "Service Robots (set)",
+          "current_price": "5.7",
+          "price_change": "12139067"
+        },
+        {
+          "value": "252.9",
+          "unit": "% economic price movement",
+          "text": "Motor Vehicles (10,000 sets) 252.9 current price -0.1; price change over previous period 1761.4; rate 252.9%.",
+          "source_kind": "structured_table",
+          "product": "Motor Vehicles (10,000 sets)",
+          "current_price": "-0.1",
+          "price_change": "1761.4"
+        },
+        {
+          "value": "83.1",
+          "unit": "% economic price movement",
+          "text": "Of which: Saloon Cars (10,000 sets) 83.1 current price -17.1; price change over previous period 563.2; rate 83.1%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Saloon Cars (10,000 sets)",
+          "current_price": "-17.1",
+          "price_change": "563.2"
+        },
+        {
+          "value": "123.6",
+          "unit": "% economic price movement",
+          "text": "SUV (10,000 sets) 123.6 current price 13.6; price change over previous period 851.1; rate 123.6%.",
+          "source_kind": "structured_table",
+          "product": "SUV (10,000 sets)",
+          "current_price": "13.6",
+          "price_change": "851.1"
+        },
+        {
+          "value": "155.0",
+          "unit": "% economic price movement",
+          "text": "Of which: New Energy Vehicles (10,000 sets) 155.0 current price 29.9; price change over previous period 894.7; rate 155.0%.",
+          "source_kind": "structured_table",
+          "product": "Of which: New Energy Vehicles (10,000 sets)",
+          "current_price": "29.9",
+          "price_change": "894.7"
+        },
+        {
+          "value": "2596",
+          "unit": "% economic price movement",
+          "text": "Power Generation Equipment (10,000 kW) 2596 current price -13.9; price change over previous period 20897; rate 2596%.",
+          "source_kind": "structured_table",
+          "product": "Power Generation Equipment (10,000 kW)",
+          "current_price": "-13.9",
+          "price_change": "20897"
+        },
+        {
+          "value": "6579",
+          "unit": "% economic price movement",
+          "text": "Solar Cells (Photovoltaic Cells) (10,000 kW) 6579 current price -9.4; price change over previous period 44608; rate 6579%.",
+          "source_kind": "structured_table",
+          "product": "Solar Cells (Photovoltaic Cells) (10,000 kW)",
+          "current_price": "-9.4",
+          "price_change": "44608"
+        },
+        {
+          "value": "1955",
+          "unit": "% economic price movement",
+          "text": "Micro Computer Equipment (10,000 units) 1955 current price -23.0; price change over previous period 16588; rate 1955%.",
+          "source_kind": "structured_table",
+          "product": "Micro Computer Equipment (10,000 units)",
+          "current_price": "-23.0",
+          "price_change": "16588"
+        },
+        {
+          "value": "9881",
+          "unit": "% economic price movement",
+          "text": "Mobile Telephones (10,000 sets) 9881 current price -16.7; price change over previous period 77428; rate 9881%.",
+          "source_kind": "structured_table",
+          "product": "Mobile Telephones (10,000 sets)",
+          "current_price": "-16.7",
+          "price_change": "77428"
+        },
+        {
+          "value": "7426",
+          "unit": "% economic price movement",
+          "text": "Of which: Smartphone (10,000 sets) 7426 current price -22.9; price change over previous period 64770; rate 7426%.",
+          "source_kind": "structured_table",
+          "product": "Of which: Smartphone (10,000 sets)",
+          "current_price": "-22.9",
+          "price_change": "64770"
+        },
+        {
+          "value": "530",
+          "unit": "% economic price movement",
+          "text": "Integrated Circuits (100 million pieces) 530 current price 20.7; price change over previous period 3342; rate 530%.",
+          "source_kind": "structured_table",
+          "product": "Integrated Circuits (100 million pieces)",
+          "current_price": "20.7",
+          "price_change": "3342"
+        },
+        {
+          "value": "34321",
+          "unit": "% economic price movement",
+          "text": "Coal (10,000 tons) 34321 current price -10.1; price change over previous period 270158; rate 34321%.",
+          "source_kind": "structured_table",
+          "product": "Coal (10,000 tons)",
+          "current_price": "-10.1",
+          "price_change": "270158"
+        },
+        {
+          "value": "4135",
+          "unit": "% economic price movement",
+          "text": "Coke (10,000 tons) 4135 current price -1.1; price change over previous period 29420; rate 4135%.",
+          "source_kind": "structured_table",
+          "product": "Coke (10,000 tons)",
+          "current_price": "-1.1",
+          "price_change": "29420"
+        },
+        {
+          "value": "1827",
+          "unit": "% economic price movement",
+          "text": "Crude Oil (10,000 tons) 1827 current price 0.8; price change over previous period 12769; rate 1827%.",
+          "source_kind": "structured_table",
+          "product": "Crude Oil (10,000 tons)",
+          "current_price": "0.8",
+          "price_change": "12769"
+        },
+        {
+          "value": "5311",
+          "unit": "% economic price movement",
+          "text": "Crude Oil Processing volume (10,000 tons) 5311 current price -15.8; price change over previous period 39696; rate 5311%.",
+          "source_kind": "structured_table",
+          "product": "Crude Oil Processing volume (10,000 tons)",
+          "current_price": "-15.8",
+          "price_change": "39696"
+        },
+        {
+          "value": "214",
+          "unit": "% economic price movement",
+          "text": "Natural Gas (100 million cubic meters) 214 current price -0.9; price change over previous period 1543; rate 214%.",
+          "source_kind": "structured_table",
+          "product": "Natural Gas (100 million cubic meters)",
+          "current_price": "-0.9",
+          "price_change": "1543"
+        },
+        {
+          "value": "9439",
+          "unit": "% economic price movement",
+          "text": "Electricity Generation of Industrial Enterprises Above the Designated Size (100 million kWh) 9439 current price -0.1; price change over previous period 56985; rate 9439%.",
+          "source_kind": "structured_table",
+          "product": "Electricity Generation of Industrial Enterprises Above the Designated Size (100 million kWh)",
+          "current_price": "-0.1",
+          "price_change": "56985"
+        },
+        {
+          "value": "5841",
+          "unit": "% economic price movement",
+          "text": "Thermal Power (100 million kWh) 5841 current price -3.5; price change over previous period 36127; rate 5841%.",
+          "source_kind": "structured_table",
+          "product": "Thermal Power (100 million kWh)",
+          "current_price": "-3.5",
+          "price_change": "36127"
+        },
+        {
+          "value": "1616",
+          "unit": "% economic price movement",
+          "text": "Hydropower (100 million kWh) 1616 current price 6.7; price change over previous period 7504; rate 1616%.",
+          "source_kind": "structured_table",
+          "product": "Hydropower (100 million kWh)",
+          "current_price": "6.7",
+          "price_change": "7504"
+        },
+        {
+          "value": "458",
+          "unit": "% economic price movement",
+          "text": "Nuclear Power (100 million kWh) 458 current price 6.6; price change over previous period 2805; rate 458%.",
+          "source_kind": "structured_table",
+          "product": "Nuclear Power (100 million kWh)",
+          "current_price": "6.6",
+          "price_change": "2805"
+        },
+        {
+          "value": "820",
+          "unit": "% economic price movement",
+          "text": "Wind Power (100 million kWh) 820 current price 4.5; price change over previous period 6433; rate 820%.",
+          "source_kind": "structured_table",
+          "product": "Wind Power (100 million kWh)",
+          "current_price": "4.5",
+          "price_change": "6433"
+        },
+        {
+          "value": "703",
+          "unit": "% economic price movement",
+          "text": "Solar Power (100 million kWh) 703 current price 5.6; price change over previous period 4117; rate 703%.",
+          "source_kind": "structured_table",
+          "product": "Solar Power (100 million kWh)",
+          "current_price": "5.6",
+          "price_change": "4117"
+        },
+        {
+          "value": "96.9",
+          "unit": "% economic price movement",
+          "text": "Product Sales Ratio (%) 96.9 current price -0.6 (percentage points); price change over previous period 96.0; rate 96.9%.",
+          "source_kind": "structured_table",
+          "product": "Product Sales Ratio (%)",
+          "current_price": "-0.6 (percentage points)",
+          "price_change": "96.0"
+        },
+        {
+          "value": "14133",
+          "unit": "% economic price movement",
+          "text": "Export Delivery Value (100 million yuan) 14133 current price 10.4; price change over previous period 95766; rate 14133%.",
+          "source_kind": "structured_table",
+          "product": "Export Delivery Value (100 million yuan)",
+          "current_price": "10.4",
+          "price_change": "95766"
+        },
+        {
+          "value": "0.30",
+          "unit": "% economic price movement",
+          "text": "August 0.30 current price ; price change over previous period ; rate 0.30%.",
+          "source_kind": "structured_table",
+          "product": "August",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.62",
+          "unit": "% economic price movement",
+          "text": "September 0.62 current price ; price change over previous period ; rate 0.62%.",
+          "source_kind": "structured_table",
+          "product": "September",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.14",
+          "unit": "% economic price movement",
+          "text": "October 0.14 current price ; price change over previous period ; rate 0.14%.",
+          "source_kind": "structured_table",
+          "product": "October",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.46",
+          "unit": "% economic price movement",
+          "text": "November 0.46 current price ; price change over previous period ; rate 0.46%.",
+          "source_kind": "structured_table",
+          "product": "November",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.45",
+          "unit": "% economic price movement",
+          "text": "December 0.45 current price ; price change over previous period ; rate 0.45%.",
+          "source_kind": "structured_table",
+          "product": "December",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.71",
+          "unit": "% economic price movement",
+          "text": "February 0.71 current price ; price change over previous period ; rate 0.71%.",
+          "source_kind": "structured_table",
+          "product": "February",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.28",
+          "unit": "% economic price movement",
+          "text": "March 0.28 current price ; price change over previous period ; rate 0.28%.",
+          "source_kind": "structured_table",
+          "product": "March",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.05",
+          "unit": "% economic price movement",
+          "text": "April 0.05 current price ; price change over previous period ; rate 0.05%.",
+          "source_kind": "structured_table",
+          "product": "April",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.40",
+          "unit": "% economic price movement",
+          "text": "May 0.40 current price ; price change over previous period ; rate 0.40%.",
+          "source_kind": "structured_table",
+          "product": "May",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.76",
+          "unit": "% economic price movement",
+          "text": "June 0.76 current price ; price change over previous period ; rate 0.76%.",
+          "source_kind": "structured_table",
+          "product": "June",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "0.11",
+          "unit": "% economic price movement",
+          "text": "July 0.11 current price ; price change over previous period ; rate 0.11%.",
+          "source_kind": "structured_table",
+          "product": "July",
+          "current_price": "",
+          "price_change": ""
+        },
+        {
+          "value": "4.5",
+          "unit": "%",
+          "text": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Industrial Production Operation in July 2026 2026-08-18 15:00 Print | Large | Medium | Small In July, the total value added of industrial enterprises above the designated size increased by 4.5% year on year in real terms (the growth rates of value added are the real growth rates after deducting price facto",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.11",
+          "unit": "%",
+          "text": "On a month-on-month basis, in July, the total value added of industrial enterprises above the designated size increased by 0.11% over the previous month.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.3",
+          "unit": "%",
+          "text": "From January to July, the total value added of industrial enterprises above the designated size increased by 5.3% year on year.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "4.2",
+          "unit": "%",
+          "text": "In terms of three sectors, in July, the value added of the mining industry decreased by 4.2% year on year, that of the manufacturing industry increased by 5.5%, and that of the production and supply of electricity, heat power, gas and water increased by 5.0%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.5",
+          "unit": "%",
+          "text": "In terms of three sectors, in July, the value added of the mining industry decreased by 4.2% year on year, that of the manufacturing industry increased by 5.5%, and that of the production and supply of electricity, heat power, gas and water increased by 5.0%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.0",
+          "unit": "%",
+          "text": "In terms of three sectors, in July, the value added of the mining industry decreased by 4.2% year on year, that of the manufacturing industry increased by 5.5%, and that of the production and supply of electricity, heat power, gas and water increased by 5.0%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.6",
+          "unit": "%",
+          "text": "In terms of economic types, in July, the value added of state-holding enterprises increased by 1.6% year on year; that of share-holding enterprises increased by 5.0%; that of enterprises funded by foreign investors and investors from Hong Kong, Macao, and Taiwan increased by 2.8%; and that of private enterprises increased by 3.7%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.0",
+          "unit": "%",
+          "text": "In terms of economic types, in July, the value added of state-holding enterprises increased by 1.6% year on year; that of share-holding enterprises increased by 5.0%; that of enterprises funded by foreign investors and investors from Hong Kong, Macao, and Taiwan increased by 2.8%; and that of private enterprises increased by 3.7%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.8",
+          "unit": "%",
+          "text": "In terms of economic types, in July, the value added of state-holding enterprises increased by 1.6% year on year; that of share-holding enterprises increased by 5.0%; that of enterprises funded by foreign investors and investors from Hong Kong, Macao, and Taiwan increased by 2.8%; and that of private enterprises increased by 3.7%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "3.7",
+          "unit": "%",
+          "text": "In terms of economic types, in July, the value added of state-holding enterprises increased by 1.6% year on year; that of share-holding enterprises increased by 5.0%; that of enterprises funded by foreign investors and investors from Hong Kong, Macao, and Taiwan increased by 2.8%; and that of private enterprises increased by 3.7%.",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "10.8",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "6.1",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "3.8",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.6",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.3",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "1.2",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "3.3",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.3",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.5",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "9.5",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "12.6",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "8.7",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "13.6",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "8.8",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "19.1",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "5.3",
+          "unit": "%",
+          "text": "Among them, the value added of the mining and washing of coal went down by 10.8%, that of the extraction of petroleum and natural gas up by 6.1%, that of the processing of food from agricultural and sideline products up by 3.8%, that of the manufacture of liquor, beverages and refined tea up by 2.6%, that of the textile industry up by 2.3%, that of the manufacture of raw chemical materials and chemical products down by 1.2%, that of the manufacture of non-metallic mineral products down by 3.3%, ",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "4.1",
+          "unit": "%",
+          "text": "Among them, the output of rolled steel was 116.46 million tons, down by 4.1% year on year; that of cement was 126.71 million tons, down by 11.6%; that of ten kinds of non-ferrous metals was 6.97 million tons, up by 2.5%; that of ethylene was 3.48 million tons, up by 0.1%; that of motor vehicles was 2.529 million sets, down by 0.1%, including 1.550 million new energy vehicles, up by 29.9%; the electricity generation was 943.9 billion kWh, down by 0.1%; and the crude oil processing volume was 53.1",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "11.6",
+          "unit": "%",
+          "text": "Among them, the output of rolled steel was 116.46 million tons, down by 4.1% year on year; that of cement was 126.71 million tons, down by 11.6%; that of ten kinds of non-ferrous metals was 6.97 million tons, up by 2.5%; that of ethylene was 3.48 million tons, up by 0.1%; that of motor vehicles was 2.529 million sets, down by 0.1%, including 1.550 million new energy vehicles, up by 29.9%; the electricity generation was 943.9 billion kWh, down by 0.1%; and the crude oil processing volume was 53.1",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "2.5",
+          "unit": "%",
+          "text": "Among them, the output of rolled steel was 116.46 million tons, down by 4.1% year on year; that of cement was 126.71 million tons, down by 11.6%; that of ten kinds of non-ferrous metals was 6.97 million tons, up by 2.5%; that of ethylene was 3.48 million tons, up by 0.1%; that of motor vehicles was 2.529 million sets, down by 0.1%, including 1.550 million new energy vehicles, up by 29.9%; the electricity generation was 943.9 billion kWh, down by 0.1%; and the crude oil processing volume was 53.1",
+          "source_kind": "text",
+          "label": "%"
+        },
+        {
+          "value": "0.1",
+          "unit": "%",
+          "text": "Among them, the output of rolled steel was 116.46 million tons, down by 4.1% year on year; that of cement was 126.71 million tons, down by 11.6%; that of ten kinds of non-ferrous metals was 6.97 million tons, up by 2.5%; that of ethylene was 3.48 million tons, up by 0.1%; that of motor vehicles was 2.529 million sets, down by 0.1%, including 1.550 million new energy vehicles, up by 29.9%; the electricity generation was 943.9 billion kWh, down by 0.1%; and the crude oil processing volume was 53.1",
+          "source_kind": "text",
+          "label": "%"
+        }
+      ],
+      "relevant_sentences": [
+        "Industrial Production Operation in July 2026 Indicator July January-July Absolute Value Growth Rate Y/Y (%) Absolute Value Growth Rate Y/Y (%) Value Added of Industrial Enterprises Above the Designated Size … 4.5 … 5.3 By Sector Mining … -4.2 … 2.5 Manufacturing … 5.5 … 5.6 Of which: High-technology Manufacturing … 16.9 … 13.8 Production and Supply of Electricity, Heat Power, Gas and Water … 5.0 … 5.4 By Economic Type Of which: State-holding Enterprises … 1.6 … 3.9 Of which: Share-holding Enterprises … 5.0 … 5.8 Enterprises Funded by Foreign Investors and Investors from Hong Kong, Macao and Taiwan … 2.8 … 3.1 Of which: Private Enterprises … 3.7 … 4.5 Value Added of the Main Industries Mining and Washing of Coal … -10.8 … 1.6 Extraction of Petroleum and Natural Gas … 6.1 … 5.0 Processing of Food from Agricultural and Sideline Products … 3.8 … 4.7 Manufacture of Foods … 9.0 … 8.4 Manufacture of Liquor, Beverages and Refined Tea … 2.6 … 2.4 Textile Industry … 2.3 … 3.1 Manufacture of Raw Chemical Materials and Chemical Products … -1.2 … 4.1 Manufacture of Medicines … 2.8 … 5.3 Manufacture of Rubber and Plastic Products … 5.0 … 6.4 Manufacture of Non-metallic Mineral Products … -3.3 … -2.9 Smelting and Pressing of Ferrous Metals … 0.3 … 1.8 Smelting and Pressing of Non-ferrous Metals … -2.5 … -0.7 Manufacture of Metal Products … 7.3 … 5.2 Manufacture of General-purpose Machinery … 9.5 … 7.9 Manufacture of Special-purpose Machinery … 12.6 … 8.8 Manufacture of Automobiles … 8.7 … 7.2 Manufacture of Railway, Ship, Aerospace and Other Transport Equipment … 13.6 … 12.7 Manufacture of Electrical Machinery and Apparatus … 8.8 … 6.5 Manufacture of Computers, Communication Equipment and Other Electronic Equipment … 19.1 … 15.4 Production and Supply of Electricity and Heat Power … 5.3 … 6.0 Output of Major Industrial Products of Enterprises Above the Designated Size Cloth (100 million meters) 26 2.0 172 3.3 Sulfuric Acid (100%) (10,000 tons) 768 -14.0 6024 -2.4 Caustic Soda (100%) (10,000 tons) 362 -5.1 2729 2.6 Ethylene (10,000 tons) 348 0.1 2429 4.1 Chemical Fiber (10,000 tons) 706 -1.7 4907 1.1 Cement (10,000 tons) 12671 -11.6 85987 -8.6 Plate Glass (10,000 weight cases) 7598 -3.6 51942 -6.2 Pig Iron (10,000 tons) 6835 -4.5 49577 -3.0 Crude Steel (10,000 tons) 7693 -3.6 57704 -3.1 Rolled Steel (10,000 tons) 11646 -4.1 83616 -1.2 Ten Kinds of Non-ferrous Metals (10,000 tons) 697 2.5 4855 3.2 Of which: Primary Aluminum (Electrolytic Aluminum) (10,000 tons) 390 3.8 2717 3.8 Metal-cutting Machine Tools (10,000 units) 8 4.0 51 0.8 Industrial Robots (set) 98677 30.2 635056 28.5 Service Robots (set) 1685797 5.7 12139067 12.2 Motor Vehicles (10,000 sets) 252.9 -0.1 1761.4 -3.4 Of which: Saloon Cars (10,000 sets) 83.1 -17.1 563.2 -20.2 SUV (10,000 sets) 123.6 13.6 851.1 9.8 Of which: New Energy Vehicles (10,000 sets) 155.0 29.9 894.7 9.5 Power Generation Equipment (10,000 kW) 2596 -13.9 20897 2.8 Solar Cells (Photovoltaic Cells) (10,000 kW) 6579 -9.4 44608 -13.6 Micro Computer Equipment (10,000 units) 1955 -23.0 16588 -13.2 Mobile Telephones (10,000 sets) 9881 -16.7 77428 -3.4 Of which: Smartphone (10,000 sets) 7426 -22.9 64770 -3.3 Integrated Circuits (100 million pieces) 530 20.7 3342 23.1 Coal (10,000 tons) 34321 -10.1 270158 -2.9 Coke (10,000 tons) 4135 -1.1 29420 1.2 Crude Oil (10,000 tons) 1827 0.8 12769 0.9 Crude Oil Processing volume (10,000 tons) 5311 -15.8 39696 -6.5 Natural Gas (100 million cubic meters) 214 -0.9 1543 1.2 Electricity Generation of Industrial Enterprises Above the Designated Size (100 million kWh) 9439 -0.1 56985 3.0 Thermal Power (100 million kWh) 5841 -3.5 36127 1.8 Hydropower (100 million kWh) 1616 6.7 7504 8.8 Nuclear Power (100 million kWh) 458 6.6 2805 0.4 Wind Power (100 million kWh) 820 4.5 6433 -0.8 Solar Power (100 million kWh) 703 5.6 4117 11.4 Product Sales Ratio (%) 96.9 -0.6 (percentage points) 96.0 0.1 (percentage points) Export Delivery Value (100 million yuan) 14133 10.4 95766 9.8 Annotations: 1.",
+        "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Industrial Production Operation in July 2026 2026-08-18 15:00 Print | Large | Medium | Small In July, the total value added of industrial enterprises above the designated size increased by 4.5% year on year in real terms (the growth rates of value added are the real growth rates after deducting price factors).",
+        "In terms of three sectors, in July, the value added of the mining industry decreased by 4.2% year on year, that of the manufacturing industry increased by 5.5%, and that of the production and supply of electricity, heat power, gas and water increased by 5.0%.",
+        "In July, the product sales ratio of industrial enterprises above the designated size was 96.9%, a year-on-year decrease of 0.6 percentage points; and the export delivery value realized by industrial enterprises above the designated size was 1,413.3 billion yuan, a nominal increase of 10.4% year on year.",
+        "Notes on Indicators Growth rate of total value added of industrial enterprises: also known as industrial growth rate, is used to reflect the degree of increase or decrease in industrial output over a given period.",
+        "Product sales ratio: refers to the ratio of sales value to total industrial output value, which reflects the coordination between production and sales of industrial products.",
+        "In terms of products, in July, the output of 279 out of 626 products produced by industrial enterprises above the designated size increased year on year.",
+        "On a month-on-month basis, in July, the total value added of industrial enterprises above the designated size increased by 0.11% over the previous month."
+      ]
+    },
+    "synthesis_version": 17,
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "production"
+      ],
+      "economic_terms": [
+        "industrial production"
+      ],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   }
 ]

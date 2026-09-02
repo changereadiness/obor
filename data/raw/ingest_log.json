@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-02T07:22:56.457959+00:00",
+  "collected_at": "2026-09-02T07:32:40.686036+00:00",
   "state": "degraded",
   "sources_enabled": 7,
   "sources_succeeded": 4,
@@ -30,7 +30,7 @@
       "attempt_errors": [
         "page https://www.canada.ca/en/news.html: HTML page contained no matching article links"
       ],
-      "seconds": 2.14
+      "seconds": 4.35
     },
     {
       "source": "Global Affairs Canada — News",
@@ -40,7 +40,7 @@
       "items": 1,
       "content_type": "text/html; charset=utf-8",
       "attempt_errors": [],
-      "seconds": 0.6
+      "seconds": 0.88
     },
     {
       "source": "National Bureau of Statistics of China — Latest Releases",
@@ -50,28 +50,28 @@
       "items": 15,
       "content_type": "text/html",
       "attempt_errors": [],
-      "seconds": 2.97
+      "seconds": 5.5
     },
     {
       "source": "WTO — News",
       "status": "error",
       "items": 0,
       "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0",
-      "seconds": 0.35
+      "seconds": 0.91
     },
     {
       "source": "IMF — News",
       "status": "error",
       "items": 0,
       "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden",
-      "seconds": 9.19
+      "seconds": 9.54
     },
     {
       "source": "OECD — News",
       "status": "error",
       "items": 0,
       "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden",
-      "seconds": 9.11
+      "seconds": 9.44
     },
     {
       "source": "World Bank — News",
@@ -81,7 +81,7 @@
       "items": 16,
       "content_type": "text/html; charset=utf-8",
       "attempt_errors": [],
-      "seconds": 0.14
+      "seconds": 0.25
     }
   ]
 }

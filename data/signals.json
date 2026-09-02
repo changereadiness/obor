@@ -1,95 +1,158 @@
 [
   {
-    "id": "demo-001",
-    "title": "Illustrative signal: China expands support for advanced manufacturing",
-    "slug": "china-advanced-manufacturing-support",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.gov.cn/",
+    "id": "sig-d955a0f9dca8",
+    "title": "12.Market Prices of Important Means of Production in Circulation, August 1-10, 2026 shows a 98% movement",
+    "slug": "12-market-prices-of-important-means-of-production-in-circulation-august-1-10-202",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260813_1965026.html",
     "source_type": "Primary source",
-    "summary": "Demo record showing how an economic-policy development can be translated into a Canadian business signal.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian manufacturers, equipment suppliers and technology companies may need to monitor how industrial-policy support changes Chinese production capacity and competitive conditions.",
+    "summary": "Market Prices of Important Means of Production in Circulation (August 1-10, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 1983.7 -54.1 -2.7 Caustic Soda (Liquid Caustic Soda, 32%) ton 684.8 -5.2 -0.8 Methyl Alcohol (Superior Quality) ton 2479.4 -47.5 -1.9 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 7487.0 -585.9 -7.",
+    "what_happened": "Market Prices of Important Means of Production in Circulation (August 1-10, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 1983.7 -54.1 -2.7 Caustic Soda (Liquid Caustic Soda, 32%) ton 684.8 -5.2 -0.8 Methyl Alcohol (Superior Quality) ton 2479.4 -47.5 -1.9 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 7487.0 -585.9 -7.3 Ethyl Alcohol (95.0%) ton 5458.6 -29.3 -0.5 Polyethylene (LLDPE, Melt Index 2 Film Material) ton 8413.3 -87.1 -1.0 Polypropylene (Wire Drawing Material) ton 8838.6 -90.4 -1.0 Glacial Acetic Acid (99.5% and above) ton 2989.2 -47.7 -1.6 Butadiene Rubbe Agricultural Products (Mainly Used for Processing) Rice (Japonica Rice) ton 3988.0 -0.3 0.0 Wheat (National Standard Grade III) ton 2390.8 -15.5 -0.6 Corn (Yellow Corn Grade II) ton 2241.6 -23.3 -1.0 Cotton (Ginned Cotton, White Cotton Grade III) ton 17198.0 387.4 2.3 Live Hog (Three-way Crossbred) kg 10.4 0.0 0.0 Soybean (Soy) ton 4464.8 -61.1 -1.4 Soybean Meal (Crude Protein Content≥43%) ton 3045.0 0.8 0.0 Peanut (For Oil",
+    "interpretation": "The reported movement points to weaker conditions in the measured activity relative to a stronger growth environment.",
+    "key_data": [],
+    "canadian_relevance": "The source does not explicitly establish a Canada-specific effect. For Canadian businesses in logistics & transportation, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 86,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Manufacturing",
-      "Machinery & Equipment",
-      "Technology"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Policy",
-      "Industry"
+      "Markets"
     ],
     "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true
   },
   {
-    "id": "demo-002",
-    "title": "Illustrative signal: Chinese logistics activity changes regional supply conditions",
-    "slug": "china-logistics-supply-conditions",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.stats.gov.cn/",
+    "id": "sig-370d277e832d",
+    "title": "China retail growth remains subdued",
+    "slug": "8-total-retail-sales-of-consumer-goods-from-january-to-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965078.html",
     "source_type": "Primary source",
-    "summary": "Demo record for a supply-chain signal that would connect Chinese logistics conditions to Canadian sourcing and transportation exposure.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian importers and supply-chain teams could be affected through lead times, freight conditions, sourcing decisions and supplier reliability.",
+    "summary": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Total Retail Sales of Consumer Goods from January to July 2026 2026-08-18 15:00 Print | Large | Medium | Small From January to July 2026, the total retail sales of consumer goods reached 28,774.4 billion yuan, up by 1.2% year o",
+    "what_happened": "Chinese(GB) RSS Organizational Chart Data Communiqués Legal Framework Classifications & Methods Latest Releases International Cooperation Understanding Statistics Agency Home > Latest Releases Total Retail Sales of Consumer Goods from January to July 2026 2026-08-18 15:00 Print | Large | Medium | Small From January to July 2026, the total retail sales of consumer goods reached 28,774.4 billion yuan, up by 1.2% year on year. Specifically, the retail sales of consumer goods excluding automobiles reached 26,514.2 billion yuan, up by 2.7%. In July, the total retail sales of consumer goods reached 3,902.2 billion yuan, up by 0.6% year on year. Specifically, the retail sales of consumer goods excluding automobiles reached 3,589.2 billion yuan, up by 2.5%.",
+    "interpretation": "The latest data point indicates limited momentum in the measured activity, although individual subcategories may be performing differently.",
+    "key_data": [],
+    "canadian_relevance": "The source does not explicitly establish a Canada-specific effect. For Canadian businesses in technology, consumer goods, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 79,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Logistics & Transportation",
-      "Manufacturing",
+      "Technology",
       "Consumer Goods"
     ],
     "categories": [
-      "Supply Chain",
       "Markets"
     ],
-    "direction": "China → Canada",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true
   },
   {
-    "id": "demo-003",
-    "title": "Illustrative signal: Chinese demand shifts create an export-market watchpoint",
-    "slug": "china-demand-export-watchpoint",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.wto.org/",
-    "source_type": "Secondary / institutional context",
-    "summary": "Demo record for a market-demand signal relevant to Canadian exporters and commodity-linked businesses.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Changes in Chinese demand can affect Canadian exporters through market access, commodity demand, pricing and competitive conditions.",
+    "id": "sig-588605b7c402",
+    "title": "4.Market Prices of Important Means of Production in Circulation, August 11-20, 2026 shows a 98% movement",
+    "slug": "4-market-prices-of-important-means-of-production-in-circulation-august-11-20-202",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260821_1965094.html",
+    "source_type": "Primary source",
+    "summary": "Market Prices of Important Means of Production in Circulation (August 11-20, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 1940.6 -43.1 -2.2 Caustic Soda (Liquid Caustic Soda, 32%) ton 684.5 -0.3 0.0 Methyl Alcohol (Superior Quality) ton 2635.6 156.2 6.3 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 7943.2 456.2 6.1 E",
+    "what_happened": "Market Prices of Important Means of Production in Circulation (August 11-20, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 1940.6 -43.1 -2.2 Caustic Soda (Liquid Caustic Soda, 32%) ton 684.5 -0.3 0.0 Methyl Alcohol (Superior Quality) ton 2635.6 156.2 6.3 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 7943.2 456.2 6.1 Ethyl Alcohol (95.0%) ton 5389.2 -69.4 -1.3 Polyethylene (LLDPE, Melt Index 2 Film Material) ton 8602.3 189.0 2.2 Polypropylene (Wire Drawing Material) ton 9034.4 195.8 2.2 Glacial Acetic Acid (99.5% and above) ton 2966.7 -22.5 -0.8 Butadiene Rubber (BR9 Agricultural Products (Mainly Used for Processing) Rice (Japonica Rice) ton 3982.6 -5.4 -0.1 Wheat (National Standard Grade III) ton 2395.1 4.3 0.2 Corn (Yellow Corn Grade II) ton 2235.8 -5.8 -0.3 Cotton (Ginned Cotton, White Cotton Grade III) ton 17484.0 286.0 1.7 Live Hog (Three-way Crossbred) kg 11.0 0.6 5.8 Soybean (Soy) ton 4533.2 68.4 1.5 Soybean Meal (Crude Protein Content≥43%) ton 3101.1 56.1 1.8 Peanut (For Oil Pr",
+    "interpretation": "The reported movement points to weaker conditions in the measured activity relative to a stronger growth environment.",
+    "key_data": [],
+    "canadian_relevance": "The source does not explicitly establish a Canada-specific effect. For Canadian businesses in logistics & transportation, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 74,
-    "confidence_score": 20,
+    "relevance_score": 60,
+    "confidence_score": 60,
     "sectors": [
-      "Agriculture & Food",
-      "Energy",
-      "Mining & Critical Minerals"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Markets",
-      "Macroeconomics"
+      "Markets"
     ],
-    "direction": "Canada → China",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "recovered": true
+  },
+  {
+    "id": "sig-7c0f8b412848",
+    "title": "15.Market Prices of Important Means of Production in Circulation, July 21-31, 2026 shows a 98% movement",
+    "slug": "15-market-prices-of-important-means-of-production-in-circulation-july-21-31-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html",
+    "source_type": "Primary source",
+    "summary": "Market Prices of Important Means of Production in Circulation (July 21-31, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 2037.8 -44.0 -2.1 Caustic Soda (Liquid Caustic Soda, 32%) ton 690.0 1.1 0.2 Methyl Alcohol (Superior Quality) ton 2526.9 36.1 1.4 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 8072.9 163.9 2.1 Ethyl",
+    "what_happened": "Market Prices of Important Means of Production in Circulation (July 21-31, 2026) Products Units Current Price (yuan) Price Change over Previous Period (yuan) ±Rate (%) I. Chemical Products Sulfuric Acid (98%) ton 2037.8 -44.0 -2.1 Caustic Soda (Liquid Caustic Soda, 32%) ton 690.0 1.1 0.2 Methyl Alcohol (Superior Quality) ton 2526.9 36.1 1.4 Pure Benzene (Petroleum Benzene, Industrial Grade) ton 8072.9 163.9 2.1 Ethyl Alcohol (95.0%) ton 5487.9 -10.4 -0.2 Polyethylene (LLDPE, Melt Index 2 Film Material) ton 8500.4 77.3 0.9 Polypropylene (Wire Drawing Material) ton 8929.0 54.0 0.6 Glacial Acetic Acid (99.5% and above) ton 3036.9 -53.1 -1.7 Butadiene Rubber (BR9000) Agricultural Products (Mainly Used for Processing) Rice (Japonica Rice) ton 3988.3 -1.4 0.0 Wheat (National Standard Grade III) ton 2406.3 -21.3 -0.9 Corn (Yellow Corn Grade II) ton 2264.9 -16.5 -0.7 Cotton (Ginned Cotton, White Cotton Grade III) ton 16810.6 33.3 0.2 Live Hog (Three-way Crossbred) kg 10.4 -0.6 -5.5 Soybean (Soy) ton 4525.9 31.3 0.7 Soybean Meal (Crude Protein Content≥43%) ton 3044.2 95.2 3.2 Peanut (For Oil",
+    "interpretation": "The reported movement points to weaker conditions in the measured activity relative to a stronger growth environment.",
+    "key_data": [],
+    "canadian_relevance": "The source does not explicitly establish a Canada-specific effect. For Canadian businesses in logistics & transportation, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 60,
+    "confidence_score": 60,
+    "sectors": [
+      "Logistics & Transportation"
+    ],
+    "categories": [
+      "Markets"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "recovered": true
+  },
+  {
+    "id": "sig-bc93d4ec061e",
+    "title": "China industrial output provides a fresh read on factory demand",
+    "slug": "5-industrial-production-operation-in-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": "2026-09-02",
+    "source": "Recovered from published signal page",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260818_1965071.html",
+    "source_type": "Primary source",
+    "summary": "Industrial Production Operation in July 2026 Indicator July January-July Absolute Value Growth Rate Y/Y (%) Absolute Value Growth Rate Y/Y (%) Value Added of Industrial Enterprises Above the Designated Size … 4.5 … 5.3 By Sector Mining … -4.2 … 2.5 Manufacturing … 5.5 … 5.6 Of which: High-technology Manufacturing … 16.9 … 13.8 Production and Supply of Electricity, Heat Power, Gas and Water … 5.0 … 5.4 By Economic Typ",
+    "what_happened": "Industrial Production Operation in July 2026 Indicator July January-July Absolute Value Growth Rate Y/Y (%) Absolute Value Growth Rate Y/Y (%) Value Added of Industrial Enterprises Above the Designated Size … 4.5 … 5.3 By Sector Mining … -4.2 … 2.5 Manufacturing … 5.5 … 5.6 Of which: High-technology Manufacturing … 16.9 … 13.8 Production and Supply of Electricity, Heat Power, Gas and Water … 5.0 … 5.4 By Economic Type Of which: State-holding Enterprises … 1.6 … 3.9 Of which: Share-holding Enterprises … 5.0 … 5.8 Enterprises Funded by Foreign Investors and Investors from Hong Kong, Macao and Taiwan … 2.8 … 3.1 Of which: Private Enterprises … 3.7 … 4.5 Value Added of the Main Industries Mining and Washing of Coal … -10.8 … 1.6 Extraction of Petroleum and Natural Gas … 6.1 … 5.0 Processing of Food from Agricultural and Sideline Products … 3.8 … 4.7 Manufacture of Foods … 9.0 … 8.4 Manufacture of Liquor, Beverages and Refined Tea … 2.6 … 2.4 Textile Industry … 2.3 … 3.1 Manufacture of Raw Chemical Materials and Chemical Products … -1.2 … 4.1 Manufacture of Medicines … 2.8 … 5.3 Manufactu",
+    "interpretation": "The latest data point indicates limited momentum in the measured activity, although individual subcategories may be performing differently.",
+    "key_data": [],
+    "canadian_relevance": "The source does not explicitly establish a Canada-specific effect. For Canadian businesses in manufacturing, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 60,
+    "confidence_score": 60,
+    "sectors": [
+      "Manufacturing"
+    ],
+    "categories": [
+      "Markets"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "recovered": true
   }
 ]

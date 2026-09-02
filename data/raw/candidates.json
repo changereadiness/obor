@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "id": "raw-50d3c6df63deb3294227",
+    "title": "2.China’s New Economic Growth Drivers Index Increased by 12.5% in 2025",
+    "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260828_1965135.html",
+    "description": "",
+    "published_at": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/",
+    "source_type": "Primary source",
+    "country": "China",
+    "collected_at": "2026-09-02T03:59:34.045436+00:00",
+    "categories": [
+      "Markets"
+    ],
+    "sectors": [
+      "Other"
+    ],
+    "direction": "Global → Canada/China",
+    "opportunity_or_risk": "OPPORTUNITY",
+    "relevance_score": 62,
+    "confidence_score": 70,
+    "evidence": {
+      "china_terms": [
+        "china"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [],
+      "opportunity_terms": [
+        "growth",
+        "increase",
+        "ease"
+      ],
+      "risk_terms": [],
+      "fact_terms": [
+        "increased"
+      ]
+    }
+  }
+]

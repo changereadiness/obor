@@ -1,89 +1,87 @@
 {
-  "collected_at": "2026-09-02T03:56:52.833523+00:00",
-  "state": "failed_no_data",
+  "collected_at": "2026-09-02T03:59:53.014605+00:00",
+  "state": "degraded",
   "sources_enabled": 7,
-  "sources_succeeded": 0,
-  "items_new": 0,
-  "items_cached": 0,
+  "sources_succeeded": 4,
+  "items_new": 34,
+  "items_cached": 34,
   "errors": [
     {
-      "source": "Government of Canada — News",
-      "error": "no collection endpoints configured"
-    },
-    {
-      "source": "Global Affairs Canada — News",
-      "error": "no collection endpoints configured"
-    },
-    {
-      "source": "National Bureau of Statistics of China — Latest Releases",
-      "error": "no collection endpoints configured"
-    },
-    {
       "source": "WTO — News",
-      "error": "no collection endpoints configured"
+      "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0"
     },
     {
       "source": "IMF — News",
-      "error": "no collection endpoints configured"
+      "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden"
     },
     {
       "source": "OECD — News",
-      "error": "no collection endpoints configured"
-    },
-    {
-      "source": "World Bank — News",
-      "error": "no collection endpoints configured"
+      "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden"
     }
   ],
   "health": [
     {
       "source": "Government of Canada — News",
-      "status": "error",
-      "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "status": "ok",
+      "method": "html",
+      "http_status": 200,
+      "items": 2,
+      "content_type": "text/html;charset=utf-8",
+      "attempt_errors": [
+        "page https://www.canada.ca/en/news.html: HTML page contained no matching article links"
+      ],
+      "seconds": 5.2
     },
     {
       "source": "Global Affairs Canada — News",
-      "status": "error",
-      "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "status": "ok",
+      "method": "html",
+      "http_status": 200,
+      "items": 1,
+      "content_type": "text/html; charset=utf-8",
+      "attempt_errors": [],
+      "seconds": 0.58
     },
     {
       "source": "National Bureau of Statistics of China — Latest Releases",
-      "status": "error",
-      "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "status": "ok",
+      "method": "html",
+      "http_status": 200,
+      "items": 15,
+      "content_type": "text/html",
+      "attempt_errors": [],
+      "seconds": 3.22
     },
     {
       "source": "WTO — News",
       "status": "error",
       "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0",
+      "seconds": 0.55
     },
     {
       "source": "IMF — News",
       "status": "error",
       "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden",
+      "seconds": 9.17
     },
     {
       "source": "OECD — News",
       "status": "error",
       "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden",
+      "seconds": 9.11
     },
     {
       "source": "World Bank — News",
-      "status": "error",
-      "items": 0,
-      "error": "no collection endpoints configured",
-      "seconds": 0.0
+      "status": "ok",
+      "method": "html",
+      "http_status": 200,
+      "items": 16,
+      "content_type": "text/html; charset=utf-8",
+      "attempt_errors": [],
+      "seconds": 0.13
     }
   ]
 }

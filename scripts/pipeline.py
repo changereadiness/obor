@@ -125,10 +125,12 @@ def analyze(item):
     if item.get('source_type') == 'Secondary reporting':
         confidence = max(35, confidence - 10)
 
-    # Strongly penalize items with no explicit Canadian connection.
+    # Canada evidence is valuable, but not mandatory: OBOR exists to interpret
+    # Chinese developments for Canadian business. Primary Chinese/institutional
+    # sources can qualify when the development has clear commercial/sector evidence.
     if not canada_hits:
-        score = min(score, 62)
-        confidence = min(confidence, 70)
+        score = min(score, 78)
+        confidence = min(confidence, 82)
 
     # A source mentioning China only as background should not become a signal.
     if not china_hits:
@@ -204,7 +206,16 @@ def main():
             continue
         if x['relevance_score'] < 60 or x['confidence_score'] < 60:
             continue
-        if not x['evidence']['canada_terms']:
+        # Explicit Canada evidence is preferred, not mandatory. A primary-source
+        # China development with strong business + sector evidence can itself be
+        # a Canadian watchpoint; the Canadian implication is written as analysis.
+        strong_china_signal = (
+            x['evidence']['china_terms']
+            and x['source_type'] in ('Primary source', 'Secondary / institutional context')
+            and len(x['evidence']['commercial_terms']) >= 2
+            and x['sectors'] != ['Other']
+        )
+        if not x['evidence']['canada_terms'] and not strong_china_signal:
             continue
         if x['url'] in existing_urls:
             continue
@@ -215,7 +226,10 @@ def main():
             summary = x['title'] + '.'
         summary = summary[:420]
         sector_text = ', '.join(x['sectors'][:3]).lower()
-        canadian = f"The development has potential relevance to Canadian businesses through {sector_text}, trade exposure or related commercial conditions."
+        if x['evidence']['canada_terms']:
+            canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
+        else:
+            canadian = f"The source does not explicitly mention Canada. For Canadian businesses in {sector_text}, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics."
         signal = {
             'id': sid,
             'title': x['title'],

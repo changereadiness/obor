@@ -55,6 +55,8 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
+SYNTHESIS_VERSION = 11
+
 SOURCE_WEIGHTS = {
     'Primary source': 30,
     'Secondary / institutional context': 20,
@@ -225,10 +227,13 @@ def main():
     print('screening_rejections=' + json.dumps(rejection_counts, sort_keys=True))
 
     existing = json.loads((DATA / 'signals.json').read_text()) if (DATA / 'signals.json').exists() else []
-    existing_urls = {s.get('source_url') for s in existing if s.get('source_url')}
+    existing_by_url = {s.get('source_url'): s for s in existing if s.get('source_url')}
+    existing_urls = set(existing_by_url)
     real_existing = [s for s in existing if s.get('status') not in ('demo','suppressed')]
 
     new = []
+    updated = []
+    unchanged = 0
     for x in candidates:
         # Publication gate: conservative and intentionally deterministic.
         if x['source'] in suppressed_sources:
@@ -248,10 +253,12 @@ def main():
         )
         if not x['evidence']['canada_terms'] and not strong_china_signal:
             continue
-        if x['url'] in existing_urls:
+        existing_signal = existing_by_url.get(x['url'])
+        if existing_signal and existing_signal.get('synthesis_version') == SYNTHESIS_VERSION:
+            unchanged += 1
             continue
 
-        sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
+        sid = existing_signal.get('id') if existing_signal else 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
         headline, what_happened, interpretation, data_points, synthesized_canadian = build_signal_fields(x)
         summary = re.sub(r'\s+', ' ', what_happened).strip()[:420]
         sector_text = ', '.join(x['sectors'][:3]).lower()
@@ -284,15 +291,27 @@ def main():
             'status': 'published',
             'evidence': x['evidence'],
             'synthesis': x.get('source_content', {}),
+            'synthesis_version': SYNTHESIS_VERSION,
         }
         signal.update(overrides.get('items', {}).get(sid, {}))
-        new.append(signal)
+        if existing_signal:
+            updated.append(signal)
+        else:
+            new.append(signal)
+
+    # Replace re-synthesized existing signals by id, while preserving any
+    # previously valid signal whose new source fetch/evidence extraction failed.
+    updated_by_id = {s['id']: s for s in updated}
+    merged = []
+    for s in real_existing:
+        merged.append(updated_by_id.get(s.get('id'), s))
+    merged.extend(new)
 
     # Keep the original visual demo until at least one real signal exists.
-    all_signals = (real_existing + new)[-200:] if (real_existing or new) else existing
+    all_signals = merged[-200:] if merged else existing
     (DATA / 'signals.json').write_text(json.dumps(all_signals, ensure_ascii=False, indent=2))
 
-    print(f'raw={len(raw)} screened={len(screened)} candidates={len(candidates)} rejected={len(rejected)} published_new={len(new)} total={len(all_signals)}')
+    print(f'raw={len(raw)} screened={len(screened)} candidates={len(candidates)} rejected={len(rejected)} published_new={len(new)} updated_existing={len(updated)} unchanged={unchanged} total={len(all_signals)}')
 
 if __name__ == '__main__':
     main()

@@ -40,68 +40,76 @@ class TextExtractor(HTMLParser):
         if self.in_title: self.title += ' ' + value
         else: self.parts.append(value)
 
-def fetch(url):
-    last = None
-    for attempt in range(RETRIES + 1):
-        try:
-            req = Request(url, headers={'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml'})
-            with urlopen(req, timeout=TIMEOUT) as r:
-                return r.read(), r.headers.get('Content-Type',''), r.status
-        except (HTTPError, URLError, TimeoutError, OSError) as exc:
-            last = exc
-            if attempt < RETRIES: time.sleep(1.2 * (attempt + 1))
-    raise last
+class TableExtractor(HTMLParser):
+    """Extract simple HTML tables while preserving row/column structure."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_table = False
+        self.in_row = False
+        self.in_cell = False
+        self.rows = []
+        self.current = []
+        self.cell = []
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag == 'table': self.in_table = True
+        elif self.in_table and tag == 'tr':
+            self.in_row = True; self.current = []
+        elif self.in_row and tag in ('td','th'):
+            self.in_cell = True; self.cell = []
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if tag in ('td','th') and self.in_cell:
+            self.current.append(re.sub(r'\s+', ' ', ' '.join(self.cell)).strip())
+            self.in_cell = False
+        elif tag == 'tr' and self.in_row:
+            if self.current: self.rows.append(self.current)
+            self.in_row = False
+        elif tag == 'table':
+            self.in_table = False
+    def handle_data(self, data):
+        if self.in_cell: self.cell.append(data.strip())
 
-def clean_text(body):
-    parser = TextExtractor(); parser.feed(body.decode('utf-8', errors='replace'))
-    text = re.sub(r'\s+', ' ', ' '.join(parser.parts)).strip()
-    return text, re.sub(r'\s+', ' ', parser.title).strip()
+def extract_price_table_facts(body):
+    """Extract economic price movements from tables with a rate/change column.
 
-def sentences(text):
-    return [s.strip() for s in re.split(r'(?<=[.!?。！？])\s+', text) if len(s.strip()) >= 30]
-
-def parse_number(token):
-    try: return float(token.replace(',',''))
-    except: return None
-
-def extract_facts(text):
+    Percentages inside product names/specifications are ignored. Only values
+    belonging to a column whose header denotes an economic rate/change are
+    treated as movements.
+    """
+    parser = TableExtractor(); parser.feed(body.decode('utf-8', errors='replace'))
     facts = []
-    # Percentages and percentage-point changes.
-    pat = re.compile(r'(?P<num>[+-]?\d+(?:,\d{3})*(?:\.\d+)?)\s*(?P<pct>%|percent|percentage points?)', re.I)
-    for m in pat.finditer(text):
-        sentence = next((s for s in sentences(text) if m.group(0) in s), '')
-        if sentence:
-            facts.append({'value': m.group('num'), 'unit': m.group('pct'), 'text': sentence[:500]})
-    # Currency/large-number figures, e.g. 28.77 trillion yuan / RMB 1.2 trillion.
-    pat2 = re.compile(r'(?P<currency>RMB|CNY|yuan|¥|US\$|USD|dollars?)?\s*(?P<num>\d+(?:,\d{3})*(?:\.\d+)?)\s*(?P<scale>trillion|billion|million|万亿元|亿元|million yuan|billion yuan|trillion yuan)', re.I)
-    for m in pat2.finditer(text):
-        sentence = next((s for s in sentences(text) if m.group(0) in s), '')
-        if sentence:
-            facts.append({'value': m.group('num'), 'unit': (m.group('currency') or '').strip() + ' ' + m.group('scale'), 'text': sentence[:500]})
-    # Index values such as PMI 49.8 or index at 102.4.
-    pat3 = re.compile(r'\b(?P<label>PMI|index|index of)\b[^.]{0,80}?\b(?P<num>\d+(?:\.\d+)?)\b', re.I)
-    for m in pat3.finditer(text):
-        sentence = next((s for s in sentences(text) if m.group(0) in s), '')
-        if sentence:
-            facts.append({'value': m.group('num'), 'unit': m.group('label'), 'text': sentence[:500]})
-    # Deduplicate exact fact sentences.
+    rate_re = re.compile(r'^[+-]?\d+(?:\.\d+)?$')
+    for header_i, header in enumerate(parser.rows):
+        headers = [c.lower() for c in header]
+        rate_idx = next((i for i,c in enumerate(headers) if ('±rate' in c or 'rate (%)' in c or ('rate' in c and '%' in c) or 'change rate' in c)), None)
+        if rate_idx is None: continue
+        # Rows after this header are data until another header-like row.
+        for row in parser.rows[header_i + 1:]:
+            if len(row) <= rate_idx: continue
+            if any(str(c).lower() == 'products' for c in row): break
+            value = row[rate_idx].replace('%','').strip()
+            if not rate_re.match(value): continue
+            name = row[0].strip() if row else ''
+            if not name or name.lower() in ('products','product','items'): continue
+            unit = row[1].strip() if len(row) > 1 else ''
+            current = row[2].strip() if len(row) > 2 else ''
+            change = row[3].strip() if len(row) > 3 else ''
+            facts.append({
+                'value': value,
+                'unit': '% economic price movement',
+                'text': f'{name} {unit} current price {current}; price change over previous period {change}; rate {value}%.',
+                'source_kind': 'structured_table',
+                'product': name,
+                'current_price': current,
+                'price_change': change,
+            })
+        break
     out=[]; seen=set()
     for f in facts:
-        key=(f['value'],f['unit'],f['text'])
+        key=(f['product'], f['value'])
         if key not in seen: seen.add(key); out.append(f)
-    return out[:30]
-
-def find_relevant_sentences(title, text, max_sent=8):
-    ss = sentences(text)
-    keys = [k.lower() for k in re.findall(r'[A-Za-z]{4,}', title)]
-    scored=[]
-    for s in ss:
-        low=s.lower(); score=0
-        if '%' in s or re.search(r'\b(trillion|billion|million|yuan|rmb|index|pmi)\b', low): score += 4
-        score += sum(1 for k in keys if k in low)
-        if re.search(r'year on year|year-over-year|yoy|month on month|compared with|increased|decreased|rose|fell|growth|decline|up |down ', low): score += 3
-        scored.append((score,s))
-    return [s for _,s in sorted(scored, reverse=True)[:max_sent]]
+    return out
 
 def synthesize(item):
     result = dict(item)
@@ -112,6 +120,10 @@ def synthesize(item):
         if len(text) < 300:
             raise ValueError('source page yielded insufficient text')
         facts = extract_facts(text)
+        table_facts = extract_price_table_facts(body)
+        # Structured table facts take precedence over free-text percentages.
+        if table_facts:
+            facts = table_facts + [f for f in facts if f.get('source_kind') != 'structured_table']
         rel = find_relevant_sentences(item.get('title',''), text)
         result['source_content'] = {
             'status': 'fetched', 'http_status': status, 'content_type': ctype,
@@ -126,7 +138,11 @@ def synthesize(item):
 
 def choose_facts(item):
     facts=item.get('source_content',{}).get('facts',[])
-    # Prefer percentages, then monetary/scale figures, then index values.
+    structured=[f for f in facts if f.get('source_kind') == 'structured_table']
+    if structured:
+        # Rank table movements by absolute rate, not by incidental product-spec percentages.
+        structured = sorted(structured, key=lambda f: abs(float(f['value'])), reverse=True)
+        return structured[:8]
     pct=[f for f in facts if '%' in f['unit'].lower() or 'percent' in f['unit'].lower()]
     other=[f for f in facts if f not in pct]
     return (pct + other)[:8]
@@ -158,6 +174,8 @@ def build_signal_fields(item):
         headline = 'China property investment remains a drag on domestic activity'
     elif 'new economic growth drivers' in title.lower():
         headline = 'China reports continued expansion of its new growth drivers'
+    elif any(f.get('source_kind') == 'structured_table' for f in facts):
+        headline = 'China production-input prices show mixed movement'
     elif pct_values:
         v=pct_values[0]
         headline=f'{title.split(" from ")[0].strip()} shows a {v:g}% movement'
@@ -182,7 +200,13 @@ def build_signal_fields(item):
         data_points.append({'value':f['value'],'unit':f['unit'],'context':f['text'][:300]})
 
     # Conservative interpretation: distinguish observed movement from inferred implication.
-    if pct_values and any(v < 1 for v in pct_values):
+    if any(f.get('source_kind') == 'structured_table' for f in facts):
+        moves = [float(f['value']) for f in facts if f.get('source_kind') == 'structured_table']
+        rising = sum(v > 0 for v in moves); falling = sum(v < 0 for v in moves)
+        interpretation = (
+            f'The table shows mixed price movement across production inputs, with {rising} tracked items rising and {falling} falling over the previous period. The largest movements in the extracted sample are concentrated in selected products rather than indicating a uniform price trend.'
+        )
+    elif pct_values and any(v < 1 for v in pct_values):
         interpretation='The latest data point indicates limited momentum in the measured activity, although individual subcategories may be performing differently.'
     elif any(v < 50 for v in pct_values):
         interpretation='The reported movement points to weaker conditions in the measured activity relative to a stronger growth environment.'
@@ -190,5 +214,8 @@ def build_signal_fields(item):
         interpretation='The latest release provides a current measure of economic activity and shows how performance is evolving across the reported period or categories.'
 
     sector=', '.join(item.get('sectors',['Other'])[:3]).lower()
-    canadian=f'The source does not explicitly establish a Canada-specific effect. For Canadian businesses in {sector}, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.'
+    if any(f.get('source_kind') == 'structured_table' for f in facts):
+        canadian='The release does not establish a direct Canada-specific effect. For Canadian businesses exposed to Chinese industrial inputs, commodities or supply chains, the data is a watchpoint for changes in input costs, supplier pricing and procurement conditions.'
+    else:
+        canadian=f'The source does not explicitly establish a Canada-specific effect. For Canadian businesses in {sector}, the data is a watchpoint because changes in Chinese demand, production, investment or pricing can affect market conditions, suppliers and competitive dynamics.'
     return headline, what, interpretation, data_points, canadian

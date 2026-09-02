@@ -1,6 +1,7 @@
 [
   {"name":"Government of Canada — News","url":"https://www.canada.ca/en/news/web-feeds.html","feed_url":"https://www.canada.ca/en/news.atom.xml","source_type":"Primary source","country":"Canada","enabled":true},
   {"name":"Global Affairs Canada — News","url":"https://www.canada.ca/en/global-affairs/news.html","feed_url":"https://www.canada.ca/en/global-affairs/news.atom.xml","source_type":"Primary source","country":"Canada","enabled":true},
+  {"name":"National Bureau of Statistics of China — Latest Releases","url":"https://www.stats.gov.cn/english/PressRelease/","feed_url":"https://www.stats.gov.cn/english/PressRelease/rss.xml","source_type":"Primary source","country":"China","enabled":true},
   {"name":"WTO — News","url":"https://www.wto.org/english/news_e/news_e.htm","feed_url":"https://www.wto.org/library/rss/news_e.xml","source_type":"Primary source","country":"International","enabled":true},
   {"name":"IMF — News","url":"https://www.imf.org/en/News","feed_url":"https://www.imf.org/en/News/rss","source_type":"Primary source","country":"International","enabled":true},
   {"name":"OECD — News","url":"https://www.oecd.org/en/about/news.html","feed_url":"https://www.oecd.org/newsroom/rss.xml","source_type":"Primary source","country":"International","enabled":true},

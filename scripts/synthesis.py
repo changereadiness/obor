@@ -63,6 +63,20 @@ class TextExtractor(HTMLParser):
         if self.in_title: self.title += ' ' + value
         else: self.parts.append(value)
 
+def clean_text(body):
+    """Extract readable page text and HTML title from an HTML response."""
+    if isinstance(body, bytes):
+        source = body.decode('utf-8', errors='replace')
+    else:
+        source = str(body)
+    parser = TextExtractor()
+    parser.feed(source)
+    parser.close()
+    text = re.sub(r'\n{3,}', '\n\n', '\n'.join(parser.parts))
+    text = re.sub(r'[ \t]+', ' ', text)
+    return text.strip(), re.sub(r'\s+', ' ', parser.title).strip()
+
+
 class TableExtractor(HTMLParser):
     """Extract simple HTML tables while preserving row/column structure."""
     def __init__(self):

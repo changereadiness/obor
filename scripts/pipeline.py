@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 15
+SYNTHESIS_VERSION = 16
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,

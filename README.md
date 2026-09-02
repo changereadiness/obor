@@ -103,3 +103,8 @@ v9 adds a synthesis layer between screening and publication. Screened source pag
 - Production-input price releases use the 50-product movement distribution for interpretation rather than the extracted sample.
 - Synthesized sectors are based on the economic subject rather than generic supply-chain keywords.
 - Canadian relevance distinguishes observed facts from conditional business implications.
+
+## V19 — Semantic observations + editorial separation
+V19 replaces flattened-text economic inference with a source-agnostic semantic table layer. HTML tables are reconstructed with rowspan/colspan support, header paths are preserved, columns are typed (growth, price change, absolute value, volume, index, etc.), and validated observations are stored explicitly before synthesis.
+
+Editorial fields are now separated by job: Summary explains why the signal matters; Canadian Relevance explains the Canadian implication; What Happened is factual bullets; Key Data contains concise validated statistics; What the Data Shows contains the deterministic interpretation. Headlines are constrained to the measured phenomenon rather than inferred concepts.

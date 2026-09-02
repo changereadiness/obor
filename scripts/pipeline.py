@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 18
+SYNTHESIS_VERSION = 19
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -349,7 +349,7 @@ def main():
             # Preserve the existing valid signal if the source is temporarily
             # unavailable or the new extractor cannot establish evidence.
             continue
-        headline, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors = build_signal_fields(rebuilt)
+        headline, summary, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors = build_signal_fields(rebuilt)
         sector_text = ', '.join(synthesized_sectors[:3]).lower()
         if rebuilt.get('evidence', {}).get('canada_terms'):
             canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
@@ -359,7 +359,7 @@ def main():
         updated_signal.update({
             'title': headline,
             'slug': make_slug(rebuilt.get('title', existing_signal.get('title', 'signal'))),
-            'summary': re.sub(r'\s+', ' ', what_happened).strip()[:420],
+            'summary': summary,
             'what_happened': what_happened,
             'interpretation': interpretation,
             'key_data': data_points,
@@ -399,8 +399,8 @@ def main():
             continue
 
         sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
-        headline, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors = build_signal_fields(x)
-        summary = re.sub(r'\s+', ' ', what_happened).strip()[:420]
+        headline, summary, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors = build_signal_fields(x)
+        summary = summary
         sector_text = ', '.join(synthesized_sectors[:3]).lower()
         if x['evidence']['canada_terms']:
             canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
@@ -433,6 +433,7 @@ def main():
             'evidence': x['evidence'],
             'synthesis': x.get('source_content', {}),
             'synthesis_version': SYNTHESIS_VERSION,
+            'observations': x.get('source_content', {}).get('observations', []),
         }
         signal.update(overrides.get('items', {}).get(sid, {}))
         new.append(signal)

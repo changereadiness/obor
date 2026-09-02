@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-09-01T07:51:48.098457+00:00",
+  "collected_at": "2026-09-02T03:33:46.982638+00:00",
   "items": 0,
   "errors": [
     {
@@ -11,6 +11,11 @@
       "source": "Global Affairs Canada \u2014 News",
       "feed_url": "https://www.canada.ca/en/global-affairs/news.atom.xml",
       "error": "syntax error: line 2, column 0"
+    },
+    {
+      "source": "National Bureau of Statistics of China \u2014 Latest Releases",
+      "feed_url": "https://www.stats.gov.cn/english/PressRelease/rss.xml",
+      "error": "mismatched tag: line 6514, column 2"
     },
     {
       "source": "WTO \u2014 News",

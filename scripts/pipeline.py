@@ -44,10 +44,15 @@ SECTORS = {
 CHINA = ['china','chinese','beijing','shanghai','shenzhen','guangzhou','prc','mainland china']
 CANADA = ['canada','canadian','ottawa','toronto','vancouver','montreal','alberta','quebec','british columbia','ontario','canadian exporter','canadian importer']
 COMMERCIAL = ['business','company','companies','export','exports','import','imports','investment','supplier','manufacturer','market','industry','trade','tariff','production','demand','sales','cost','price','sourcing','procurement']
+ECONOMIC_SIGNALS = ['pmi','purchasing managers','industrial production','industrial output','retail sales','fixed asset investment','fixed investment','property investment','real estate investment','consumer prices','producer prices','cpi','ppi','employment','unemployment','gdp','gross domestic product','industrial profits','foreign trade','trade surplus','trade deficit','services production','manufacturing activity','economic activity','business activity','new orders','factory activity','capacity utilization','investment growth','sales growth','output growth']
 
 OPPORTUNITY = ['access','open','opens','growth','increase','support','reduce','agreement','demand','recovery','investment','approve','approval','ease','easing','expand','expands','export growth']
 RISK = ['tariff','restriction','ban','sanction','decline','disruption','shortage','weakness','cut','cuts','uncertainty','investigation','compliance burden','barrier','limit','limits','slowdown','contraction']
 FACT_VERBS = ['announces','announced','reports','reported','raises','raised','cuts','cut','falls','fell','rises','rose','approves','approved','launches','launched','changes','changed','expands','expanded','restricts','restricted','opens','opened','closes','closed','increases','increased','decreases','decreased','issues','issued','releases','released']
+
+SOURCE_CONTEXT = {
+    'National Bureau of Statistics of China — Latest Releases': 'China',
+}
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -89,6 +94,8 @@ def classify_direction(text):
 def analyze(item):
     text = norm(item.get('title','') + ' ' + item.get('description',''))
     china_hits = unique_terms(text, CHINA)
+    if not china_hits and SOURCE_CONTEXT.get(item.get('source')) == 'China':
+        china_hits = ['[source: China]']
     canada_hits = unique_terms(text, CANADA)
     categories = [c for c in CATEGORIES if count_terms(text, CATEGORIES[c])]
     categories = categories[:3] or ['Markets']
@@ -97,6 +104,7 @@ def analyze(item):
     opp_hits = unique_terms(text, OPPORTUNITY)
     risk_hits = unique_terms(text, RISK)
     commercial_hits = unique_terms(text, COMMERCIAL)
+    economic_hits = unique_terms(text, ECONOMIC_SIGNALS)
     fact_hits = unique_terms(text, FACT_VERBS)
     direction = classify_direction(text)
 
@@ -113,13 +121,14 @@ def analyze(item):
     canada_evidence = min(25, len(canada_hits) * 8)
     china_evidence = min(15, len(china_hits) * 5)
     commercial_evidence = min(15, len(commercial_hits) * 2)
+    economic_evidence = min(12, len(economic_hits) * 3)
     sector_evidence = min(10, len(sectors) * 3)
     category_evidence = min(10, len(categories) * 3)
     recency_evidence = 5 if item.get('published_at') else 0
     fact_evidence = 5 if fact_hits else 0
 
     # Conservative score: Canadian evidence carries the most weight.
-    score = min(100, 20 + source_bonus + canada_evidence + china_evidence + commercial_evidence + sector_evidence + category_evidence + recency_evidence + fact_evidence)
+    score = min(100, 20 + source_bonus + canada_evidence + china_evidence + commercial_evidence + economic_evidence + sector_evidence + category_evidence + recency_evidence + fact_evidence)
 
     confidence = min(95, 40 + source_bonus // 2 + (15 if fact_hits else 0) + (10 if item.get('published_at') else 0) + (10 if china_hits else 0) + (10 if item.get('url') else 0))
     if item.get('source_type') == 'Secondary reporting':
@@ -149,6 +158,7 @@ def analyze(item):
             'china_terms': china_hits,
             'canada_terms': canada_hits,
             'commercial_terms': commercial_hits[:12],
+            'economic_terms': economic_hits[:12],
             'opportunity_terms': opp_hits[:8],
             'risk_terms': risk_hits[:8],
             'fact_terms': fact_hits[:8],
@@ -161,9 +171,17 @@ def candidate(item):
     text = norm(title + ' ' + item.get('description',''))
     if len(title) < 18:
         return False, 'title_too_short'
-    if not any(term in text for term in CHINA):
+    source_is_china = SOURCE_CONTEXT.get(item.get('source')) == 'China'
+    if not source_is_china and not any(term in text for term in CHINA):
         return False, 'no_china_signal'
-    if not any(term in text for term in COMMERCIAL + ['economy','economic','policy','industry','manufacturing','market']):
+    economic_hit = any(term in text for term in ECONOMIC_SIGNALS)
+    business_hit = any(term in text for term in COMMERCIAL + ['economy','economic','policy','industry','manufacturing','market'])
+    # Official statistical releases are intrinsically economic/business material.
+    # Source provenance supplies the China context, while the release title supplies
+    # the economic signal. This prevents titles such as 'Purchasing Managers Index'
+    # or 'Industrial Production' from being discarded simply because they don't say
+    # 'China' or use generic commercial vocabulary.
+    if not business_hit and not economic_hit:
         return False, 'low_business_relevance'
     return True, None
 
@@ -192,8 +210,13 @@ def main():
 
     screened.sort(key=lambda x: (x['relevance_score'], x['confidence_score'], x.get('published_at') or ''), reverse=True)
     candidates = screened[:50]
+    rejection_counts = {}
+    for r in rejected:
+        rejection_counts[r['reason']] = rejection_counts.get(r['reason'], 0) + 1
     (RAW / 'candidates.json').write_text(json.dumps(candidates, ensure_ascii=False, indent=2))
     (RAW / 'rejections.json').write_text(json.dumps(rejected, ensure_ascii=False, indent=2))
+    (RAW / 'screening_summary.json').write_text(json.dumps({'raw': len(raw), 'screened': len(screened), 'candidates': len(candidates), 'rejected': len(rejected), 'rejection_reasons': rejection_counts}, ensure_ascii=False, indent=2))
+    print('screening_rejections=' + json.dumps(rejection_counts, sort_keys=True))
 
     existing = json.loads((DATA / 'signals.json').read_text()) if (DATA / 'signals.json').exists() else []
     existing_urls = {s.get('source_url') for s in existing if s.get('source_url')}
@@ -212,7 +235,7 @@ def main():
         strong_china_signal = (
             x['evidence']['china_terms']
             and x['source_type'] in ('Primary source', 'Secondary / institutional context')
-            and len(x['evidence']['commercial_terms']) >= 2
+            and (len(x['evidence']['commercial_terms']) >= 2 or len(x['evidence'].get('economic_terms', [])) >= 1)
             and x['sectors'] != ['Other']
         )
         if not x['evidence']['canada_terms'] and not strong_china_signal:

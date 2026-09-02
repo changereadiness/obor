@@ -1,6 +1,6 @@
-## V11 — Re-synthesis of existing signals
+## V12 — Runtime re-synthesis of existing signals
 
-V11 reprocesses previously published signals when the synthesis engine version changes. Existing valid signals are replaced by improved evidence-backed versions; failed re-fetches preserve the prior signal. Each published signal records `synthesis_version`.
+V12 reprocesses previously published signals when the synthesis engine version changes. Existing valid signals are replaced by improved evidence-backed versions; failed re-fetches preserve the prior signal. Each published signal records `synthesis_version`.
 
 # OBOR.ca
 

@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 11
+SYNTHESIS_VERSION = 12
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -234,6 +234,66 @@ def main():
     new = []
     updated = []
     unchanged = 0
+
+    # Re-synthesize every already-published real signal directly from the
+    # checked-out repository state. Existing signals must not depend on the
+    # current screening rank or publication gate: they were already admitted
+    # by an earlier version of the engine. This makes synthesis upgrades
+    # deterministic and independent of package-time generated data.
+    raw_by_url = {item.get('url'): item for item in raw if item.get('url')}
+    for existing_signal in real_existing:
+        if existing_signal.get('synthesis_version') == SYNTHESIS_VERSION:
+            unchanged += 1
+            continue
+        source_url = existing_signal.get('source_url')
+        base = dict(raw_by_url.get(source_url, {}))
+        if not base:
+            base = {
+                'url': source_url,
+                'title': existing_signal.get('title', ''),
+                'description': existing_signal.get('summary', ''),
+                'published_at': existing_signal.get('event_date') or existing_signal.get('published_at'),
+                'source': existing_signal.get('source', ''),
+                'source_type': existing_signal.get('source_type', 'Primary source'),
+                'categories': existing_signal.get('categories', []),
+                'sectors': existing_signal.get('sectors', ['Other']),
+                'direction': existing_signal.get('direction', 'Global → Canada/China'),
+                'evidence': existing_signal.get('evidence', {}),
+                'relevance_score': existing_signal.get('relevance_score', 0),
+                'confidence_score': existing_signal.get('confidence_score', 0),
+                'opportunity_or_risk': existing_signal.get('opportunity_or_risk', 'WATCH'),
+            }
+        else:
+            base = analyze(base)
+        rebuilt = synthesize(base)
+        if rebuilt.get('synthesis_status') != 'evidence_available':
+            # Preserve the existing valid signal if the source is temporarily
+            # unavailable or the new extractor cannot establish evidence.
+            continue
+        headline, what_happened, interpretation, data_points, synthesized_canadian = build_signal_fields(rebuilt)
+        sector_text = ', '.join(rebuilt.get('sectors', existing_signal.get('sectors', ['Other']))[:3]).lower()
+        if rebuilt.get('evidence', {}).get('canada_terms'):
+            canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
+        else:
+            canadian = f"The source does not explicitly mention Canada. For Canadian businesses in {sector_text}, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics."
+        updated_signal = dict(existing_signal)
+        updated_signal.update({
+            'title': headline,
+            'slug': make_slug(rebuilt.get('title', existing_signal.get('title', 'signal'))),
+            'summary': re.sub(r'\s+', ' ', what_happened).strip()[:420],
+            'what_happened': what_happened,
+            'interpretation': interpretation,
+            'key_data': data_points,
+            'canadian_relevance': synthesized_canadian if synthesized_canadian else canadian,
+            'source_url': source_url,
+            'source_type': rebuilt.get('source_type', existing_signal.get('source_type')),
+            'synthesis': rebuilt.get('source_content', {}),
+            'synthesis_version': SYNTHESIS_VERSION,
+            'evidence': rebuilt.get('evidence', existing_signal.get('evidence', {})),
+        })
+        updated.append(updated_signal)
+
+    updated_ids = {s.get('id') for s in updated}
     for x in candidates:
         # Publication gate: conservative and intentionally deterministic.
         if x['source'] in suppressed_sources:
@@ -254,11 +314,11 @@ def main():
         if not x['evidence']['canada_terms'] and not strong_china_signal:
             continue
         existing_signal = existing_by_url.get(x['url'])
-        if existing_signal and existing_signal.get('synthesis_version') == SYNTHESIS_VERSION:
-            unchanged += 1
+        # Existing real signals were handled in the dedicated re-synthesis pass above.
+        if existing_signal:
             continue
 
-        sid = existing_signal.get('id') if existing_signal else 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
+        sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
         headline, what_happened, interpretation, data_points, synthesized_canadian = build_signal_fields(x)
         summary = re.sub(r'\s+', ' ', what_happened).strip()[:420]
         sector_text = ', '.join(x['sectors'][:3]).lower()
@@ -294,10 +354,7 @@ def main():
             'synthesis_version': SYNTHESIS_VERSION,
         }
         signal.update(overrides.get('items', {}).get(sid, {}))
-        if existing_signal:
-            updated.append(signal)
-        else:
-            new.append(signal)
+        new.append(signal)
 
     # Replace re-synthesized existing signals by id, while preserving any
     # previously valid signal whose new source fetch/evidence extraction failed.

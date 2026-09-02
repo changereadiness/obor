@@ -1,0 +1,10 @@
+{
+  "raw": 34,
+  "screened": 14,
+  "candidates": 14,
+  "rejected": 20,
+  "rejection_reasons": {
+    "no_china_signal": 19,
+    "low_business_relevance": 1
+  }
+}

@@ -76,59 +76,7 @@
     "reason": "no_china_signal"
   },
   {
-    "id": "raw-3ff98e23790f08637a4d",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-357cd178eb55899a72b1",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-4adffd44dd7b17757c2c",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-f5398e022e7cb073cd91",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-a6d4fc97ed68e5754537",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-21ef95ddb5ec5f7b8ceb",
-    "reason": "no_china_signal"
-  },
-  {
     "id": "raw-69faaadfd25418844122",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-0236214602e4fbe70363",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-61e15fde106f6531aee9",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-6ec66895352b5aed42e5",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-932fbaa22edabd380b2d",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-489ffc3f96e70deb48b3",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-23afc74dd439c69ef0fe",
-    "reason": "no_china_signal"
-  },
-  {
-    "id": "raw-e5055e3964481f24a104",
-    "reason": "no_china_signal"
+    "reason": "low_business_relevance"
   }
 ]

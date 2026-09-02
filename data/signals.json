@@ -1,95 +1,228 @@
 [
   {
-    "id": "demo-001",
-    "title": "Illustrative signal: China expands support for advanced manufacturing",
-    "slug": "china-advanced-manufacturing-support",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.gov.cn/",
+    "id": "sig-588605b7c402",
+    "title": "4.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+    "slug": "4-market-prices-of-important-means-of-production-in-circulation-august-11-20-202",
+    "published_at": "2026-09-02",
+    "event_date": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260821_1965094.html",
     "source_type": "Primary source",
-    "summary": "Demo record showing how an economic-policy development can be translated into a Canadian business signal.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian manufacturers, equipment suppliers and technology companies may need to monitor how industrial-policy support changes Chinese production capacity and competitive conditions.",
+    "summary": "4.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+    "what_happened": "4.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+    "canadian_relevance": "The source does not explicitly mention Canada. For Canadian businesses in logistics & transportation, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 86,
-    "confidence_score": 20,
+    "relevance_score": 75,
+    "confidence_score": 75,
     "sectors": [
-      "Manufacturing",
-      "Machinery & Equipment",
-      "Technology"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Policy",
-      "Industry"
+      "Trade",
+      "Markets",
+      "Supply Chain"
     ],
     "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   },
   {
-    "id": "demo-002",
-    "title": "Illustrative signal: Chinese logistics activity changes regional supply conditions",
-    "slug": "china-logistics-supply-conditions",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.stats.gov.cn/",
+    "id": "sig-7c0f8b412848",
+    "title": "15.Market Prices of Important Means of Production in Circulation, July 21-31, 2026",
+    "slug": "15-market-prices-of-important-means-of-production-in-circulation-july-21-31-2026",
+    "published_at": "2026-09-02",
+    "event_date": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html",
     "source_type": "Primary source",
-    "summary": "Demo record for a supply-chain signal that would connect Chinese logistics conditions to Canadian sourcing and transportation exposure.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Canadian importers and supply-chain teams could be affected through lead times, freight conditions, sourcing decisions and supplier reliability.",
+    "summary": "15.Market Prices of Important Means of Production in Circulation, July 21-31, 2026",
+    "what_happened": "15.Market Prices of Important Means of Production in Circulation, July 21-31, 2026",
+    "canadian_relevance": "The source does not explicitly mention Canada. For Canadian businesses in logistics & transportation, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 79,
-    "confidence_score": 20,
+    "relevance_score": 75,
+    "confidence_score": 75,
     "sectors": [
-      "Logistics & Transportation",
-      "Manufacturing",
-      "Consumer Goods"
+      "Logistics & Transportation"
     ],
     "categories": [
-      "Supply Chain",
-      "Markets"
+      "Trade",
+      "Markets",
+      "Supply Chain"
     ],
-    "direction": "China → Canada",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   },
   {
-    "id": "demo-003",
-    "title": "Illustrative signal: Chinese demand shifts create an export-market watchpoint",
-    "slug": "china-demand-export-watchpoint",
-    "published_at": "2026-09-01",
-    "event_date": "2026-09-01",
-    "source": "Illustrative / demo content",
-    "source_url": "https://www.wto.org/",
-    "source_type": "Secondary / institutional context",
-    "summary": "Demo record for a market-demand signal relevant to Canadian exporters and commodity-linked businesses.",
-    "what_happened": "This is placeholder content for the first visual build. Replace it with a verified source record when the ingestion pipeline is connected.",
-    "canadian_relevance": "Changes in Chinese demand can affect Canadian exporters through market access, commodity demand, pricing and competitive conditions.",
+    "id": "sig-d955a0f9dca8",
+    "title": "12.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+    "slug": "12-market-prices-of-important-means-of-production-in-circulation-august-1-10-202",
+    "published_at": "2026-09-02",
+    "event_date": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260813_1965026.html",
+    "source_type": "Primary source",
+    "summary": "12.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+    "what_happened": "12.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+    "canadian_relevance": "The source does not explicitly mention Canada. For Canadian businesses in logistics & transportation, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics.",
     "opportunity_or_risk": "WATCH",
-    "relevance_score": 74,
-    "confidence_score": 20,
+    "relevance_score": 75,
+    "confidence_score": 75,
     "sectors": [
-      "Agriculture & Food",
-      "Energy",
-      "Mining & Critical Minerals"
+      "Logistics & Transportation"
+    ],
+    "categories": [
+      "Trade",
+      "Markets",
+      "Supply Chain"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "import",
+        "market",
+        "production",
+        "price"
+      ],
+      "economic_terms": [],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
+  },
+  {
+    "id": "sig-370d277e832d",
+    "title": "8.Total Retail Sales of Consumer Goods from January to July 2026",
+    "slug": "8-total-retail-sales-of-consumer-goods-from-january-to-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965078.html",
+    "source_type": "Primary source",
+    "summary": "8.Total Retail Sales of Consumer Goods from January to July 2026.",
+    "what_happened": "8.Total Retail Sales of Consumer Goods from January to July 2026.",
+    "canadian_relevance": "The source does not explicitly mention Canada. For Canadian businesses in technology, consumer goods, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 69,
+    "confidence_score": 75,
+    "sectors": [
+      "Technology",
+      "Consumer Goods"
+    ],
+    "categories": [
+      "Markets"
+    ],
+    "direction": "Global → Canada/China",
+    "entities": [
+      "China"
+    ],
+    "related_signals": [],
+    "status": "published",
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "sales"
+      ],
+      "economic_terms": [
+        "retail sales"
+      ],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
+  },
+  {
+    "id": "sig-bc93d4ec061e",
+    "title": "5.Industrial Production Operation in July 2026",
+    "slug": "5-industrial-production-operation-in-july-2026",
+    "published_at": "2026-09-02",
+    "event_date": null,
+    "source": "National Bureau of Statistics of China — Latest Releases",
+    "source_url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260818_1965071.html",
+    "source_type": "Primary source",
+    "summary": "5.Industrial Production Operation in July 2026.",
+    "what_happened": "5.Industrial Production Operation in July 2026.",
+    "canadian_relevance": "The source does not explicitly mention Canada. For Canadian businesses in manufacturing, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics.",
+    "opportunity_or_risk": "WATCH",
+    "relevance_score": 69,
+    "confidence_score": 75,
+    "sectors": [
+      "Manufacturing"
     ],
     "categories": [
       "Markets",
       "Macroeconomics"
     ],
-    "direction": "Canada → China",
+    "direction": "Global → Canada/China",
     "entities": [
       "China"
     ],
     "related_signals": [],
-    "status": "demo"
+    "status": "published",
+    "evidence": {
+      "china_terms": [
+        "[source: China]"
+      ],
+      "canada_terms": [],
+      "commercial_terms": [
+        "production"
+      ],
+      "economic_terms": [
+        "industrial production"
+      ],
+      "opportunity_terms": [],
+      "risk_terms": [],
+      "fact_terms": []
+    }
   }
 ]

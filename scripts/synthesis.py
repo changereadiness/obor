@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 
 RETRIES = 2
 TIMEOUT = 15
+MAX_SOURCE_BYTES = 5 * 1024 * 1024
 UA = 'Mozilla/5.0 (compatible; OBOR/0.9; +https://obor.ca/)'
 
 
@@ -75,6 +76,86 @@ def clean_text(body):
     text = re.sub(r'\n{3,}', '\n\n', '\n'.join(parser.parts))
     text = re.sub(r'[ \t]+', ' ', text)
     return text.strip(), re.sub(r'\s+', ' ', parser.title).strip()
+
+
+def _number_value(raw):
+    value = raw.replace(',', '').strip()
+    try:
+        return float(value)
+    except ValueError:
+        return None
+
+
+def extract_facts(text):
+    """Extract conservative numeric facts from readable source text.
+
+    This is deliberately generic: it only records values that are visibly
+    expressed as percentages, index readings, or currency/large-number
+    amounts. Structured tables are handled separately.
+    """
+    facts = []
+    seen = set()
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    patterns = [
+        (re.compile(r'([+-]?\d+(?:\.\d+)?)\s*%'), '%', '%'),
+        (re.compile(r'\bPMI\s*(?:was|stood at|came in at|registered)?\s*([0-9]+(?:\.[0-9]+)?)', re.I), 'index', 'PMI'),
+        (re.compile(r'(?:¥|CNY|RMB|yuan)\s*([0-9][0-9,]*(?:\.[0-9]+)?)\s*(trillion|billion|million|thousand)?', re.I), 'currency', 'CNY'),
+    ]
+    for sentence in sentences:
+        sentence = re.sub(r'\s+', ' ', sentence).strip()
+        if not sentence or len(sentence) < 12:
+            continue
+        for pattern, unit, label in patterns:
+            for m in pattern.finditer(sentence):
+                raw = m.group(1)
+                value = _number_value(raw)
+                if value is None:
+                    continue
+                # Ignore percentages that are plainly product specifications
+                # or composition values; the dedicated table parser handles
+                # economic rates when the source presents them in tables.
+                if unit == '%' and re.search(r'\b(?:content|purity|grade|concentration|composition|specification)\b', sentence, re.I):
+                    continue
+                key = (value, unit, sentence[:240])
+                if key in seen:
+                    continue
+                seen.add(key)
+                facts.append({
+                    'value': raw,
+                    'unit': unit,
+                    'text': sentence[:500],
+                    'source_kind': 'text',
+                    'label': label,
+                })
+                if len(facts) >= 30:
+                    return facts
+    return facts
+
+
+def find_relevant_sentences(title, text):
+    """Rank source sentences against the release title and economic vocabulary."""
+    sentences = [re.sub(r'\s+', ' ', s).strip() for s in re.split(r'(?<=[.!?])\s+', text)]
+    sentences = [s for s in sentences if len(s) >= 40]
+    title_terms = {t for t in re.findall(r'[a-zA-Z]{4,}', title.lower())
+                   if t not in {'from','january','february','march','april','may','june','july','august','september','october','november','december','china'}}
+    economic_terms = {
+        'growth','decline','increase','decrease','rose','fell','rising','falling','output',
+        'production','sales','investment','demand','price','prices','profit','profits','pmi',
+        'export','exports','import','imports','trade','market','manufacturing','consumption',
+        'activity','industrial','business','revenue','employment','unemployment','index'
+    }
+    scored = []
+    for idx, sentence in enumerate(sentences):
+        low = sentence.lower()
+        title_hits = sum(1 for term in title_terms if term in low)
+        econ_hits = sum(1 for term in economic_terms if term in low)
+        numeric = bool(re.search(r'\d', sentence))
+        movement = bool(re.search(r'\b(?:up|down|rose|fell|increased|decreased|grew|declined|growth|change|higher|lower)\b', low))
+        score = title_hits * 4 + econ_hits * 2 + (2 if numeric else 0) + (2 if movement else 0)
+        if score:
+            scored.append((score, -idx, sentence))
+    scored.sort(reverse=True)
+    return [s for _, _, s in scored[:8]]
 
 
 class TableExtractor(HTMLParser):

@@ -2,7 +2,7 @@
 
 **China Economic Intelligence for Canadian Business**
 
-OBOR is a static intelligence site backed by a structured signal store and an automated collection/classification pipeline.
+OBOR is a static intelligence site backed by a structured signal store and an automated, cost-free collection and analysis pipeline.
 
 ## Current architecture
 
@@ -15,13 +15,15 @@ deduplicate
       ↓
 deterministic China + business filter
       ↓
+evidence extraction
+      ↓
 category / sector / direction classification
       ↓
 Canadian relevance scoring
       ↓
-opportunity / risk / watch classification
+opportunity / risk / watch / neutral classification
       ↓
-quality gate
+conservative publication gate
       ↓
 structured signals.json
       ↓
@@ -30,33 +32,49 @@ static HTML generation
 GitHub Pages
 ```
 
-The AI boundary lives in `scripts/ai_adapter.py`. It is intentionally optional. The site does not require a paid model to collect, filter, score or publish.
+The AI boundary remains in `scripts/ai_adapter.py` but is deliberately unused. No paid model is required.
+
+## Deterministic intelligence principles
+
+The MVP is intentionally conservative. It should prefer missing a weak signal over publishing an unsupported one.
+
+A candidate must:
+
+- concern China;
+- contain a business/economic relevance cue;
+- have explicit Canadian relevance evidence;
+- meet minimum OBOR relevance and confidence thresholds;
+- pass the structured validation gate.
+
+Every accepted signal retains evidence terms used by the deterministic analyst so later AI analysis can inspect the same structured input.
+
+## Raw artifacts
+
+- `data/raw/items.json` — normalized source items
+- `data/raw/candidates.json` — highest-ranked candidates sent to the publication gate
+- `data/raw/rejections.json` — rejected candidates and reasons
+- `data/raw/ingest_log.json` — source collection results and errors
+
+## Human overrides
+
+`data/overrides.json` supports:
+
+- source suppression;
+- per-signal field overrides.
+
+The schema can later be expanded for verification status and editorial corrections without introducing an admin application.
 
 ## Run locally
-
-From the repository root:
 
 ```bash
 python scripts/run.py
 python scripts/validate.py
 ```
 
-`run.py` executes ingestion, processing and static generation.
-
-## Source configuration
-
-Edit `data/sources.json` to enable/disable feeds. `data/overrides.json` supports source suppression and per-signal overrides.
-
-Raw collection artifacts are written to `data/raw/` and are not treated as published intelligence until they pass the deterministic gate.
-
-## Publication rules
-
-The MVP will not manufacture a signal when no meaningful candidate is found. If collection fails, the last valid signal store is preserved. If no signals exist at all, the site can display a no-major-signals state rather than inventing content.
-
 ## Cost model
 
-Default infrastructure uses Python standard library + RSS/Atom + GitHub Actions + GitHub Pages. No paid API is required.
+The default system uses Python's standard library, RSS/Atom, GitHub Actions and GitHub Pages. There is no paid API dependency.
 
-## Next layer
+## Next upgrade
 
-The next upgrade is an optional AI analysis stage between deterministic candidate selection and publication. It should only receive the top candidates, return structured fields, and remain subject to the same validation gate.
+The deterministic analyst can later be replaced or augmented by an optional AI analyzer. The publication gate and validation layer should remain deterministic regardless of the intelligence provider.

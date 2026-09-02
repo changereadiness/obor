@@ -15,7 +15,7 @@ RAW=DATA/'raw'; RAW.mkdir(exist_ok=True)
 UA='OBOR/0.1 (+https://obor.ca; economic-intelligence feed collector)'
 
 def clean(s):
-    return re.sub(r'\\s+', ' ', re.sub(r'<[^>]+>', ' ', s or '')).strip()
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', s or '')).strip()
 
 def iso_date(value):
     if not value: return None

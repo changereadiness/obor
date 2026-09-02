@@ -1,3 +1,7 @@
+## V13 — Self-healing signal ledger
+
+V13 makes the published signal pages a recovery ledger. If `data/signals.json` is stale or reverted but real published signal pages remain under `signals/<slug>/`, the runtime pipeline reconstructs those records, re-fetches their source URLs, re-synthesizes them, and rewrites the canonical `data/signals.json`. The normal architecture remains `data/signals.json` → generated pages; page recovery exists only to survive deployment/package replacement. Demo pages are never recovered as real signals.
+
 ## V12 — Runtime re-synthesis of existing signals
 
 V12 reprocesses previously published signals when the synthesis engine version changes. Existing valid signals are replaced by improved evidence-backed versions; failed re-fetches preserve the prior signal. Each published signal records `synthesis_version`.

@@ -5,7 +5,7 @@ Stages: candidate screening -> evidence extraction -> classification -> scoring 
 conservative publication gate -> structured signal creation.
 No AI or paid service is required.
 """
-import hashlib, json, re
+import hashlib, json, re, html
 from synthesis import synthesize, build_signal_fields
 from datetime import datetime, timezone
 from pathlib import Path
@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 12
+SYNTHESIS_VERSION = 13
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -194,6 +194,77 @@ def make_slug(title):
     return slug[:80] or 'signal'
 
 
+def recover_published_signals(existing):
+    """Recover real published signals from signal pages when the canonical JSON
+    was lost or stale. The generated pages are treated as a recovery ledger,
+    never as the normal source of truth. This makes the pipeline self-healing
+    after a bad deployment/package replacement.
+    """
+    signals_dir = ROOT / 'signals'
+    if not signals_dir.exists():
+        return existing
+
+    recovered = {s.get('id'): s for s in existing if s.get('id')}
+    known_urls = {s.get('source_url') for s in existing if s.get('source_url')}
+
+    def text_between(body, start, end=None):
+        i = body.find(start)
+        if i < 0:
+            return ''
+        i += len(start)
+        j = body.find(end, i) if end else len(body)
+        return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', body[i:j]))).strip()
+
+    for page in signals_dir.glob('*/index.html'):
+        body = page.read_text(errors='ignore')
+        # Ignore the archive index and deliberately retained demo pages.
+        if 'Demo record. OBOR should not publish unverified records in production.' in body:
+            continue
+        m = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S | re.I)
+        if not m:
+            continue
+        title = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', m.group(1)))).strip()
+        if not title:
+            continue
+        sm = re.search(r'<p class="eyebrow">SUMMARY</p>\s*<p>(.*?)</p>', body, re.S | re.I)
+        summary = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', sm.group(1)))).strip() if sm else ''
+        src = re.search(r'<p class="eyebrow">SOURCE</p>.*?<a href="([^"]+)"', body, re.S | re.I)
+        source_url = html.unescape(src.group(1)) if src else ''
+        if not source_url or source_url in known_urls:
+            continue
+        meta = re.search(r'<div[^>]*>\s*<strong>OBOR relevance</strong>\s*(\d+)/100</span>\s*<span><strong>Confidence</strong>\s*(\d+)/100</span>\s*<span>(.*?)</span>', body, re.S | re.I)
+        relevance = int(meta.group(1)) if meta else 60
+        confidence = int(meta.group(2)) if meta else 60
+        cats = [x.strip() for x in re.sub(r'<[^>]+>', '', meta.group(3)).split('·')] if meta else ['Markets']
+        date_m = re.search(r'<p class="eyebrow">(OPPORTUNITY|RISK|WATCH|NEUTRAL)\s*·\s*([^<]+)</p>', body, re.I)
+        classification = date_m.group(1).upper() if date_m else 'WATCH'
+        event_date = date_m.group(2).strip() if date_m else None
+        # Recover section text where available.
+        def section(label):
+            pat = rf'<p class="eyebrow">{re.escape(label)}</p>\s*<p>(.*?)</p>'
+            mm = re.search(pat, body, re.S | re.I)
+            return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', mm.group(1)))).strip() if mm else ''
+        canadian = section('CANADIAN RELEVANCE')
+        what = section('WHAT HAPPENED')
+        interp = section('WHAT THE DATA SHOWS')
+        sec_text = section('SECTORS')
+        sectors = [x.strip() for x in sec_text.split('·') if x.strip()] or ['Other']
+        sid = 'sig-' + hashlib.sha1(source_url.encode()).hexdigest()[:12]
+        recovered[sid] = {
+            'id': sid, 'title': title, 'slug': page.parent.name,
+            'published_at': event_date, 'event_date': event_date,
+            'source': 'Recovered from published signal page', 'source_url': source_url,
+            'source_type': 'Primary source', 'summary': summary,
+            'what_happened': what, 'interpretation': interp,
+            'key_data': [], 'canadian_relevance': canadian,
+            'opportunity_or_risk': classification, 'relevance_score': relevance,
+            'confidence_score': confidence, 'sectors': sectors, 'categories': cats,
+            'direction': 'Global → Canada/China', 'entities': ['China'],
+            'related_signals': [], 'status': 'published', 'recovered': True
+        }
+        known_urls.add(source_url)
+    return list(recovered.values())
+
 def main():
     raw_path = RAW / 'items.json'
     raw = json.loads(raw_path.read_text()) if raw_path.exists() else []
@@ -227,6 +298,7 @@ def main():
     print('screening_rejections=' + json.dumps(rejection_counts, sort_keys=True))
 
     existing = json.loads((DATA / 'signals.json').read_text()) if (DATA / 'signals.json').exists() else []
+    existing = recover_published_signals(existing)
     existing_by_url = {s.get('source_url'): s for s in existing if s.get('source_url')}
     existing_urls = set(existing_by_url)
     real_existing = [s for s in existing if s.get('status') not in ('demo','suppressed')]

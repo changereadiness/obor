@@ -6,6 +6,7 @@ conservative publication gate -> structured signal creation.
 No AI or paid service is required.
 """
 import hashlib, json, re
+from synthesis import synthesize, build_signal_fields
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -209,7 +210,12 @@ def main():
         screened.append(analyze(item))
 
     screened.sort(key=lambda x: (x['relevance_score'], x['confidence_score'], x.get('published_at') or ''), reverse=True)
-    candidates = screened[:50]
+    candidates = [synthesize(x) for x in screened[:50]]
+    for x in candidates:
+        if x.get('synthesis_status') == 'source_unavailable':
+            x['confidence_score'] = min(x.get('confidence_score', 0), 55)
+        elif x.get('synthesis_status') == 'insufficient_evidence':
+            x['confidence_score'] = min(x.get('confidence_score', 0), 60)
     rejection_counts = {}
     for r in rejected:
         rejection_counts[r['reason']] = rejection_counts.get(r['reason'], 0) + 1
@@ -229,6 +235,8 @@ def main():
             continue
         if x['relevance_score'] < 60 or x['confidence_score'] < 60:
             continue
+        if x.get('synthesis_status') not in ('evidence_available',):
+            continue
         # Explicit Canada evidence is preferred, not mandatory. A primary-source
         # China development with strong business + sector evidence can itself be
         # a Canadian watchpoint; the Canadian implication is written as analysis.
@@ -244,10 +252,8 @@ def main():
             continue
 
         sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
-        summary = re.sub(r'\s+', ' ', x.get('description') or x['title']).strip()
-        if len(summary) < 80:
-            summary = x['title'] + '.'
-        summary = summary[:420]
+        headline, what_happened, interpretation, data_points, synthesized_canadian = build_signal_fields(x)
+        summary = re.sub(r'\s+', ' ', what_happened).strip()[:420]
         sector_text = ', '.join(x['sectors'][:3]).lower()
         if x['evidence']['canada_terms']:
             canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
@@ -255,7 +261,7 @@ def main():
             canadian = f"The source does not explicitly mention Canada. For Canadian businesses in {sector_text}, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics."
         signal = {
             'id': sid,
-            'title': x['title'],
+            'title': headline,
             'slug': make_slug(x['title']),
             'published_at': (x.get('published_at') or datetime.now(timezone.utc).isoformat())[:10],
             'event_date': (x.get('published_at') or '')[:10] or None,
@@ -263,8 +269,10 @@ def main():
             'source_url': x['url'],
             'source_type': x['source_type'],
             'summary': summary,
-            'what_happened': summary,
-            'canadian_relevance': canadian,
+            'what_happened': what_happened,
+            'interpretation': interpretation,
+            'key_data': data_points,
+            'canadian_relevance': synthesized_canadian if synthesized_canadian else canadian,
             'opportunity_or_risk': x['opportunity_or_risk'],
             'relevance_score': x['relevance_score'],
             'confidence_score': x['confidence_score'],
@@ -275,6 +283,7 @@ def main():
             'related_signals': [],
             'status': 'published',
             'evidence': x['evidence'],
+            'synthesis': x.get('source_content', {}),
         }
         signal.update(overrides.get('items', {}).get(sid, {}))
         new.append(signal)

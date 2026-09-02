@@ -78,3 +78,8 @@ The default system uses Python's standard library, RSS/Atom, GitHub Actions and 
 ## Next upgrade
 
 The deterministic analyst can later be replaced or augmented by an optional AI analyzer. The publication gate and validation layer should remain deterministic regardless of the intelligence provider.
+
+
+## v9 — Evidence-backed synthesis
+
+v9 adds a synthesis layer between screening and publication. Screened source pages are fetched, article text is extracted, numeric economic facts are parsed, and each published signal is generated from source evidence rather than the raw source title. Signals now carry `key_data`, `interpretation`, and `synthesis` evidence. A source fetch/extraction failure prevents publication of that candidate rather than allowing an unsupported signal through.

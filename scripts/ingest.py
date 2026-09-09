@@ -5,7 +5,7 @@ Official publication pages are the primary collection surface. RSS/Atom is optio
 and may be used first when configured, but failures fall through to HTML pages.
 No third-party feed is required.
 """
-import hashlib, html, json, re, time
+import hashlib, html, json, re, time, os
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
@@ -15,10 +15,10 @@ from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get('OBOR_ROOT', Path(__file__).resolve().parents[1])).resolve()
 DATA = ROOT / 'data'
 RAW = DATA / 'raw'
-RAW.mkdir(exist_ok=True)
+RAW.mkdir(parents=True, exist_ok=True)
 
 UA = 'OBOR/0.3 (+https://obor.ca; economic-intelligence collector)'
 TIMEOUT = 20
@@ -253,6 +253,25 @@ def collect_source(source):
 
 
 def main():
+    fixture_items = os.environ.get('OBOR_INGEST_FIXTURE_ITEMS')
+    if fixture_items:
+        items = load_json(Path(fixture_items), [])
+        merged = dedupe(items)[:500]
+        log = {
+            'collected_at': datetime.now(timezone.utc).isoformat(),
+            'state': 'fixture',
+            'sources_enabled': 0,
+            'sources_succeeded': 0,
+            'items_new': len(merged),
+            'items_cached': len(merged),
+            'errors': [],
+            'health': [],
+        }
+        (RAW / 'items.json').write_text(json.dumps(merged, ensure_ascii=False, indent=2))
+        (RAW / 'ingest_log.json').write_text(json.dumps(log, ensure_ascii=False, indent=2))
+        print(f'Collection state: fixture; new={len(merged)} cached={len(merged)}')
+        return
+
     sources = load_json(DATA / 'sources.json', [])
     previous = load_json(RAW / 'items.json', [])
     all_items, errors, health = [], [], []

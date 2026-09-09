@@ -5,12 +5,12 @@ Stages: candidate screening -> evidence extraction -> classification -> scoring 
 conservative publication gate -> structured signal creation.
 No AI or paid service is required.
 """
-import hashlib, json, re, html
-from synthesis import synthesize, build_signal_fields
+import hashlib, json, re, html, os
+from clean_adapter import synthesize_item, draft_fields, ENGINE_VERSION
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get('OBOR_ROOT', Path(__file__).resolve().parents[1])).resolve()
 DATA = ROOT / 'data'
 RAW = DATA / 'raw'
 
@@ -55,7 +55,7 @@ SOURCE_CONTEXT = {
     'National Bureau of Statistics of China — Latest Releases': 'China',
 }
 
-SYNTHESIS_VERSION = 19
+SYNTHESIS_VERSION = ENGINE_VERSION
 
 SOURCE_WEIGHTS = {
     'Primary source': 30,
@@ -250,6 +250,10 @@ def recover_published_signals(existing):
             return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', mm.group(1)))).strip() if mm else ''
         canadian = section('CANADIAN RELEVANCE')
         what = section('WHAT HAPPENED')
+        if not what:
+            wm = re.search(r'<p class="eyebrow">WHAT HAPPENED</p>\s*<ul[^>]*>(.*?)</ul>', body, re.S | re.I)
+            if wm:
+                what = [re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', li))).strip() for li in re.findall(r'<li[^>]*>(.*?)</li>', wm.group(1), re.S | re.I)]
         interp = section('WHAT THE DATA SHOWS')
         sec_text = section('SECTORS')
         sectors = [x.strip() for x in sec_text.split('·') if x.strip()] or ['Other']
@@ -287,7 +291,7 @@ def main():
         screened.append(analyze(item))
 
     screened.sort(key=lambda x: (x['relevance_score'], x['confidence_score'], x.get('published_at') or ''), reverse=True)
-    candidates = [synthesize(x) for x in screened[:50]]
+    candidates = [synthesize_item(x) for x in screened[:50]]
     for x in candidates:
         if x.get('synthesis_status') == 'source_unavailable':
             x['confidence_score'] = min(x.get('confidence_score', 0), 55)
@@ -341,7 +345,7 @@ def main():
             }
         else:
             base = analyze(base)
-        rebuilt = synthesize(base)
+        rebuilt = synthesize_item(base)
         print(f"reprocess: {existing_signal.get('slug', existing_signal.get('id'))} -> {rebuilt.get('synthesis_status')}")
         if rebuilt.get('synthesis_status') == 'source_unavailable':
             print(f"  synthesis_error: {rebuilt.get('source_content', {}).get('error', 'unknown')}")
@@ -349,27 +353,18 @@ def main():
             # Preserve the existing valid signal if the source is temporarily
             # unavailable or the new extractor cannot establish evidence.
             continue
-        headline, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors, synthesized_summary = build_signal_fields(rebuilt)
-        sector_text = ', '.join(synthesized_sectors[:3]).lower()
-        if rebuilt.get('evidence', {}).get('canada_terms'):
-            canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
-        else:
-            canadian = f"The source does not explicitly mention Canada. For Canadian businesses in {sector_text}, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics."
+        fields = draft_fields(rebuilt)
         updated_signal = dict(existing_signal)
         updated_signal.update({
-            'title': headline,
-            'slug': make_slug(rebuilt.get('title', existing_signal.get('title', 'signal'))),
-            'summary': synthesized_summary,
-            'what_happened': what_happened,
-            'interpretation': interpretation,
-            'key_data': data_points,
-            'canadian_relevance': synthesized_canadian if synthesized_canadian else canadian,
-            'sectors': synthesized_sectors,
+            **fields,
+            'slug': make_slug(base.get('title') or existing_signal.get('title', 'signal')),
             'source_url': source_url,
-            'source_type': rebuilt.get('source_type', existing_signal.get('source_type')),
+            'source_type': rebuilt.get('source_type', existing_signal.get('source_type', 'Primary source')),
             'synthesis': rebuilt.get('source_content', {}),
+            'clean_analysis': rebuilt.get('clean_analysis', {}),
             'synthesis_version': SYNTHESIS_VERSION,
             'evidence': rebuilt.get('evidence', existing_signal.get('evidence', {})),
+            'status': 'published',
         })
         updated.append(updated_signal)
 
@@ -399,39 +394,26 @@ def main():
             continue
 
         sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
-        headline, what_happened, interpretation, data_points, synthesized_canadian, synthesized_sectors, synthesized_summary = build_signal_fields(x)
-        summary = re.sub(r'\s+', ' ', what_happened).strip()[:420]
-        sector_text = ', '.join(synthesized_sectors[:3]).lower()
-        if x['evidence']['canada_terms']:
-            canadian = f"The source directly connects the development to Canada. Canadian businesses in {sector_text} should assess the implications for trade exposure, sourcing, market access and competitive conditions."
-        else:
-            canadian = f"The source does not explicitly mention Canada. For Canadian businesses in {sector_text}, the development is a watchpoint because it may affect Chinese production, demand, pricing, supply conditions or competitive dynamics."
+        fields = draft_fields(x)
         signal = {
             'id': sid,
-            'title': headline,
+            **fields,
             'slug': make_slug(x['title']),
             'published_at': (x.get('published_at') or datetime.now(timezone.utc).isoformat())[:10],
             'event_date': (x.get('published_at') or '')[:10] or None,
             'source': x['source'],
             'source_url': x['url'],
             'source_type': x['source_type'],
-            'summary': synthesized_summary,
-            'what_happened': what_happened,
-            'interpretation': interpretation,
-            'key_data': data_points,
-            'canadian_relevance': synthesized_canadian if synthesized_canadian else canadian,
-            'sectors': synthesized_sectors,
             'opportunity_or_risk': x['opportunity_or_risk'],
             'relevance_score': x['relevance_score'],
             'confidence_score': x['confidence_score'],
-            'sectors': synthesized_sectors,
-            'categories': x['categories'],
             'direction': x['direction'],
             'entities': ['China'],
             'related_signals': [],
             'status': 'published',
             'evidence': x['evidence'],
             'synthesis': x.get('source_content', {}),
+            'clean_analysis': x.get('clean_analysis', {}),
             'synthesis_version': SYNTHESIS_VERSION,
         }
         signal.update(overrides.get('items', {}).get(sid, {}))

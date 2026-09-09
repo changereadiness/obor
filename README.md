@@ -96,13 +96,6 @@ The deterministic analyst can later be replaced or augmented by an optional AI a
 
 v9 adds a synthesis layer between screening and publication. Screened source pages are fetched, article text is extracted, numeric economic facts are parsed, and each published signal is generated from source evidence rather than the raw source title. Signals now carry `key_data`, `interpretation`, and `synthesis` evidence. A source fetch/extraction failure prevents publication of that candidate rather than allowing an unsupported signal through.
 
+## Clean reconstruction M5
 
-### V18 — Intelligence Semantics
-- Article-body extraction prioritizes content after the main H1 and strips site chrome.
-- Dataset-level statistics are treated as primary evidence ahead of individual table rows.
-- Production-input price releases use the 50-product movement distribution for interpretation rather than the extracted sample.
-- Synthesized sectors are based on the economic subject rather than generic supply-chain keywords.
-- Canadian relevance distinguishes observed facts from conditional business implications.
-
-## V19 — Semantic Observations
-V19 replaces flattened-text economic inference with a source-agnostic semantic observation layer. Structured HTML tables are reconstructed with row/column spans, headers are retained with period and metric context, and validated observations are passed into deterministic synthesis. Supported semantic types include absolute values, YoY/MoM growth, price changes, price-change rates, volume, quantity, index and share. Text extraction remains a fallback when no usable structured table exists. Editorial output separates Summary, Canadian Relevance, factual What Happened bullets, Key Data, and analytical interpretation.
+The project now contains an isolated clean semantic intelligence engine integrated into the V17 operational shell. See `M5_STATUS.md` for the checkpoint status, architecture boundary, test coverage and deployment rule.

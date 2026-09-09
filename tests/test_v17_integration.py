@@ -76,7 +76,7 @@ class V17IntegrationTests(unittest.TestCase):
         for c in CASES:
             s=by_url[c['url']]
             self.assertIn(c['expected'],s['title'])
-            self.assertEqual(s['synthesis_version'],'clean-m5')
+            self.assertEqual(s['synthesis_version'],'clean-m6')
             self.assertEqual(s['clean_analysis']['status'],'ready')
             self.assertIsInstance(s['what_happened'],list)
             self.assertGreaterEqual(len(s['what_happened']),1)

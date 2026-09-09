@@ -145,9 +145,27 @@ def dataset_evidence(ds: DatasetObservation) -> list[EvidencePoint]:
     def pct(n: int) -> str:
         return f"{(100*n/pop):g}%" if pop else "n/a"
     return [
-        EvidencePoint("dataset_distribution", "Decreased", f"{ds.decreased} of {pop}", pct(ds.decreased), period=ds.period),
-        EvidencePoint("dataset_distribution", "Increased", f"{ds.increased} of {pop}", pct(ds.increased), period=ds.period),
-        EvidencePoint("dataset_distribution", "Unchanged", f"{ds.unchanged} of {pop}", pct(ds.unchanged), period=ds.period),
+        EvidencePoint(
+            "dataset_distribution",
+            "Monitored production inputs with price decreases",
+            f"{ds.decreased} of {pop}",
+            f"{pct(ds.decreased)} of monitored basket",
+            period=ds.period,
+        ),
+        EvidencePoint(
+            "dataset_distribution",
+            "Monitored production inputs with price increases",
+            f"{ds.increased} of {pop}",
+            f"{pct(ds.increased)} of monitored basket",
+            period=ds.period,
+        ),
+        EvidencePoint(
+            "dataset_distribution",
+            "Monitored production inputs with unchanged prices",
+            f"{ds.unchanged} of {pop}",
+            f"{pct(ds.unchanged)} of monitored basket",
+            period=ds.period,
+        ),
     ]
 
 

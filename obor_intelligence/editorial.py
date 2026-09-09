@@ -121,12 +121,29 @@ def _period_phrase(period: Optional[str]) -> str:
     return period.replace("-", "–")
 
 
+KEY_DATA_METRIC_LABELS = {
+    "growth_rate_yoy": "year-over-year growth",
+    "growth_rate_mom": "month-over-month growth",
+    "price_change_rate": "price change vs previous period",
+    "price_change": "absolute price change vs previous period",
+    "price": "current market price",
+    "absolute_value": "reported absolute value",
+    "rate": "reported rate",
+}
+
+
+def _explicit_key_label(subject: str, metric: Optional[str]) -> str:
+    meaning = KEY_DATA_METRIC_LABELS.get(metric or "")
+    return f"{subject} — {meaning}" if meaning else subject
+
+
 def _key_cards(points: list[EvidencePoint]) -> list[dict]:
     cards = []
     for p in points:
+        label = _explicit_key_label(p.context, p.metric) if p.kind == "observation" else p.label
         cards.append({
             "value": p.value,
-            "label": p.context if p.kind == "observation" else p.label,
+            "label": label,
             "period": p.period,
             "metric": p.metric or p.kind,
             "context": p.context,
@@ -143,7 +160,7 @@ def _observation_cards(items: list[tuple[Optional[Observation], str]]) -> list[d
         value = f"{sign}{obs.value:g}%" if obs.unit == "%" else f"{obs.value:g}{(' ' + obs.unit) if obs.unit else ''}"
         cards.append({
             "value": value,
-            "label": label,
+            "label": _explicit_key_label(label, obs.metric),
             "period": obs.period,
             "metric": obs.metric,
             "context": obs.subject,

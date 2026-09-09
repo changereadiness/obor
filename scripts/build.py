@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Deterministic static generator for OBOR signal pages.
 
-M5 contract: rendering consumes the persisted signal schema only. It never
+M6 contract: rendering consumes the persisted signal schema only. It never
 re-interprets source data or performs synthesis.
 """
 from __future__ import annotations
@@ -30,11 +30,21 @@ def key_data_html(cards):
         label = d.get('label') or d.get('context') or ''
         period = d.get('period') or ''
         unit = d.get('unit') or ''
+        context = d.get('context') or ''
+        metric = d.get('metric') or ''
         shown = f'{value} {unit}'.strip()
+        meta = []
+        # Dataset-distribution cards carry a useful percentage in context.
+        # Observation context generally duplicates the subject already present
+        # in the explicit label, so it is intentionally not rendered twice.
+        if metric == 'dataset_distribution' and context:
+            meta.append(context)
+        if period:
+            meta.append(period.replace('-', '–'))
         out.append('<li class="key-data-card">'
                    f'<strong>{esc(shown)}</strong>'
                    f'<span>{esc(label)}</span>'
-                   f'<small>{esc(period)}</small>'
+                   f'<small>{esc(" · ".join(meta))}</small>'
                    '</li>')
     return ''.join(out)
 

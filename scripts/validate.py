@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""OBOR M5 quality gate.
+"""OBOR M6 quality gate.
 
 This gate checks schema *and* semantic regressions. It is intentionally stricter
 for real clean-engine signals than for retained illustrative demo records.
@@ -43,7 +43,7 @@ for s in data:
     if s.get('status') in ('demo','suppressed'):
         continue
 
-    if s.get('synthesis_version') != 'clean-m5': errors.append(f'{sid}: not produced by clean-m5')
+    if s.get('synthesis_version') != 'clean-m6': errors.append(f'{sid}: not produced by clean-m6')
     if not isinstance(s.get('what_happened'), list) or not (1<=len(s.get('what_happened',[]))<=6):
         errors.append(f'{sid}: what_happened must be 1-6 bullets')
     if not isinstance(s.get('key_data'), list) or not (1<=len(s.get('key_data',[]))<=5):
@@ -66,6 +66,15 @@ for s in data:
             errors.append(f'{sid}: absolute value rendered as percentage')
         if metric in {'growth_rate_yoy','growth_rate_mom','price_change_rate'} and '%' not in value:
             errors.append(f'{sid}: rate lost percentage unit')
+        label=str(card.get('label','')).lower()
+        if metric=='growth_rate_yoy' and 'year-over-year growth' not in label:
+            errors.append(f'{sid}: YoY key-data card does not explain its metric')
+        if metric=='growth_rate_mom' and 'month-over-month growth' not in label:
+            errors.append(f'{sid}: MoM key-data card does not explain its metric')
+        if metric=='price_change_rate' and 'price change' not in label:
+            errors.append(f'{sid}: price-change key-data card does not explain its metric')
+        if metric=='dataset_distribution' and not any(term in label for term in ('price decreases','price increases','unchanged prices')):
+            errors.append(f'{sid}: distribution key-data card does not explain what the count represents')
 
 if errors:
     print('\n'.join(errors)); sys.exit(1)

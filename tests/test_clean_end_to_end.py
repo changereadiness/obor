@@ -59,5 +59,17 @@ class EndToEndTests(unittest.TestCase):
             self.assertNotIn(bad, page)
 
 
+    def test_key_data_rendering_explains_metric(self):
+        record = make_signal_record(
+            analyze_source("Industrial Production Operation in July 2026", (FIX / "industrial_production.html").read_text()),
+            "https://example.test/industrial",
+            "National Bureau of Statistics of China",
+            "2026-08-18",
+        )
+        page = render_signal(record)
+        self.assertIn("Industrial value added — year-over-year growth", page)
+        self.assertIn("Manufacturing — year-over-year growth", page)
+        self.assertNotIn("economic price movement", page.lower())
+
 if __name__ == "__main__":
     unittest.main()

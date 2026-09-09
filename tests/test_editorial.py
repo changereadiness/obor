@@ -24,6 +24,8 @@ class MarketPriceEditorialTests(unittest.TestCase):
         self.assertIn("mostly declined", draft.headline)
         self.assertIn("31 of 50", draft.summary)
         self.assertTrue(any(c["value"] == "31 of 50" for c in draft.key_data))
+        self.assertEqual(draft.key_data[0]["label"], "Monitored production inputs with price decreases")
+        self.assertEqual(draft.key_data[3]["label"], "Pure Benzene (Petroleum Benzene, Industrial Grade) — price change vs previous period")
         self.assertEqual(validate_draft(draft, observations, datasets), [])
 
 
@@ -37,6 +39,12 @@ class RetailEditorialTests(unittest.TestCase):
         self.assertTrue(any("excluding automobiles" in b.lower() for b in draft.what_happened))
         self.assertFalse(any(c["value"] == "39022%" for c in draft.key_data))
         self.assertEqual([c["value"] for c in draft.key_data], ["+0.6%", "+1.2%", "+2.5%", "+4.6%"] )
+        self.assertEqual([c["label"] for c in draft.key_data], [
+            "Total retail sales — year-over-year growth",
+            "Total retail sales — year-over-year growth",
+            "Retail sales excluding automobiles — year-over-year growth",
+            "Online retail sales of goods — year-over-year growth",
+        ])
         self.assertEqual(validate_draft(draft, observations), [])
 
 
@@ -51,7 +59,11 @@ class IndustrialEditorialTests(unittest.TestCase):
         self.assertIn("not itself a measure", draft.canadian_relevance)
         self.assertFalse(any("1685797%" in c["value"] for c in draft.key_data))
         self.assertEqual([c["label"] for c in draft.key_data], [
-            "Industrial value added", "Industrial value added", "Manufacturing", "High-tech manufacturing", "Mining"
+            "Industrial value added — year-over-year growth",
+            "Industrial value added — year-over-year growth",
+            "Manufacturing — year-over-year growth",
+            "High-tech manufacturing — year-over-year growth",
+            "Mining — year-over-year growth",
         ])
         self.assertEqual(validate_draft(draft, observations), [])
 

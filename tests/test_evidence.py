@@ -43,9 +43,13 @@ class EvidenceSelectionTests(unittest.TestCase):
             "August 1-10 2026",
         )
         points = select_key_evidence(obs, ds, limit=5)
-        self.assertEqual([p.label for p in points[:3]], ["Decreased", "Increased", "Unchanged"])
+        self.assertEqual([p.label for p in points[:3]], [
+            "Monitored production inputs with price decreases",
+            "Monitored production inputs with price increases",
+            "Monitored production inputs with unchanged prices",
+        ])
         self.assertEqual(points[0].value, "31 of 50")
-        self.assertEqual(points[0].context, "62%")
+        self.assertEqual(points[0].context, "62% of monitored basket")
         self.assertEqual(validate_evidence(points), [])
 
     def test_retail_primary_subject_preserves_value_and_growth(self):

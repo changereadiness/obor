@@ -11,14 +11,21 @@ def esc(value) -> str:
 
 def render_signal(signal: dict) -> str:
     what_html = "".join(f"<li>{esc(item)}</li>" for item in signal.get("what_happened", []))
-    key_html = "".join(
-        "<li class=\"key-data-card\">"
-        f"<strong>{esc(card.get('value', ''))}</strong>"
-        f"<span>{esc(card.get('label', ''))}</span>"
-        f"<small>{esc(card.get('period') or '')}</small>"
-        "</li>"
-        for card in signal.get("key_data", [])
-    )
+    key_parts = []
+    for card in signal.get("key_data", []):
+        meta = []
+        if card.get("metric") == "dataset_distribution" and card.get("context"):
+            meta.append(str(card["context"]))
+        if card.get("period"):
+            meta.append(str(card["period"]).replace("-", "–"))
+        key_parts.append(
+            "<li class=\"key-data-card\">"
+            f"<strong>{esc(card.get('value', ''))}</strong>"
+            f"<span>{esc(card.get('label', ''))}</span>"
+            f"<small>{esc(' · '.join(meta))}</small>"
+            "</li>"
+        )
+    key_html = "".join(key_parts)
     sectors = " · ".join(signal.get("sectors", []))
     categories = " · ".join(signal.get("categories", []))
     return f'''<!doctype html>

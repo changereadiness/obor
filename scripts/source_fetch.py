@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
-UA = "OBOR/clean-m5 (+https://obor.ca)"
+UA = "OBOR/clean-m6 (+https://obor.ca)"
 TIMEOUT = 15
 RETRIES = 2
 MAX_BYTES = 5 * 1024 * 1024

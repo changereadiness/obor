@@ -13,7 +13,7 @@ from obor_intelligence.source_analysis import analyze_source
 from obor_intelligence.records import category_for
 from source_fetch import fetch_source
 
-ENGINE_VERSION = "clean-m5"
+ENGINE_VERSION = "clean-m6"
 
 
 def synthesize_item(item: dict) -> dict:

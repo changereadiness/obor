@@ -1,7 +1,7 @@
 {
-  "raw": 35,
-  "screened": 14,
-  "candidates": 14,
+  "raw": 37,
+  "screened": 16,
+  "candidates": 16,
   "rejected": 21,
   "rejection_reasons": {
     "no_china_signal": 20,

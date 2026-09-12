@@ -142,3 +142,9 @@ It adds:
 Current regression suite: **30 / 30 passing**.
 
 This remains **M6**. It is operational observability around the frozen engine, not a new intelligence milestone.
+
+## PRE-LAUNCH discovery identity hardening
+
+Freshness observability exposed that raw IDs historically hash URL + title, which could make an official headline edit appear as a new discovery. Discovery identity now uses the canonical URL while preserving prior raw IDs and first-seen timestamps across title edits. This changes telemetry only; publication behavior is unchanged.
+
+Regression suite: **31 / 31 passed**.

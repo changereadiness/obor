@@ -229,21 +229,44 @@ def load_json(path, default):
         return default
 
 
-def stamp_seen(items, previous_items):
-    """Preserve first-seen time while recording the latest successful observation.
+def canonical_item_key(item):
+    """Stable source-item identity for discovery/freshness telemetry.
 
-    Freshness diagnostics need a stable detection timestamp. ``collected_at`` is
-    intentionally the time of the current fetch, so it cannot answer when OBOR
-    first encountered an item across recurring runs.
+    Official publishers may edit a headline after publication. Raw ``id`` values
+    historically hash URL + title, so using only ``id`` would incorrectly treat a
+    title edit as a newly discovered item. A canonical URL is therefore the
+    primary identity; ``id`` is only a fallback for malformed/fixture records.
     """
+    url = (item.get('url') or '').strip()
+    if url:
+        return 'url:' + url.rstrip('/')
+    raw_id = (item.get('id') or '').strip()
+    return 'id:' + raw_id if raw_id else None
+
+
+def stamp_seen(items, previous_items):
+    """Preserve stable identity and first-seen time across recurring runs.
+
+    A source title can change while its canonical URL remains the same. In that
+    case OBOR keeps the prior raw ``id`` and ``first_seen_at`` instead of
+    inventing a discovery event.
+    """
+    previous_by_key = {canonical_item_key(x): x for x in previous_items if canonical_item_key(x)}
     previous_by_id = {x.get('id'): x for x in previous_items if x.get('id')}
     now = datetime.now(timezone.utc).isoformat()
     for item in items:
-        prior = previous_by_id.get(item.get('id'), {})
+        prior = previous_by_key.get(canonical_item_key(item)) or previous_by_id.get(item.get('id'), {})
+        if prior.get('id'):
+            item['id'] = prior['id']
         observed = item.get('collected_at') or now
         item['first_seen_at'] = prior.get('first_seen_at') or prior.get('collected_at') or observed
         item['last_seen_at'] = observed
     return items
+
+
+def discovered_items(fetched_items, previous_items):
+    previous_keys = {canonical_item_key(x) for x in previous_items if canonical_item_key(x)}
+    return [x for x in fetched_items if canonical_item_key(x) not in previous_keys]
 
 
 def previous_source_health(previous_log):
@@ -288,8 +311,7 @@ def main():
         items = load_json(Path(fixture_items), [])
         previous = load_json(RAW / 'items.json', [])
         fetched = dedupe(stamp_seen(items, previous))[:500]
-        previous_ids = {x.get('id') for x in previous if x.get('id')}
-        discovered = [x for x in fetched if x.get('id') not in previous_ids]
+        discovered = discovered_items(fetched, previous)
         merged = dedupe(fetched + previous)[:500]
         log = {
             'collected_at': datetime.now(timezone.utc).isoformat(),
@@ -340,8 +362,7 @@ def main():
             print(f"WARN {source['name']}: {msg}")
 
     fetched_items = dedupe(all_items)
-    previous_ids = {x.get('id') for x in previous if x.get('id')}
-    discovered_items = [x for x in fetched_items if x.get('id') not in previous_ids]
+    newly_discovered = discovered_items(fetched_items, previous)
     if fetched_items:
         merged = dedupe(fetched_items + previous)[:500]
         state = 'success' if successes == len(enabled) else 'degraded'
@@ -355,9 +376,9 @@ def main():
         'sources_enabled': len(enabled),
         'sources_succeeded': successes,
         'items_fetched': len(fetched_items),
-        'items_discovered': len(discovered_items),
+        'items_discovered': len(newly_discovered),
         # Backward-compatible alias, now corrected to mean truly new to OBOR.
-        'items_new': len(discovered_items),
+        'items_new': len(newly_discovered),
         'items_cached': len(merged),
         'errors': errors,
         'health': health,
@@ -368,7 +389,7 @@ def main():
     if successes == 0 and not previous:
         print('COLLECTION FAILED: no sources succeeded and no previous collection exists')
     else:
-        print(f'Collection state: {state}; fetched={len(fetched_items)} discovered_new={len(discovered_items)} cached={len(merged)}')
+        print(f'Collection state: {state}; fetched={len(fetched_items)} discovered_new={len(newly_discovered)} cached={len(merged)}')
 
 
 if __name__ == '__main__':

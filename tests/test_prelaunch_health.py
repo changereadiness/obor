@@ -62,6 +62,40 @@ class PrelaunchHealthTests(unittest.TestCase):
             self.assertEqual(stored2['first_seen_at'], first_seen)
             self.assertTrue(stored2['last_seen_at'])
 
+    def test_title_edit_on_same_url_is_not_counted_as_new_discovery(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root / 'data/raw').mkdir(parents=True)
+            previous = [{
+                'id': 'raw-original', 'title': 'Original official headline',
+                'url': 'https://example.test/article-1', 'description': '',
+                'published_at': '2026-09-10T00:00:00+00:00', 'source': 'Fixture Source',
+                'source_type': 'Primary source', 'country': 'China',
+                'collected_at': '2026-09-10T01:00:00+00:00',
+                'first_seen_at': '2026-09-10T01:00:00+00:00',
+                'last_seen_at': '2026-09-10T01:00:00+00:00',
+            }]
+            (root / 'data/raw/items.json').write_text(json.dumps(previous))
+            fixture_items = [{
+                'id': 'raw-title-derived-new-id', 'title': 'Edited official headline',
+                'url': 'https://example.test/article-1', 'description': '',
+                'published_at': '2026-09-10T00:00:00+00:00', 'source': 'Fixture Source',
+                'source_type': 'Primary source', 'country': 'China',
+            }]
+            fixture = root / 'fixture.json'
+            fixture.write_text(json.dumps(fixture_items))
+            env = os.environ.copy()
+            env['OBOR_ROOT'] = str(root)
+            env['OBOR_INGEST_FIXTURE_ITEMS'] = str(fixture)
+
+            p = subprocess.run([sys.executable, str(SCRIPTS/'ingest.py')], env=env, text=True, capture_output=True)
+            self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
+            log = json.loads((root/'data/raw/ingest_log.json').read_text())
+            stored = json.loads((root/'data/raw/items.json').read_text())[0]
+            self.assertEqual(log['items_discovered'], 0)
+            self.assertEqual(stored['id'], 'raw-original')
+            self.assertEqual(stored['first_seen_at'], '2026-09-10T01:00:00+00:00')
+
     def test_health_report_separates_degradation_freshness_and_gate_reasons(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

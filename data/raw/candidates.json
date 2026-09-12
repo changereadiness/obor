@@ -9,7 +9,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355717+00:00",
+    "collected_at": "2026-09-12T07:05:29.002442+00:00",
     "categories": [
       "Markets"
     ],
@@ -39,6 +39,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "7.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+    "reporting_period": "August 11-20 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "7.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
@@ -5005,7 +5007,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355651+00:00",
+    "collected_at": "2026-09-12T07:05:29.002403+00:00",
     "categories": [
       "Markets"
     ],
@@ -5035,6 +5037,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "3.Market Prices of Important Means of Production in Circulation, August 21-31, 2026",
+    "reporting_period": "August 21-31 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "3.Market Prices of Important Means of Production in Circulation, August 21-31, 2026",
@@ -9977,7 +9981,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355822+00:00",
+    "collected_at": "2026-09-12T07:05:29.002504+00:00",
     "categories": [
       "Markets"
     ],
@@ -10007,6 +10011,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "15.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+    "reporting_period": "August 1-10 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "15.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
@@ -15001,6 +15007,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "9.Total Retail Sales of Consumer Goods from January to July 2026",
+    "reporting_period": "July",
     "clean_analysis": {
       "status": "ready",
       "title": "9.Total Retail Sales of Consumer Goods from January to July 2026",
@@ -18959,6 +18967,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "8.Investment in Real Estate Development from January to July 2026",
+    "reporting_period": "July 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "8.Investment in Real Estate Development from January to July 2026",
@@ -22115,7 +22125,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355729+00:00",
+    "collected_at": "2026-09-12T07:05:29.002449+00:00",
     "categories": [
       "Industry"
     ],
@@ -22145,6 +22155,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "8.Industrial Production Operation in July 2026",
+    "reporting_period": "July",
     "clean_analysis": {
       "status": "ready",
       "title": "8.Industrial Production Operation in July 2026",
@@ -29769,7 +29781,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355795+00:00",
+    "collected_at": "2026-09-12T07:05:29.002488+00:00",
     "categories": [
       "Markets"
     ],
@@ -29793,6 +29805,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "13.National Economy Maintained Steady Momentum with Innovation-driven and High-quality Dev...",
+    "reporting_period": null,
     "clean_analysis": {
       "status": "insufficient_structured_evidence",
       "title": "13.National Economy Maintained Steady Momentum with Innovation-driven and High-quality Dev...",
@@ -29828,7 +29842,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355686+00:00",
+    "collected_at": "2026-09-12T07:05:29.002425+00:00",
     "categories": [
       "Markets"
     ],
@@ -29856,6 +29870,8 @@
         "increased"
       ]
     },
+    "source_title": "5.China’s New Economic Growth Drivers Index Increased by 12.5% in 2025",
+    "reporting_period": null,
     "clean_analysis": {
       "status": "insufficient_structured_evidence",
       "title": "5.China’s New Economic Growth Drivers Index Increased by 12.5% in 2025",
@@ -29891,7 +29907,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355809+00:00",
+    "collected_at": "2026-09-12T07:05:29.002496+00:00",
     "categories": [
       "Markets"
     ],
@@ -29916,6 +29932,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "14.Sales Prices of Commercial Residential Buildings in 70 Medium and Large-sized Cities in...",
+    "reporting_period": null,
     "clean_analysis": {
       "status": "insufficient_structured_evidence",
       "title": "14.Sales Prices of Commercial Residential Buildings in 70 Medium and Large-sized Cities in...",
@@ -29951,7 +29969,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355669+00:00",
+    "collected_at": "2026-09-12T07:05:29.002414+00:00",
     "categories": [
       "Markets"
     ],
@@ -29975,6 +29993,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "4.Purchasing Managers’ Index for August 2026",
+    "reporting_period": null,
     "clean_analysis": {
       "status": "insufficient_structured_evidence",
       "title": "4.Purchasing Managers’ Index for August 2026",
@@ -30010,7 +30030,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355742+00:00",
+    "collected_at": "2026-09-12T07:05:29.002457+00:00",
     "categories": [
       "Macroeconomics"
     ],
@@ -30036,6 +30056,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "9.Investment in Fixed Assets from January to July 2026",
+    "reporting_period": "July 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "9.Investment in Fixed Assets from January to July 2026",
@@ -31680,7 +31702,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355634+00:00",
+    "collected_at": "2026-09-12T07:05:29.002394+00:00",
     "categories": [
       "Macroeconomics"
     ],
@@ -31704,6 +31726,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "2.Industrial Producer Price Indexes in August 2026",
+    "reporting_period": "August 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "2.Industrial Producer Price Indexes in August 2026",
@@ -36866,6 +36890,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "15.Industrial Producer Price Indexes in July 2026",
+    "reporting_period": "July 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "15.Industrial Producer Price Indexes in July 2026",
@@ -42028,6 +42054,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "14.Consumer Price Index in July 2026",
+    "reporting_period": "July 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "14.Consumer Price Index in July 2026",
@@ -46584,7 +46612,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355781+00:00",
+    "collected_at": "2026-09-12T07:05:29.002480+00:00",
     "categories": [
       "Markets"
     ],
@@ -46608,6 +46636,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "12.Energy Production in July 2026",
+    "reporting_period": null,
     "clean_analysis": {
       "status": "insufficient_structured_evidence",
       "title": "12.Energy Production in July 2026",
@@ -46643,7 +46673,7 @@
     "source_url": "https://www.stats.gov.cn/english/PressRelease/",
     "source_type": "Primary source",
     "country": "China",
-    "collected_at": "2026-09-12T06:38:20.355603+00:00",
+    "collected_at": "2026-09-12T07:05:29.002367+00:00",
     "categories": [
       "Macroeconomics"
     ],
@@ -46667,6 +46697,8 @@
       "risk_terms": [],
       "fact_terms": []
     },
+    "source_title": "1.Consumer Price Index in August 2026",
+    "reporting_period": "August 2026",
     "clean_analysis": {
       "status": "ready",
       "title": "1.Consumer Price Index in August 2026",

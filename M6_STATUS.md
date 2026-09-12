@@ -80,3 +80,25 @@ Historical parser artifacts remain blocked.
 ## Deployment expectation
 
 A successful M6 production run should show existing real signals as reprocessed/updated because the synthesis version changed from `clean-m5` to `clean-m6`. Source degradation for WTO, IMF and OECD remains a known non-fatal ingestion condition.
+
+---
+
+## PRE-LAUNCH HARDENING ADDENDUM — recovery and publishing hygiene
+
+The production-candidate audit identified three activation-adjacent defects that do not require a new milestone:
+
+1. recovered signal pages could leak the internal label `Recovered from published signal page` into public source attribution;
+2. a recovered market-price signal could lose its reporting period when its original source title was no longer present in the current ingestion window;
+3. static generation did not remove obsolete signal directories or regenerate the sitemap from the canonical signal ledger.
+
+The M6 pre-launch hardening patch addresses these within the existing architecture:
+
+- source identity is restored from the configured source registry;
+- `source_title` and `reporting_period` are persisted as provenance metadata;
+- recovery can restore a reporting period from surviving generated source-title slugs before those stale pages are removed;
+- already-M6 records are reprocessed when they still carry known recovery defects;
+- `build.py` removes signal directories not present in `data/signals.json` and regenerates `sitemap.xml` from the same canonical ledger;
+- `validate.py` rejects leaked recovery placeholders, missing market-price periods, stale generated signal pages, and sitemap omissions;
+- the regression suite now contains 24 tests, including an exact reproduction of the recovered-source/missing-period failure.
+
+This remains **M6**. It is pre-launch hardening, not a new product milestone.

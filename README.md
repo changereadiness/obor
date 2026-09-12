@@ -1137,3 +1137,9 @@ For M6 specifically, the expected engine version is:
 ```text
 clean-m6
 ```
+
+---
+
+## M6 pre-launch hardening status
+
+A post-activation production audit added a narrow hardening layer without changing the M6 intelligence architecture. Recovery now preserves canonical source identity and reporting-period provenance, static builds remove obsolete signal pages, the sitemap is generated from the canonical signal ledger, and the quality gate checks those production invariants. The current regression suite contains **24 tests**.

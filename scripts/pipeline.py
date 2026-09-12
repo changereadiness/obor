@@ -9,6 +9,7 @@ import hashlib, json, re, html, os
 from clean_adapter import synthesize_item, draft_fields, ENGINE_VERSION
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(os.environ.get('OBOR_ROOT', Path(__file__).resolve().parents[1])).resolve()
 DATA = ROOT / 'data'
@@ -189,6 +190,116 @@ def candidate(item):
     return True, None
 
 
+
+def source_registry():
+    """Return configured source metadata used to restore provenance after recovery."""
+    path = ROOT / 'scripts' / 'sources.json'
+    if not path.exists():
+        path = Path(__file__).with_name('sources.json')
+    try:
+        return json.loads(path.read_text()) if path.exists() else []
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def canonical_source_for_url(url):
+    """Resolve an article URL back to its configured source without guessing."""
+    if not url:
+        return None
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix('www.')
+    best = None
+    for src in source_registry():
+        candidates = [src.get('url')] + list(src.get('page_urls') or []) + list(src.get('feed_urls') or [])
+        for candidate_url in candidates:
+            if not candidate_url:
+                continue
+            c = urlparse(candidate_url)
+            c_host = c.netloc.lower().removeprefix('www.')
+            if host != c_host:
+                continue
+            # Prefer the most specific configured path on the same host.
+            score = len(c.path or '/') if (not c.path or parsed.path.startswith(c.path.rsplit('/', 1)[0])) else 0
+            if best is None or score > best[0]:
+                best = (score, src)
+    return best[1] if best else None
+
+
+def period_from_slug(slug):
+    """Recover a reporting period from an older source-title slug when available."""
+    month = r'january|february|march|april|may|june|july|august|september|october|november|december'
+    m = re.search(rf'\b({month})-(\d{{1,2}})-(\d{{1,2}})-(\d{{4}})\b', slug or '', re.I)
+    if m:
+        return f'{m.group(1).title()} {m.group(2)}-{m.group(3)} {m.group(4)}'
+    m = re.search(rf'\b({month})-(\d{{4}})\b', slug or '', re.I)
+    if m:
+        return f'{m.group(1).title()} {m.group(2)}'
+    return None
+
+
+def source_title_from_slug(slug):
+    """Restore enough of an old source title for deterministic period parsing."""
+    if not slug:
+        return None
+    text = re.sub(r'^\d+-', '', slug)
+    text = re.sub(r'-(?=\d{1,2}-\d{1,2}-\d{4}\b)', ' ', text)
+    text = text.replace('-', ' ')
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text.title() if text else None
+
+
+def enrich_existing_metadata(existing):
+    """Repair recovery-only metadata using persisted analysis, configured sources,
+    and surviving generated pages. No economic meaning is inferred here.
+    """
+    pages_by_url = {}
+    signals_dir = ROOT / 'signals'
+    if signals_dir.exists():
+        for page in signals_dir.glob('*/index.html'):
+            body = page.read_text(errors='ignore')
+            src = re.search(r'<p class="eyebrow">SOURCE</p>.*?<a href="([^"]+)"', body, re.S | re.I)
+            url = html.unescape(src.group(1)) if src else ''
+            if url:
+                pages_by_url.setdefault(url, []).append(page)
+
+    out = []
+    for original in existing:
+        s = dict(original)
+        url = s.get('source_url')
+        configured = canonical_source_for_url(url)
+        if configured and (not s.get('source') or s.get('source') == 'Recovered from published signal page'):
+            s['source'] = configured.get('name') or s.get('source')
+            s['source_type'] = configured.get('source_type') or s.get('source_type') or 'Primary source'
+
+        analysis_title = (s.get('clean_analysis') or {}).get('title')
+        if not s.get('source_title') and analysis_title and analysis_title != s.get('title'):
+            s['source_title'] = analysis_title
+
+        periods = [c.get('period') for c in (s.get('key_data') or []) if isinstance(c, dict) and c.get('period')]
+        if periods and not s.get('reporting_period'):
+            s['reporting_period'] = periods[0]
+
+        for page in pages_by_url.get(url, []):
+            slug = page.parent.name
+            if not s.get('reporting_period'):
+                s['reporting_period'] = period_from_slug(slug)
+            if not s.get('source_title') and period_from_slug(slug):
+                s['source_title'] = source_title_from_slug(slug)
+            if s.get('reporting_period') and s.get('source_title'):
+                break
+        out.append(s)
+    return out
+
+
+def needs_m6_hardening(signal):
+    """True when an M6 record still carries known recovery defects."""
+    if signal.get('source') == 'Recovered from published signal page':
+        return True
+    cards = [c for c in (signal.get('key_data') or []) if isinstance(c, dict)]
+    if cards and signal.get('profile') in {'market_prices'} and any(not c.get('period') for c in cards):
+        return True
+    return False
+
 def make_slug(title):
     slug = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
     return slug[:80] or 'signal'
@@ -258,11 +369,14 @@ def recover_published_signals(existing):
         sec_text = section('SECTORS')
         sectors = [x.strip() for x in sec_text.split('·') if x.strip()] or ['Other']
         sid = 'sig-' + hashlib.sha1(source_url.encode()).hexdigest()[:12]
+        configured = canonical_source_for_url(source_url)
         recovered[sid] = {
             'id': sid, 'title': title, 'slug': page.parent.name,
             'published_at': event_date, 'event_date': event_date,
-            'source': 'Recovered from published signal page', 'source_url': source_url,
-            'source_type': 'Primary source', 'summary': summary,
+            'source': (configured or {}).get('name') or 'Recovered from published signal page', 'source_url': source_url,
+            'source_title': source_title_from_slug(page.parent.name),
+            'reporting_period': period_from_slug(page.parent.name),
+            'source_type': (configured or {}).get('source_type') or 'Primary source', 'summary': summary,
             'what_happened': what, 'interpretation': interp,
             'key_data': [], 'canadian_relevance': canadian,
             'opportunity_or_risk': classification, 'relevance_score': relevance,
@@ -307,6 +421,7 @@ def main():
 
     existing = json.loads((DATA / 'signals.json').read_text()) if (DATA / 'signals.json').exists() else []
     existing = recover_published_signals(existing)
+    existing = enrich_existing_metadata(existing)
     existing_by_url = {s.get('source_url'): s for s in existing if s.get('source_url')}
     existing_urls = set(existing_by_url)
     real_existing = [s for s in existing if s.get('status') not in ('demo','suppressed')]
@@ -322,7 +437,7 @@ def main():
     # deterministic and independent of package-time generated data.
     raw_by_url = {item.get('url'): item for item in raw if item.get('url')}
     for existing_signal in real_existing:
-        if existing_signal.get('synthesis_version') == SYNTHESIS_VERSION:
+        if existing_signal.get('synthesis_version') == SYNTHESIS_VERSION and not needs_m6_hardening(existing_signal):
             unchanged += 1
             continue
         source_url = existing_signal.get('source_url')
@@ -330,7 +445,9 @@ def main():
         if not base:
             base = {
                 'url': source_url,
-                'title': existing_signal.get('title', ''),
+                'title': existing_signal.get('source_title') or existing_signal.get('title', ''),
+                'source_title': existing_signal.get('source_title') or existing_signal.get('title', ''),
+                'reporting_period': existing_signal.get('reporting_period'),
                 'description': existing_signal.get('summary', ''),
                 'published_at': existing_signal.get('event_date') or existing_signal.get('published_at'),
                 'source': existing_signal.get('source', ''),
@@ -345,6 +462,8 @@ def main():
             }
         else:
             base = analyze(base)
+            base.setdefault('source_title', existing_signal.get('source_title') or base.get('title'))
+            base.setdefault('reporting_period', existing_signal.get('reporting_period'))
         rebuilt = synthesize_item(base)
         print(f"reprocess: {existing_signal.get('slug', existing_signal.get('id'))} -> {rebuilt.get('synthesis_status')}")
         if rebuilt.get('synthesis_status') == 'source_unavailable':
@@ -358,7 +477,10 @@ def main():
         updated_signal.update({
             **fields,
             'slug': make_slug(base.get('title') or existing_signal.get('title', 'signal')),
+            'source': rebuilt.get('source') or existing_signal.get('source'),
             'source_url': source_url,
+            'source_title': base.get('source_title') or base.get('title'),
+            'reporting_period': rebuilt.get('reporting_period') or existing_signal.get('reporting_period'),
             'source_type': rebuilt.get('source_type', existing_signal.get('source_type', 'Primary source')),
             'synthesis': rebuilt.get('source_content', {}),
             'clean_analysis': rebuilt.get('clean_analysis', {}),
@@ -403,6 +525,8 @@ def main():
             'event_date': (x.get('published_at') or '')[:10] or None,
             'source': x['source'],
             'source_url': x['url'],
+            'source_title': x.get('source_title') or x.get('title'),
+            'reporting_period': x.get('reporting_period'),
             'source_type': x['source_type'],
             'opportunity_or_risk': x['opportunity_or_risk'],
             'relevance_score': x['relevance_score'],

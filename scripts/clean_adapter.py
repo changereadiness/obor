@@ -21,7 +21,10 @@ def synthesize_item(item: dict) -> dict:
     url = item.get("url") or item.get("source_url")
     try:
         body, content_type, status = fetch_source(url)
-        analysis = analyze_source(item.get("title", ""), body)
+        source_title = item.get("source_title") or item.get("title", "")
+        analysis = analyze_source(source_title, body, default_period=item.get("reporting_period"))
+        result["source_title"] = source_title
+        result["reporting_period"] = item.get("reporting_period") or next((o.period for o in analysis.observations if o.period), None) or next((d.period for d in analysis.dataset_observations if d.period), None)
         result["clean_analysis"] = analysis.to_dict()
         result["source_content"] = {
             "status": "fetched",

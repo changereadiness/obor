@@ -89,7 +89,15 @@ class V17IntegrationTests(unittest.TestCase):
         out=self.run_script('pipeline.py')
         self.assertIn('updated_existing=3',out)
         self.assert_clean_outputs()
+        # Add an obsolete generated page: build must remove it deterministically.
+        stale=self.root/'signals/obsolete-old-signal/index.html'; stale.parent.mkdir(parents=True); stale.write_text('obsolete')
         self.run_script('build.py')
+        self.assertFalse(stale.exists())
+        sitemap=(self.root/'sitemap.xml').read_text()
+        built_signals=json.loads((self.root/'data/signals.json').read_text())
+        for signal in built_signals:
+            self.assertIn(f"https://obor.ca/signals/{signal['slug']}/", sitemap)
+        self.assertNotIn('obsolete-old-signal', sitemap)
         gate=self.run_script('validate.py')
         self.assertIn('Quality gate passed: 3 signals',gate)
         pages=' '.join(p.read_text() for p in (self.root/'signals').glob('*/index.html'))
@@ -107,6 +115,40 @@ class V17IntegrationTests(unittest.TestCase):
         gate=self.run_script('validate.py')
         self.assertIn('Quality gate passed: 3 signals',gate)
 
+
+    def test_m6_recovery_hardening_repairs_source_and_period(self):
+        # One already-M6 signal carries the two defects found in the live repo:
+        # recovery placeholder provenance and missing market-price periods.
+        c=CASES[0]
+        broken=existing_signal(c)
+        broken.update({
+            'source':'Recovered from published signal page',
+            'synthesis_version':'clean-m6',
+            'profile':'market_prices',
+            'key_data':[{'value':'27 of 50','label':'Monitored production inputs with price decreases','metric':'dataset_distribution','period':None}],
+            'clean_analysis':{'status':'ready','title':'China production-input prices mostly declined in the reported period','draft':{'profile':'market_prices'}},
+        })
+        # Use the production-input fixture and an old source-title slug carrying
+        # the reporting period, exactly like the pre-launch repository did.
+        broken['source_url']='https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html'
+        broken['slug']='china-production-input-prices-mostly-declined-in-the-reported-period'
+        (self.root/'data/signals.json').write_text(json.dumps([broken],indent=2))
+        (self.root/'data/raw/items.json').write_text('[]')
+        page=self.root/'signals/15-market-prices-of-important-means-of-production-in-circulation-july-21-31-2026/index.html'
+        page.parent.mkdir(parents=True)
+        page.write_text('<h1>China production-input prices mostly declined in early August</h1><p class="eyebrow">SOURCE</p><p>Recovered from published signal page · <a href="https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html">View source →</a></p>')
+        fmap={'https://www.stats.gov.cn/english/PressRelease/202608/t20260803_1964274.html':str(FIX/'production_inputs.html')}
+        self.mapfile.write_text(json.dumps(fmap))
+        out=self.run_script('pipeline.py')
+        self.assertIn('updated_existing=1',out)
+        signal=json.loads((self.root/'data/signals.json').read_text())[0]
+        self.assertEqual(signal['source'],SOURCE)
+        self.assertEqual(signal['reporting_period'],'July 21-31 2026')
+        self.assertTrue(all(card.get('period')=='July 21-31 2026' for card in signal['key_data']))
+        self.assertNotIn('reported period',signal['title'].lower())
+        self.run_script('build.py')
+        self.run_script('validate.py')
+        self.assertFalse(page.exists())
 
     def test_recovery_from_generated_pages_then_clean_reprocess(self):
         self.run_script('pipeline.py')

@@ -84,8 +84,8 @@ class AnalysisResult:
         }
 
 
-def analyze_source(title: str, html: str | bytes) -> AnalysisResult:
-    fallback_period = reporting_period(title)
+def analyze_source(title: str, html: str | bytes, default_period: Optional[str] = None) -> AnalysisResult:
+    fallback_period = default_period or reporting_period(title)
     observations = extract_observations(html, default_period=fallback_period)
     datasets = extract_dataset_observations(visible_text(html), fallback_period)
     errors = validate_observations(observations)

@@ -162,9 +162,10 @@ The active pipeline deliberately separates:
 5. **Editorial synthesis** — convert validated observations into a human-readable signal.
 6. **Persistence** — store the canonical structured signal.
 7. **Rendering** — render persisted data without reinterpreting it.
-8. **Validation** — enforce schema and known semantic invariants before commit/deployment.
+8. **Observability** — report source degradation, collection freshness, candidate synthesis and publication-gate reasons without changing editorial decisions.
+9. **Validation** — enforce schema and known semantic invariants before commit/deployment.
 
-Rendering is intentionally dumb. `scripts/build.py` must never become an intelligence layer.
+Rendering is intentionally dumb. `scripts/build.py` must never become an intelligence layer. Observability is also read-only: it may explain a decision, but it must never make one.
 
 ---
 
@@ -188,6 +189,8 @@ data/
     candidates.json         screened candidates
     rejections.json         rejected items and reasons
     ingest_log.json         source health and collection diagnostics
+    publication_gate.json   per-candidate publication decision/reason
+    prelaunch_health.json   cross-stage freshness/source-health report
 
 obor_intelligence/
   semantic_tables.py        header-aware table reconstruction + observations
@@ -204,6 +207,7 @@ scripts/
   pipeline.py               screening, scoring, recovery, persistence
   clean_adapter.py          bridge from operational shell to clean engine
   source_fetch.py           source-page retrieval
+  prelaunch_health.py       read-only freshness/source-health observability
   build.py                  production static page renderer
   validate.py               production quality gate
   run.py                    stage orchestrator
@@ -220,6 +224,7 @@ tests/
   test_editorial.py
   test_clean_end_to_end.py
   test_v17_integration.py
+  test_prelaunch_health.py
 ```
 
 `legacy_synthesis_v17.py` is retained only to preserve development history and facilitate forensic comparison. No active production module should import it.
@@ -248,9 +253,21 @@ Collection is **page-first**:
 2. Extract matching article links.
 3. If page extraction fails, try configured RSS/Atom fallback(s).
 4. If a source fails completely, log the failure and continue.
-5. Merge new items with the cached item ledger.
+5. Preserve stable `first_seen_at` / `last_seen_at` observation timestamps.
+6. Separate items fetched on this run from items genuinely discovered for the first time.
+7. Merge fetched items with the cached item ledger.
 
 One failing source must not crash the daily pipeline.
+
+The collector's workflow telemetry deliberately distinguishes:
+
+```text
+fetched          items successfully observed on source surfaces this run
+discovered_new   items not previously present in OBOR's cached ledger
+cached           total normalized items retained after merge/deduplication
+```
+
+This prevents recurring source-page contents from being mislabeled as newly discovered intelligence.
 
 ### 5.2 Degraded collection
 
@@ -269,6 +286,21 @@ The important operational distinction is:
 ```text
 source unavailable != pipeline unavailable
 ```
+
+### 5.3 PRE-LAUNCH freshness and source-health observability
+
+`scripts/prelaunch_health.py` runs after the intelligence pipeline and before static rendering. It does not alter publication eligibility. It writes `data/raw/prelaunch_health.json` and emits a concise workflow summary covering:
+
+- successful vs degraded configured sources;
+- consecutive failure streaks and last successful observation where known;
+- fetched vs genuinely newly discovered items;
+- the newest dated material visible for each source;
+- candidate synthesis outcomes;
+- exact deterministic publication-gate reasons.
+
+For statistical releases whose listing item has no publication date, OBOR may infer the **end of an explicitly named reference period** from the title (for example, `August 2026` -> `2026-08-31`). This is labeled `title_reference_period` and must never be represented as the source's publication date.
+
+The publication gate now records reason codes such as `already_published`, `synthesis_insufficient_evidence`, and `unsupported_sector_no_canada_evidence`. These are diagnostic facts only; the gate thresholds and editorial rules remain unchanged.
 
 ---
 
@@ -614,10 +646,10 @@ There are two complementary mechanisms:
 
 ### 13.1 Current test result
 
-M6 freeze result:
+Current M6 PRE-LAUNCH regression result:
 
 ```text
-23 tests passed
+30 tests passed
 ```
 
 Run with:

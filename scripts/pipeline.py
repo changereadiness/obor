@@ -190,6 +190,47 @@ def candidate(item):
     return True, None
 
 
+def publication_gate_reason(item, suppressed_sources, existing_by_url):
+    """Explain the deterministic publication decision without changing it.
+
+    These reason codes are PRE-LAUNCH observability: they make it possible to
+    distinguish "nothing meaningful arrived" from "meaningful evidence was
+    extracted but deliberately held back by an editorial guardrail."
+    """
+    if item.get('source') in suppressed_sources:
+        return 'suppressed_source'
+    if item.get('url') in existing_by_url:
+        return 'already_published'
+    if item.get('relevance_score', 0) < 60:
+        return 'relevance_below_threshold'
+    if item.get('confidence_score', 0) < 60:
+        return 'confidence_below_threshold'
+    status = item.get('synthesis_status')
+    if status != 'evidence_available':
+        return 'synthesis_' + (status or 'unknown')
+
+    evidence = item.get('evidence') or {}
+    canada_terms = evidence.get('canada_terms') or []
+    china_terms = evidence.get('china_terms') or []
+    commercial_terms = evidence.get('commercial_terms') or []
+    economic_terms = evidence.get('economic_terms') or []
+    sectors = item.get('sectors') or ['Other']
+    strong_china_signal = (
+        bool(china_terms)
+        and item.get('source_type') in ('Primary source', 'Secondary / institutional context')
+        and (len(commercial_terms) >= 2 or len(economic_terms) >= 1)
+        and sectors != ['Other']
+    )
+    if not canada_terms and not strong_china_signal:
+        if sectors == ['Other']:
+            return 'unsupported_sector_no_canada_evidence'
+        if not china_terms:
+            return 'insufficient_china_evidence'
+        if len(commercial_terms) < 2 and len(economic_terms) < 1:
+            return 'insufficient_business_evidence'
+        return 'insufficient_canadian_relevance'
+    return 'eligible_new'
+
 
 def source_registry():
     """Return configured source metadata used to restore provenance after recovery."""
@@ -491,28 +532,19 @@ def main():
         updated.append(updated_signal)
 
     updated_ids = {s.get('id') for s in updated}
+    gate_decisions = []
+    gate_counts = {}
     for x in candidates:
         # Publication gate: conservative and intentionally deterministic.
-        if x['source'] in suppressed_sources:
-            continue
-        if x['relevance_score'] < 60 or x['confidence_score'] < 60:
-            continue
-        if x.get('synthesis_status') not in ('evidence_available',):
-            continue
-        # Explicit Canada evidence is preferred, not mandatory. A primary-source
-        # China development with strong business + sector evidence can itself be
-        # a Canadian watchpoint; the Canadian implication is written as analysis.
-        strong_china_signal = (
-            x['evidence']['china_terms']
-            and x['source_type'] in ('Primary source', 'Secondary / institutional context')
-            and (len(x['evidence']['commercial_terms']) >= 2 or len(x['evidence'].get('economic_terms', [])) >= 1)
-            and x['sectors'] != ['Other']
-        )
-        if not x['evidence']['canada_terms'] and not strong_china_signal:
-            continue
-        existing_signal = existing_by_url.get(x['url'])
-        # Existing real signals were handled in the dedicated re-synthesis pass above.
-        if existing_signal:
+        reason = publication_gate_reason(x, suppressed_sources, existing_by_url)
+        gate_counts[reason] = gate_counts.get(reason, 0) + 1
+        gate_decisions.append({
+            'id': x.get('id'), 'title': x.get('title'), 'url': x.get('url'),
+            'source': x.get('source'), 'reason': reason,
+            'relevance_score': x.get('relevance_score'), 'confidence_score': x.get('confidence_score'),
+            'synthesis_status': x.get('synthesis_status'), 'sectors': x.get('sectors', []),
+        })
+        if reason != 'eligible_new':
             continue
 
         sid = 'sig-' + hashlib.sha1(x['url'].encode()).hexdigest()[:12]
@@ -554,7 +586,14 @@ def main():
     # Keep the original visual demo until at least one real signal exists.
     all_signals = merged[-200:] if merged else existing
     (DATA / 'signals.json').write_text(json.dumps(all_signals, ensure_ascii=False, indent=2))
+    (RAW / 'publication_gate.json').write_text(json.dumps({
+        'evaluated_at': datetime.now(timezone.utc).isoformat(),
+        'candidate_count': len(candidates),
+        'counts': gate_counts,
+        'decisions': gate_decisions,
+    }, ensure_ascii=False, indent=2))
 
+    print('publication_gate=' + json.dumps(gate_counts, sort_keys=True))
     print(f'raw={len(raw)} screened={len(screened)} candidates={len(candidates)} rejected={len(rejected)} published_new={len(new)} updated_existing={len(updated)} unchanged={unchanged} total={len(all_signals)}')
 
 if __name__ == '__main__':

@@ -229,6 +229,36 @@ def load_json(path, default):
         return default
 
 
+def stamp_seen(items, previous_items):
+    """Preserve first-seen time while recording the latest successful observation.
+
+    Freshness diagnostics need a stable detection timestamp. ``collected_at`` is
+    intentionally the time of the current fetch, so it cannot answer when OBOR
+    first encountered an item across recurring runs.
+    """
+    previous_by_id = {x.get('id'): x for x in previous_items if x.get('id')}
+    now = datetime.now(timezone.utc).isoformat()
+    for item in items:
+        prior = previous_by_id.get(item.get('id'), {})
+        observed = item.get('collected_at') or now
+        item['first_seen_at'] = prior.get('first_seen_at') or prior.get('collected_at') or observed
+        item['last_seen_at'] = observed
+    return items
+
+
+def previous_source_health(previous_log):
+    return {x.get('source'): x for x in previous_log.get('health', []) if x.get('source')}
+
+
+def last_success_from_previous(source_name, previous_log, previous_health):
+    prior = previous_health.get(source_name, {})
+    if prior.get('last_success_at'):
+        return prior['last_success_at']
+    if prior.get('status') == 'ok':
+        return previous_log.get('collected_at')
+    return None
+
+
 def collect_source(source):
     errors = []
     # Page-first: try configured pages in order. RSS is optional, never mandatory.
@@ -256,24 +286,32 @@ def main():
     fixture_items = os.environ.get('OBOR_INGEST_FIXTURE_ITEMS')
     if fixture_items:
         items = load_json(Path(fixture_items), [])
-        merged = dedupe(items)[:500]
+        previous = load_json(RAW / 'items.json', [])
+        fetched = dedupe(stamp_seen(items, previous))[:500]
+        previous_ids = {x.get('id') for x in previous if x.get('id')}
+        discovered = [x for x in fetched if x.get('id') not in previous_ids]
+        merged = dedupe(fetched + previous)[:500]
         log = {
             'collected_at': datetime.now(timezone.utc).isoformat(),
             'state': 'fixture',
             'sources_enabled': 0,
             'sources_succeeded': 0,
-            'items_new': len(merged),
+            'items_fetched': len(fetched),
+            'items_discovered': len(discovered),
+            'items_new': len(discovered),
             'items_cached': len(merged),
             'errors': [],
             'health': [],
         }
         (RAW / 'items.json').write_text(json.dumps(merged, ensure_ascii=False, indent=2))
         (RAW / 'ingest_log.json').write_text(json.dumps(log, ensure_ascii=False, indent=2))
-        print(f'Collection state: fixture; new={len(merged)} cached={len(merged)}')
+        print(f'Collection state: fixture; fetched={len(fetched)} discovered_new={len(discovered)} cached={len(merged)}')
         return
 
     sources = load_json(DATA / 'sources.json', [])
     previous = load_json(RAW / 'items.json', [])
+    previous_log = load_json(RAW / 'ingest_log.json', {})
+    previous_health = previous_source_health(previous_log)
     all_items, errors, health = [], [], []
     successes = 0
     enabled = [s for s in sources if s.get('enabled')]
@@ -282,22 +320,30 @@ def main():
         started = time.time()
         try:
             items, method, status, ctype, attempts = collect_source(source)
+            items = stamp_seen(items, previous)
             all_items.extend(items)
             successes += 1
             health.append({'source': source['name'], 'status': 'ok', 'method': method,
                            'http_status': status, 'items': len(items), 'content_type': ctype,
-                           'attempt_errors': attempts, 'seconds': round(time.time()-started, 2)})
+                           'attempt_errors': attempts, 'seconds': round(time.time()-started, 2),
+                           'consecutive_failures': 0,
+                           'last_success_at': datetime.now(timezone.utc).isoformat()})
             print(f"{source['name']}: {len(items)} items ({method})")
         except Exception as exc:
             msg = str(exc)
             errors.append({'source': source['name'], 'error': msg})
+            prior = previous_health.get(source['name'], {})
             health.append({'source': source['name'], 'status': 'error', 'items': 0,
-                           'error': msg, 'seconds': round(time.time()-started, 2)})
+                           'error': msg, 'seconds': round(time.time()-started, 2),
+                           'consecutive_failures': int(prior.get('consecutive_failures', 0) or 0) + 1,
+                           'last_success_at': last_success_from_previous(source['name'], previous_log, previous_health)})
             print(f"WARN {source['name']}: {msg}")
 
-    new_items = dedupe(all_items)
-    if new_items:
-        merged = dedupe(new_items + previous)[:500]
+    fetched_items = dedupe(all_items)
+    previous_ids = {x.get('id') for x in previous if x.get('id')}
+    discovered_items = [x for x in fetched_items if x.get('id') not in previous_ids]
+    if fetched_items:
+        merged = dedupe(fetched_items + previous)[:500]
         state = 'success' if successes == len(enabled) else 'degraded'
     else:
         merged = previous
@@ -308,7 +354,10 @@ def main():
         'state': state,
         'sources_enabled': len(enabled),
         'sources_succeeded': successes,
-        'items_new': len(new_items),
+        'items_fetched': len(fetched_items),
+        'items_discovered': len(discovered_items),
+        # Backward-compatible alias, now corrected to mean truly new to OBOR.
+        'items_new': len(discovered_items),
         'items_cached': len(merged),
         'errors': errors,
         'health': health,
@@ -319,7 +368,7 @@ def main():
     if successes == 0 and not previous:
         print('COLLECTION FAILED: no sources succeeded and no previous collection exists')
     else:
-        print(f'Collection state: {state}; new={len(new_items)} cached={len(merged)}')
+        print(f'Collection state: {state}; fetched={len(fetched_items)} discovered_new={len(discovered_items)} cached={len(merged)}')
 
 
 if __name__ == '__main__':

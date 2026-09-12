@@ -120,3 +120,25 @@ The M6 homepage hardening patch now:
 - adds dedicated homepage regression coverage.
 
 This remains **M6**. It changes presentation truthfulness only; the intelligence architecture, source coverage, publication gate, and signal schema are unchanged.
+
+
+## PRE-LAUNCH OBSERVABILITY ADDENDUM — freshness and source health
+
+The M6 production engine is frozen semantically. The next PRE-LAUNCH hardening step adds read-only observability so recurring production runs can distinguish source freshness from pipeline health.
+
+This patch does **not** add sources, loosen publication thresholds, change sector taxonomy, or alter editorial synthesis.
+
+It adds:
+
+- stable `first_seen_at` and `last_seen_at` timestamps for normalized source items;
+- corrected collection telemetry separating `fetched`, `discovered_new`, and `cached` counts;
+- source failure streaks plus last-success timestamps where known;
+- `publication_gate.json`, which explains why every synthesized candidate was published, already existed, or was held back;
+- `prelaunch_health.json`, which consolidates source status, reference-date freshness, synthesis outcomes, and publication-gate counts;
+- workflow output from `prelaunch_health.py` after each production pipeline run;
+- explicit labeling of title-derived statistical reference dates so they cannot be confused with publication dates;
+- regression coverage for discovery semantics, first-seen persistence, source-health reporting, and statistical reference-date inference.
+
+Current regression suite: **30 / 30 passing**.
+
+This remains **M6**. It is operational observability around the frozen engine, not a new intelligence milestone.

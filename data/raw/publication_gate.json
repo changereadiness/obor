@@ -1,0 +1,236 @@
+{
+  "evaluated_at": "2026-09-12T08:14:08.958441+00:00",
+  "candidate_count": 16,
+  "counts": {
+    "already_published": 5,
+    "unsupported_sector_no_canada_evidence": 6,
+    "synthesis_insufficient_evidence": 5
+  },
+  "decisions": [
+    {
+      "id": "raw-e4500a587b950a53f7c1",
+      "title": "7.Market Prices of Important Means of Production in Circulation, August 11-20, 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260821_1965094.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "already_published",
+      "relevance_score": 75,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Manufacturing",
+        "Energy",
+        "Mining & Critical Minerals",
+        "Construction & Infrastructure"
+      ]
+    },
+    {
+      "id": "raw-ed5c81f4621f515ff75d",
+      "title": "3.Market Prices of Important Means of Production in Circulation, August 21-31, 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202609/t20260903_1965181.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "already_published",
+      "relevance_score": 75,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Manufacturing",
+        "Energy",
+        "Mining & Critical Minerals",
+        "Construction & Infrastructure"
+      ]
+    },
+    {
+      "id": "raw-c174ef1eb1d38669e2c7",
+      "title": "15.Market Prices of Important Means of Production in Circulation, August 1-10, 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260813_1965026.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "already_published",
+      "relevance_score": 75,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Manufacturing",
+        "Energy",
+        "Mining & Critical Minerals",
+        "Construction & Infrastructure"
+      ]
+    },
+    {
+      "id": "raw-7d382b32afd319416b50",
+      "title": "9.Total Retail Sales of Consumer Goods from January to July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965078.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "already_published",
+      "relevance_score": 69,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Consumer Goods",
+        "Automotive",
+        "Technology"
+      ]
+    },
+    {
+      "id": "raw-229d45c01ac8a6084d97",
+      "title": "8.Investment in Real Estate Development from January to July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965077.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 69,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-26eb64110afdd5325054",
+      "title": "8.Industrial Production Operation in July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260818_1965071.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "already_published",
+      "relevance_score": 69,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Manufacturing",
+        "Technology",
+        "Machinery & Equipment",
+        "Energy",
+        "Mining & Critical Minerals"
+      ]
+    },
+    {
+      "id": "raw-cb77a5c19ffdbf7ef012",
+      "title": "13.National Economy Maintained Steady Momentum with Innovation-driven and High-quality Dev...",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260817_1965057.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "synthesis_insufficient_evidence",
+      "relevance_score": 67,
+      "confidence_score": 60,
+      "synthesis_status": "insufficient_evidence",
+      "sectors": [
+        "Technology",
+        "Clean Technology",
+        "Automotive"
+      ]
+    },
+    {
+      "id": "raw-285a61131f59d126b006",
+      "title": "5.China’s New Economic Growth Drivers Index Increased by 12.5% in 2025",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260828_1965135.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "synthesis_insufficient_evidence",
+      "relevance_score": 66,
+      "confidence_score": 60,
+      "synthesis_status": "insufficient_evidence",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-0382012622777a0faf54",
+      "title": "14.Sales Prices of Commercial Residential Buildings in 70 Medium and Large-sized Cities in...",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260817_1965061.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "synthesis_insufficient_evidence",
+      "relevance_score": 65,
+      "confidence_score": 60,
+      "synthesis_status": "insufficient_evidence",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-05663fa816c5d336cc87",
+      "title": "4.Purchasing Managers’ Index for August 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202609/t20260901_1965170.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "synthesis_insufficient_evidence",
+      "relevance_score": 64,
+      "confidence_score": 60,
+      "synthesis_status": "insufficient_evidence",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-a26850201a8757b839de",
+      "title": "9.Investment in Fixed Assets from January to July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260818_1965072.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 63,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-bb017d61ed6b03705aa8",
+      "title": "2.Industrial Producer Price Indexes in August 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202609/t20260910_1965274.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 63,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-2cf0c90be8ca7932c1a5",
+      "title": "15.Industrial Producer Price Indexes in July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260810_1965017.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 63,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-718db34af9fd2c327a33",
+      "title": "14.Consumer Price Index in July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260810_1965018.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 63,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    },
+    {
+      "id": "raw-5f23621227f71252036d",
+      "title": "12.Energy Production in July 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202608/t20260819_1965079.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "synthesis_insufficient_evidence",
+      "relevance_score": 63,
+      "confidence_score": 60,
+      "synthesis_status": "insufficient_evidence",
+      "sectors": [
+        "Energy"
+      ]
+    },
+    {
+      "id": "raw-cec223ff241f823fbf63",
+      "title": "1.Consumer Price Index in August 2026",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202609/t20260910_1965275.html",
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "reason": "unsupported_sector_no_canada_evidence",
+      "relevance_score": 63,
+      "confidence_score": 75,
+      "synthesis_status": "evidence_available",
+      "sectors": [
+        "Other"
+      ]
+    }
+  ]
+}

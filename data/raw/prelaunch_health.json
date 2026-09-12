@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-09-12T08:14:09.043337+00:00",
+  "observation_time": "2026-09-12T08:13:06.798042+00:00",
+  "collection_state": "degraded",
+  "collection": {
+    "sources_enabled": 7,
+    "sources_succeeded": 4,
+    "items_fetched": 34,
+    "items_discovered": 3,
+    "items_cached": 37
+  },
+  "source_status_counts": {
+    "ok": 4,
+    "error": 3
+  },
+  "source_freshness_counts": {
+    "unknown": 2,
+    "current": 1,
+    "degraded": 3,
+    "fresh": 1
+  },
+  "sources": [
+    {
+      "source": "Government of Canada — News",
+      "status": "ok",
+      "freshness_state": "unknown",
+      "method": "html",
+      "http_status": 200,
+      "items_fetched": 2,
+      "items_in_cache": 2,
+      "consecutive_failures": 0,
+      "last_success_at": "2026-09-12T08:12:44.138500+00:00",
+      "seconds": 2.15,
+      "newest_reference_date": null,
+      "newest_reference_basis": null,
+      "newest_reference_age_days": null,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": null
+    },
+    {
+      "source": "Global Affairs Canada — News",
+      "status": "ok",
+      "freshness_state": "unknown",
+      "method": "html",
+      "http_status": 200,
+      "items_fetched": 1,
+      "items_in_cache": 1,
+      "consecutive_failures": 0,
+      "last_success_at": "2026-09-12T08:12:44.704425+00:00",
+      "seconds": 0.57,
+      "newest_reference_date": null,
+      "newest_reference_basis": null,
+      "newest_reference_age_days": null,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": null
+    },
+    {
+      "source": "National Bureau of Statistics of China — Latest Releases",
+      "status": "ok",
+      "freshness_state": "current",
+      "method": "html",
+      "http_status": 200,
+      "items_fetched": 15,
+      "items_in_cache": 17,
+      "consecutive_failures": 0,
+      "last_success_at": "2026-09-12T08:12:47.612724+00:00",
+      "seconds": 2.91,
+      "newest_reference_date": "2026-08-31",
+      "newest_reference_basis": "title_reference_period",
+      "newest_reference_age_days": 12.3,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": null
+    },
+    {
+      "source": "WTO — News",
+      "status": "error",
+      "freshness_state": "degraded",
+      "method": null,
+      "http_status": null,
+      "items_fetched": 0,
+      "items_in_cache": 0,
+      "consecutive_failures": 1,
+      "last_success_at": null,
+      "seconds": 0.46,
+      "newest_reference_date": null,
+      "newest_reference_basis": null,
+      "newest_reference_age_days": null,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": "page https://www.wto.org/english/news_e/news_e.htm: HTML page contained no matching article links | feed https://www.wto.org/library/rss/news_e.xml: syntax error: line 1, column 0"
+    },
+    {
+      "source": "IMF — News",
+      "status": "error",
+      "freshness_state": "degraded",
+      "method": null,
+      "http_status": null,
+      "items_fetched": 0,
+      "items_in_cache": 0,
+      "consecutive_failures": 1,
+      "last_success_at": null,
+      "seconds": 9.35,
+      "newest_reference_date": null,
+      "newest_reference_basis": null,
+      "newest_reference_age_days": null,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": "page https://www.imf.org/en/news: HTTP Error 403: Forbidden | feed https://www.imf.org/en/news/rss: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "OECD — News",
+      "status": "error",
+      "freshness_state": "degraded",
+      "method": null,
+      "http_status": null,
+      "items_fetched": 0,
+      "items_in_cache": 0,
+      "consecutive_failures": 1,
+      "last_success_at": null,
+      "seconds": 9.23,
+      "newest_reference_date": null,
+      "newest_reference_basis": null,
+      "newest_reference_age_days": null,
+      "newest_published_at": null,
+      "median_observed_age_at_first_detection_days": null,
+      "error": "page https://www.oecd.org/en/about/newsroom.html: HTTP Error 403: Forbidden | feed https://www.oecd.org/newsroom/rss.xml: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "World Bank — News",
+      "status": "ok",
+      "freshness_state": "fresh",
+      "method": "html",
+      "http_status": 200,
+      "items_fetched": 16,
+      "items_in_cache": 17,
+      "consecutive_failures": 0,
+      "last_success_at": "2026-09-12T08:13:06.797496+00:00",
+      "seconds": 0.15,
+      "newest_reference_date": "2026-09-10",
+      "newest_reference_basis": "published_at",
+      "newest_reference_age_days": 2.3,
+      "newest_published_at": "2026-09-10",
+      "median_observed_age_at_first_detection_days": 89.4,
+      "error": null
+    }
+  ],
+  "screening": {
+    "raw": 37,
+    "screened": 16,
+    "candidates": 16,
+    "rejected": 21,
+    "rejection_reasons": {
+      "no_china_signal": 20,
+      "low_business_relevance": 1
+    }
+  },
+  "candidate_synthesis_counts": {
+    "evidence_available": 11,
+    "insufficient_evidence": 5
+  },
+  "publication_gate_counts": {
+    "already_published": 5,
+    "unsupported_sector_no_canada_evidence": 6,
+    "synthesis_insufficient_evidence": 5
+  },
+  "published_signal_count": 6,
+  "latest_published_signal_date": "2026-09-09"
+}

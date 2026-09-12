@@ -104,6 +104,34 @@ if sitemap_path.exists():
 else:
     errors.append('missing sitemap.xml')
 
+
+# Homepage truthfulness: TODAY must be a live calendar state, not a hard-coded
+# archive date. Quiet days are valid intelligence and must be stated explicitly.
+homepage_path = ROOT/'index.html'
+app_path = ROOT/'assets/app.js'
+if not homepage_path.exists():
+    errors.append('missing homepage index.html')
+else:
+    homepage = homepage_path.read_text(errors='ignore')
+    for marker in ('id="today-date"', 'id="today-state"', 'id="today-signal-grid"',
+                   'LATEST SIGNALS', 'id="latest-date"', 'id="latest-signal-grid"'):
+        if marker not in homepage:
+            errors.append(f'homepage missing dynamic daily-state marker: {marker}')
+    today_heading = re.search(r'<p class="eyebrow">TODAY</p>\s*<h2([^>]*)>(.*?)</h2>', homepage, re.I|re.S)
+    if not today_heading or 'id="today-date"' not in today_heading.group(1):
+        errors.append('homepage TODAY heading is not bound to dynamic current-date state')
+
+if not app_path.exists():
+    errors.append('missing homepage application script')
+else:
+    app_js = app_path.read_text(errors='ignore')
+    if 'No major signals detected today.' not in app_js:
+        errors.append('homepage does not state a truthful quiet-day condition')
+    if "status!=='demo'" not in app_js or "status!=='suppressed'" not in app_js:
+        errors.append('homepage signal feed does not exclude non-public records')
+    if "slice(0,10)===todayKey" not in app_js:
+        errors.append("homepage does not separate today's signals from archived signals")
+
 if errors:
     print('\n'.join(errors)); sys.exit(1)
 print(f'Quality gate passed: {len(data)} signals')

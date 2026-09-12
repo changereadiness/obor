@@ -99,6 +99,24 @@ The M6 pre-launch hardening patch addresses these within the existing architectu
 - already-M6 records are reprocessed when they still carry known recovery defects;
 - `build.py` removes signal directories not present in `data/signals.json` and regenerates `sitemap.xml` from the same canonical ledger;
 - `validate.py` rejects leaked recovery placeholders, missing market-price periods, stale generated signal pages, and sitemap omissions;
-- the regression suite now contains 24 tests, including an exact reproduction of the recovered-source/missing-period failure.
+- the regression suite now contains 27 tests, including exact reproductions of the recovered-source/missing-period failure and the homepage stale-TODAY failure.
 
 This remains **M6**. It is pre-launch hardening, not a new product milestone.
+
+
+## PRE-LAUNCH HARDENING ADDENDUM — truthful daily homepage state
+
+A subsequent live-site check found that the homepage could label an archived signal date as `TODAY`. That is not acceptable for a daily intelligence product, especially because OBOR explicitly treats a quiet day as valid intelligence.
+
+The M6 homepage hardening patch now:
+
+- derives the displayed TODAY date from the visitor's current calendar date rather than a hard-coded archive date;
+- shows `No major signals detected today.` when no published signal matches that date;
+- renders same-day signals separately when they do exist;
+- presents the most recent older records under a distinct `LATEST SIGNALS` section and shows their actual latest publication date;
+- excludes `demo` and `suppressed` records from both homepage states;
+- fails gracefully if the canonical signal ledger cannot be loaded;
+- extends `validate.py` so the dynamic TODAY/LATEST contract is part of the production quality gate;
+- adds dedicated homepage regression coverage.
+
+This remains **M6**. It changes presentation truthfulness only; the intelligence architecture, source coverage, publication gate, and signal schema are unchanged.

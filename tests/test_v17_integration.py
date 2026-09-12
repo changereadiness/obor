@@ -52,6 +52,10 @@ class V17IntegrationTests(unittest.TestCase):
         (self.root/'data/raw/items.json').write_text(json.dumps([raw_item(c) for c in CASES], indent=2))
         (self.root/'data/signals.json').write_text(json.dumps([existing_signal(c) for c in CASES], indent=2))
         (self.root/'data/overrides.json').write_text('{}')
+        shutil.copy2(REPO/'index.html', self.root/'index.html')
+        (self.root/'assets').mkdir()
+        shutil.copy2(REPO/'assets/app.js', self.root/'assets/app.js')
+        shutil.copy2(REPO/'assets/style.css', self.root/'assets/style.css')
         fmap={c['url']:str(FIX/c['fixture']) for c in CASES}
         self.mapfile=self.root/'fixture-map.json'; self.mapfile.write_text(json.dumps(fmap))
         self.env=os.environ.copy(); self.env['OBOR_ROOT']=str(self.root); self.env['OBOR_SOURCE_FIXTURE_MAP']=str(self.mapfile)

@@ -1142,4 +1142,4 @@ clean-m6
 
 ## M6 pre-launch hardening status
 
-A post-activation production audit added a narrow hardening layer without changing the M6 intelligence architecture. Recovery now preserves canonical source identity and reporting-period provenance, static builds remove obsolete signal pages, the sitemap is generated from the canonical signal ledger, and the quality gate checks those production invariants. The current regression suite contains **24 tests**.
+A post-activation production audit added a narrow hardening layer without changing the M6 intelligence architecture. Recovery now preserves canonical source identity and reporting-period provenance, static builds remove obsolete signal pages, the sitemap is generated from the canonical signal ledger, and the homepage distinguishes the current day from the latest archived signal date. Quiet days are rendered explicitly as `No major signals detected today.` rather than relabelling older intelligence as current. The quality gate checks these production invariants. The current regression suite contains **27 tests**.
